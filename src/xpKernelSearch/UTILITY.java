@@ -1,4 +1,4 @@
-package main.java.data;
+package xpKernelSearch;
 
 import java.util.ArrayList;
 import java.util.Collection;

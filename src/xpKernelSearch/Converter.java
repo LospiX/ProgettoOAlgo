@@ -14,7 +14,7 @@ public class Converter {
     private Path destinationFolder;
 
     public static void main(String[] args) {
-        Converter conv = new Converter("", "");
+        Converter conv = new Converter("C:\\Users\\Xavier\\Documents\\XP - Asus\\Università\\Magistrale 1 anno\\Optimization Algorithms\\Project\\Istanze\\KPS_Class1\\Class1\\prob1_050_040_060_005_015_01.txt", "C:\\Users\\Xavier\\Documents\\XP - Asus\\Università\\Magistrale 1 anno\\Optimization Algorithms\\Project\\Istanze\\mps\\Class1Mps");
         conv.convert();
     }
 
@@ -39,14 +39,14 @@ public class Converter {
                 lines.remove(0);
             for (int i=0; i< numOfVars; i++){
                 //ATTENZIONE SPACING Dipende da istanze ad istanze
-                profits[i]= Integer.parseInt(lines.get(i).split("  ")[0].trim());
-                costs[i]= Integer.parseInt(lines.get(i).split("  ")[1].trim());
+                profits[i]= Integer.parseInt(lines.get(i).split("\s*")[0].trim());
+                costs[i]= Integer.parseInt(lines.get(i).split("\s*")[1].trim());
             }
 
             MpsBuilder conv = new MpsBuilder(capacity, dimOfFamilies, costsSetupOfFamilies, costsOfFamilies, profits, costs);
-            conv.build(destinationFolder);
+            conv.build(destination);
         } catch (IOException e) {
-            System.out.println("File Path provided not correct");
+            System.out.println(e.getMessage()+ "\nFile Path provided not correct");
         }
     }
 

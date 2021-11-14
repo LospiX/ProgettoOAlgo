@@ -13,7 +13,6 @@ public class ModelDescriber {
         this.printGeneralInfos();
         this.printObjFun();
         this.printConstraints();
-
     }
 
     private void printConstraints() throws GRBException {
@@ -43,6 +42,7 @@ public class ModelDescriber {
         for (GRBVar v: model.getVars())
             System.out.println(v.get(GRB.StringAttr.VarName)+ " "+ v.get(GRB.DoubleAttr.X));
     }
+
     public void printSolTable(int elemForRow) throws GRBException {
         String varName;
         int size = model.getVars().length;
@@ -51,7 +51,6 @@ public class ModelDescriber {
             if (i%elemForRow==0)
                 System.out.print("\n");
         }
-
     }
 
     private void printConstr( GRBConstr g, GRBModel model) throws GRBException {
