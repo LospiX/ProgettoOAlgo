@@ -15,14 +15,14 @@ public class Converter {
 
     public static void main(String[] args) {
         //Converter conv = new Converter(".\\Istanze\\KPS_Class1\\Class1\\prob1_050_040_060_005_015_01.txt", ".\\Istanze\\mps\\Class1Mps");
-        Converter conv = new Converter(".\\Istanze\\InstancesCorrect\\test5x500-SC(1).txt", ".\\Istanze\\mps\\SCmps");
+        Converter conv = new Converter(".\\Istanze\\InstancesCorrect\\test5x500-SC(2).txt", ".\\Istanze\\mps\\SCmps");
         conv.convert();
     }
 
     Converter(String filename, String destinationFolder) {
         this.path = Path.of(filename);
         this.destinationFolder = Path.of(destinationFolder);
-        this.destination = Path.of(destinationFolder+"\\"+this.path.getFileName()+".mps");
+        this.destination = Path.of(destinationFolder+"\\"+this.path.getFileName().toString().subSequence(0, this.path.getFileName().toString().indexOf(".txt"))+".mps");
     }
 
     public void convert (){
