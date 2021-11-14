@@ -8,7 +8,7 @@ import kernel.ModelDescriber;
 public class MipResolver {
 
     public static void main(String[] args) throws GRBException {
-        String pth =".\\Istanze\\mps\\SCmps\\test5x500-SC(1).txt.mps";
+        String pth =".\\Istanze\\mps\\SCmps\\test5x500-SC(1).mps";
 
         GRBEnv env = new GRBEnv("logMIP");
 

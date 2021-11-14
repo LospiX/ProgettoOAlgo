@@ -14,8 +14,8 @@ public class Converter {
     private Path destinationFolder;
 
     public static void main(String[] args) {
-        //Converter conv = new Converter(".\\Istanze\\KPS_Class1\\Class1\\prob1_050_040_060_005_015_01.txt", ".\\Istanze\\mps\\Class1Mps");
-        Converter conv = new Converter(".\\Istanze\\InstancesCorrect\\test5x500-SC(5).txt", ".\\Istanze\\mps\\SCmps");
+        Converter conv = new Converter(".\\Istanze\\KPS_Class1\\Class1\\prob1_050_040_060_005_015_01.txt", ".\\Istanze\\mps\\Class1Mps");
+        //Converter conv = new Converter(".\\Istanze\\InstancesCorrect\\test5x500-SC(5).txt", ".\\Istanze\\mps\\SCmps");
         conv.convert();
     }
 
@@ -40,8 +40,8 @@ public class Converter {
                 lines.remove(0);
             for (int i=0; i< numOfVars; i++){
                 //ATTENZIONE SPACING Dipende da istanze ad istanze
-                profits[i]= Integer.parseInt(lines.get(i).split("\s*")[0].trim());
-                costs[i]= Integer.parseInt(lines.get(i).split("\s*")[1].trim());
+                profits[i]= Integer.parseInt(lines.get(i).split("\s+")[0].trim());
+                costs[i]= Integer.parseInt(lines.get(i).split("\s+")[1].trim());
             }
 
             MpsBuilder conv = new MpsBuilder(capacity, dimOfFamilies, costsSetupOfFamilies, costsOfFamilies, profits, costs);

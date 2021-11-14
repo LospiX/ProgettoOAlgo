@@ -91,3 +91,69 @@ No other solutions better than -0
 
 Optimal solution found (tolerance 1.00e-04)
 Best objective -0.000000000000e+00, best bound -0.000000000000e+00, gap 0.0000%
+
+Gurobi 9.1.2 (win64, Java) logging started Sun Nov 14 18:58:10 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sun Nov 14 18:58:21 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+Read MPS format model from file .\Istanze\mps\SCmps\test5x500-SC(2).mps
+Reading time = 0.00 seconds
+HELLO: 501 rows, 505 columns, 1422 nonzeros
+Warning: parameter changes on this environment will not affect existing models.
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 501 rows, 505 columns and 1422 nonzeros
+Model fingerprint: 0xc9625df1
+Variable types: 0 continuous, 505 integer (505 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 8e+02]
+  Objective range  [1e+00, 1e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+04, 1e+04]
+Found heuristic solution: objective -0.0000000
+Presolve removed 501 rows and 505 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 1: -0 
+No other solutions better than -0
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective -0.000000000000e+00, best bound -0.000000000000e+00, gap 0.0000%
+
+Gurobi 9.1.2 (win64, Java) logging started Sun Nov 14 19:00:32 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+Read MPS format model from file .\Istanze\mps\SCmps\test5x500-SC(1).mps
+Reading time = 0.00 seconds
+HELLO: 501 rows, 505 columns, 1414 nonzeros
+Warning: parameter changes on this environment will not affect existing models.
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 501 rows, 505 columns and 1414 nonzeros
+Model fingerprint: 0x83717ec7
+Variable types: 0 continuous, 505 integer (505 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [1e+00, 1e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+04, 1e+04]
+Found heuristic solution: objective -0.0000000
+Presolve removed 501 rows and 505 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 1: -0 
+No other solutions better than -0
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective -0.000000000000e+00, best bound -0.000000000000e+00, gap 0.0000%
