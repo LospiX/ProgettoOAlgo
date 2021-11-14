@@ -1,0 +1,10 @@
+OBJ:-0.0  -  TIME: 0 s.
+OBJ:3725.0  -  TIME: 0 s.
+OBJ:3728.0  -  TIME: 0 s.
+OBJ:3741.0  -  TIME: 0 s.
+OBJ:3752.0  -  TIME: 0 s.
+OBJ:3760.0  -  TIME: 0 s.
+OBJ:3770.0  -  TIME: 0 s.
+OBJ:3781.0  -  TIME: 0 s.
+OBJ:3807.0  -  TIME: 0 s.
+OBJ:3835.0  -  TIME: 0 s.
