@@ -15,7 +15,7 @@ public class Converter {
 
     public static void main(String[] args) {
         //Converter conv = new Converter(".\\Istanze\\KPS_Class1\\Class1\\prob1_050_040_060_005_015_01.txt", ".\\Istanze\\mps\\Class1Mps");
-        Converter conv = new Converter(".\\Istanze\\InstancesCorrect\\test5x500-SC(2).txt", ".\\Istanze\\mps\\SCmps");
+        Converter conv = new Converter(".\\Istanze\\InstancesCorrect\\test5x500-SC(5).txt", ".\\Istanze\\mps\\SCmps");
         conv.convert();
     }
 
