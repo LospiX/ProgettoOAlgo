@@ -14,7 +14,8 @@ public class Converter {
     private Path destinationFolder;
 
     public static void main(String[] args) {
-        Converter conv = new Converter("C:\\Users\\Xavier\\Documents\\XP - Asus\\Università\\Magistrale 1 anno\\Optimization Algorithms\\Project\\Istanze\\KPS_Class1\\Class1\\prob1_050_040_060_005_015_01.txt", "C:\\Users\\Xavier\\Documents\\XP - Asus\\Università\\Magistrale 1 anno\\Optimization Algorithms\\Project\\Istanze\\mps\\Class1Mps");
+        //Converter conv = new Converter(".\\Istanze\\KPS_Class1\\Class1\\prob1_050_040_060_005_015_01.txt", ".\\Istanze\\mps\\Class1Mps");
+        Converter conv = new Converter(".\\Istanze\\InstancesCorrect\\test5x500-SC(1).txt", ".\\Istanze\\mps\\SCmps");
         conv.convert();
     }
 
