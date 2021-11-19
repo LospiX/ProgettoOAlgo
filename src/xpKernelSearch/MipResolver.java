@@ -4,8 +4,30 @@ package xpKernelSearch;
 import gurobi.*;
 import kernel.ModelDescriber;
 
+import java.io.File;
+
 
 public class MipResolver {
+    private File file;
+    MipResolver (File istFile) {
+        this.file = istFile;
+    }
+    public double solve () throws GRBException {
+        GRBEnv env = new GRBEnv("logMIP");
+
+        GRBModel model = new GRBModel(env,  this.file.getPath());
+        env.set(GRB.IntParam.Presolve, 2 );
+        env.set(GRB.IntParam.Threads, 8);
+        env.set(GRB.IntParam.MIPFocus, 2);
+        env.set(GRB.DoubleParam.TimeLimit, 200);
+        env.set(GRB.DoubleParam.MIPGap, 1e-12);
+
+
+        GRBLinExpr objectiveFun =(GRBLinExpr) model.getObjective();
+        model.update();
+        model.optimize();
+        return ((GRBLinExpr) model.getObjective()).getValue();
+    }
 
     public static void main(String[] args) throws GRBException {
         String pth =".\\Istanze\\mps\\SCmps\\test5x500-SC(2).mps";

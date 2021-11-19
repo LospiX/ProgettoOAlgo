@@ -37,6 +37,7 @@ public class Model {
 			if(lpRelaxation)
 				model = model.relax();
 		} catch (GRBException e) {
+			System.out.println(e.getMessage());
 			e.printStackTrace();
 		}
 	}
