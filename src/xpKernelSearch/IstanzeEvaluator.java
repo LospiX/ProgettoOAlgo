@@ -14,16 +14,15 @@ public class IstanzeEvaluator {
 
     }
     public static void main (String[] args) throws Exception {
-        List<File> files = new Explorer(".\\Istanze\\mps\\Class5Mps").retrieveFiles();
-        //List<File> files = new Explorer(".\\Istanze\\mps\\SCmps").retrieveFiles();
+        //List<File> files = new Explorer(".\\Istanze\\mps\\Class5Mps").retrieveFiles();
+        List<File> files = new Explorer(".\\Istanze\\mps\\SCmps").retrieveFiles();
         String pathlog = ".\\log";
         String pathConfig = ".\\config.txt";
         Configuration config = ConfigurationReader.read(pathConfig);
-
         List<File> istanzeToSolve= new ArrayList<>();
         for (File f : files) {
-            //if (!f.getName().startsWith("test5x500-SC(4)") && !f.getName().startsWith("test5x500-SC(5)"))
-            if (!f.getName().startsWith("prob5_005_100000_03"))
+            if (!f.getName().startsWith("test10x10000-SC(1)") && !f.getName().startsWith("test10x10000-SC(2)"))
+            //if (!f.getName().startsWith("prob5_005_100000_03"))
                 continue;
             istanzeToSolve.add(f);
             System.out.println(f.canRead());

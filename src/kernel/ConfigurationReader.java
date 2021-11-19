@@ -90,7 +90,7 @@ public class ConfigurationReader
         			}
         			break;
         		default:
-        			System.out.println("Unrecognized parameter name.");			
+        			System.out.println("Unrecognized parameter name."+splitLine[0]+".. ");
 			}
         }
         return config;

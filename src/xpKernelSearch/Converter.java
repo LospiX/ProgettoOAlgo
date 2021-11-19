@@ -15,11 +15,13 @@ public class Converter {
     private Path destinationFolder;
 
     public static void main(String[] args) throws Exception {
-        List<File> files = new Explorer(".\\Istanze\\KPS_Class6\\Class6").retrieveFiles();
+        List<File> files = new Explorer(".\\Istanze\\KPS_Class5\\Class5").retrieveFiles();
         for (File f: files) {
+            if (!f.getName().startsWith("prob5_010_020000_01") && !f.getName().startsWith("prob5_010_020000_02"))
+                continue;
             //Converter conv = new Converter(".\\Istanze\\KPS_Class3\\Class3\\prob3_100_090_110_035_045_01.txt", ".\\Istanze\\mps\\Class1Mps");
             //Converter conv = new Converter(".\\Istanze\\InstancesCorrect\\test5x500-SC(5).txt", ".\\Istanze\\mps\\SCmps");
-            Converter conv = new Converter(f.getAbsolutePath(), ".\\Istanze\\mps\\Class6Mps");
+            Converter conv = new Converter(f.getAbsolutePath(), ".\\Istanze\\mps\\Class5Mps");
             conv.convert();
         }
 
