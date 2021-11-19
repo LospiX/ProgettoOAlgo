@@ -1,6 +1,7 @@
 package xpKernelSearch;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -13,10 +14,15 @@ public class Converter {
     private Path destination;
     private Path destinationFolder;
 
-    public static void main(String[] args) {
-        Converter conv = new Converter(".\\Istanze\\KPS_Class3\\Class3\\prob3_100_090_110_035_045_01.txt", ".\\Istanze\\mps\\Class1Mps");
-        //Converter conv = new Converter(".\\Istanze\\InstancesCorrect\\test5x500-SC(5).txt", ".\\Istanze\\mps\\SCmps");
-        conv.convert();
+    public static void main(String[] args) throws Exception {
+        List<File> files = new Explorer(".\\Istanze\\InstancesCorrect").retrieveFiles();
+        for (File f: files) {
+            //Converter conv = new Converter(".\\Istanze\\KPS_Class3\\Class3\\prob3_100_090_110_035_045_01.txt", ".\\Istanze\\mps\\Class1Mps");
+            //Converter conv = new Converter(".\\Istanze\\InstancesCorrect\\test5x500-SC(5).txt", ".\\Istanze\\mps\\SCmps");
+            Converter conv = new Converter(f.getAbsolutePath(), ".\\Istanze\\mps\\SCmps");
+            conv.convert();
+        }
+
     }
 
     Converter(String filename, String destinationFolder) {
