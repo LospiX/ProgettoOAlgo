@@ -66,10 +66,10 @@ public class Model {
 
 			if(model.get(IntAttr.SolCount) > 0) {
 				hasSolution = true;
-				md.printSolTable(6);
+				//md.printSolTable(6);
 				GRBLinExpr sol = (GRBLinExpr) model.getObjective();
-				System.out.println("SOL VAL:: " + sol.getValue());
-				System.out.println("***OBJ VAL: " + model.get(DoubleAttr.ObjVal));
+				//System.out.println("SOL VAL:: " + sol.getValue());
+				//System.out.println("***OBJ VAL: " + model.get(DoubleAttr.ObjVal));
 			}
 		} catch (GRBException e) {
 			e.printStackTrace();
@@ -112,8 +112,8 @@ public class Model {
 	public void disableItems(List<Item> items) {
 		try {
 			for(Item it : items) {
-				//if(it.getName().startsWith("Y")) // PREVENT FAMILIES VARIABLES DISABLING
-				//	continue;
+				if(it.getName().startsWith("Y")) // PREVENT FAMILIES VARIABLES DISABLING
+					continue;
 				String constrName = "FIX_VAR_" + it.getName();
 				model.addConstr(model.getVarByName(it.getName()), GRB.EQUAL, 0, constrName);
 			}

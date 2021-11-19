@@ -124,14 +124,16 @@ public class KernelSearch {
 			// Ad ogni iterazione ricostruisci il Model da capo e disabilita
 			model.buildModel();
 			model.disableItems(toDisable);
-			for (Item it: b.getItems())
-				System.out.print(it.getName()+" ");
+
+			// PRINT BUCKET ITEMS
+			// for (Item it: b.getItems())
+				// System.out.print(it.getName()+" ");
+
 			// La bucketConstraint impone di scegliere almeno una variabile del Bucket
 			model.addBucketConstraint(b.getItems()); // can we use this constraint regardless of the type of variables chosen as items?
 			if(!bestSolution.isEmpty()) { // Se esiste una soluzione
 				// ***** //
-				// model.getEnv().set(GRB.DoubleParam.Cutoff, obj);
-				model.addObjConstraint(bestSolution.getObj());		
+				model.addObjConstraint(bestSolution.getObj()); // -> model.getEnv().set(GRB.DoubleParam.Cutoff, obj);
 				model.readSolution(bestSolution);
 			}
 			
@@ -150,10 +152,12 @@ public class KernelSearch {
 			else
 				objValues.get(objValues.size()-1).add(0.0);
 
-			if(getRemainingTime() <= timeThreshold)
+			if(getRemainingTime() <= timeThreshold) {
+				System.out.println("Treshold superata?");
 				return;
+			}
 		}
-		System.out.println("BEST SOLUTION: "+this.bestSolution.getObj());
+		//System.out.println("BEST SOLUTION of Iteration: "+this.bestSolution.getObj());
 	}
 
 	private int getRemainingTime()

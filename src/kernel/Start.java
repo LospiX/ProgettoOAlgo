@@ -13,13 +13,13 @@ public class Start
 		String pathConfig = args[2];*/
 
 		//String pathmps = ".\\Istanze\\mps\\SCmps\\test5x500-SC(3).mps";
-		String pathmps = ".\\Istanze\\mps\\Class1Mps\\prob3_100_090_110_035_045_01.mps";
+		String pathmps = ".\\Istanze\\mps\\Class2Mps\\prob2_100_090_110_035_045_10.mps";
 		String pathlog = ".\\log";
 		String pathConfig = ".\\config.txt";
 
 		Configuration config = ConfigurationReader.read(pathConfig);
 		KernelSearch ks = new KernelSearch(pathmps, pathlog, config);
-		ks.start();
+		System.out.println("BEST SOLUTION:: "+ks.start());
 		
 		List<List<Double>> objValues = ks.getObjValues();	
 	}
