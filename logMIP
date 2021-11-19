@@ -613,3 +613,247 @@ Solution count 4: 8.94014e+06 8.93958e+06 8.93807e+06 -0
 
 Optimal solution found (tolerance 1.00e-04)
 Best objective 8.940144000000e+06, best bound 8.940622861063e+06, gap 0.0054%
+
+Gurobi 9.1.2 (win64, Java) logging started Wed Nov 17 16:01:18 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+Read MPS format model from file .\Istanze\mps\Class1Mps\prob1_050_040_060_005_015_01.mps
+Reading time = 0.03 seconds
+HELLO: 2566 rows, 2615 columns, 7745 nonzeros
+Warning: parameter changes on this environment will not affect existing models.
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 2566 rows, 2615 columns and 7745 nonzeros
+Model fingerprint: 0xa32896d3
+Variable types: 0 continuous, 2615 integer (2615 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+04]
+  Objective range  [2e+01, 3e+04]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [5e+06, 5e+06]
+Found heuristic solution: objective -0.0000000
+Presolve time: 0.02s
+Presolved: 2566 rows, 2615 columns, 7745 nonzeros
+Variable types: 0 continuous, 2615 integer (2615 binary)
+
+Root relaxation: objective 7.009363e+06, 1737 iterations, 0.06 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 7009362.85    0   17   -0.00000 7009362.85      -     -    0s
+H    0     0                    7002458.0000 7009362.85  0.10%     -    0s
+H    0     0                    7004909.0000 7009362.85  0.06%     -    0s
+H    0     0                    7008938.0000 7009362.85  0.01%     -    0s
+H    0     0                    7009216.0000 7009362.85  0.00%     -    0s
+
+Cutting planes:
+  Gomory: 1
+
+Explored 1 nodes (1737 simplex iterations) in 0.18 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 5: 7.00922e+06 7.00894e+06 7.00491e+06 ... -0
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.009216000000e+06, best bound 7.009362852776e+06, gap 0.0021%
+
+Gurobi 9.1.2 (win64, Java) logging started Wed Nov 17 16:01:46 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+Read MPS format model from file .\Istanze\mps\SCmps\test5x500-SC(1).mps
+Reading time = 0.02 seconds
+HELLO: 501 rows, 505 columns, 1505 nonzeros
+Warning: parameter changes on this environment will not affect existing models.
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 501 rows, 505 columns and 1505 nonzeros
+Model fingerprint: 0x2830cf5b
+Variable types: 0 continuous, 505 integer (505 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [1e+01, 1e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+04, 1e+04]
+Found heuristic solution: objective -0.0000000
+Presolve time: 0.00s
+Presolved: 501 rows, 505 columns, 1505 nonzeros
+Variable types: 0 continuous, 505 integer (505 binary)
+
+Root relaxation: objective 1.124043e+04, 613 iterations, 0.02 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 11240.4300    0   94   -0.00000 11240.4300      -     -    0s
+H    0     0                    8070.0000000 11240.4300  39.3%     -    0s
+H    0     0                    10710.000000 11240.4300  4.95%     -    0s
+H    0     0                    10770.000000 11240.4300  4.37%     -    0s
+H    0     0                    10780.000000 11240.4300  4.27%     -    0s
+H    0     0                    10800.000000 11240.4300  4.08%     -    0s
+H    0     0                    10810.000000 11240.4300  3.98%     -    0s
+H    0     0                    10936.000000 11221.4434  2.61%     -    0s
+     0     0 11026.8000    0  241 10936.0000 11026.8000  0.83%     -    0s
+H    0     0                    10946.000000 11026.8000  0.74%     -    0s
+H    0     0                    11016.000000 11026.8000  0.10%     -    0s
+     0     0 11025.0909    0  335 11016.0000 11025.0909  0.08%     -    0s
+     0     0 11025.0909    0  335 11016.0000 11025.0909  0.08%     -    0s
+     0     2 11025.0909    0  335 11016.0000 11025.0909  0.08%     -    0s
+ 87773 22093 11023.6712   67    1 11016.0000 11024.1319  0.07%   1.4    5s
+ 228376 64879 11022.0784  118    1 11016.0000 11023.7273  0.07%   1.4   10s
+ 365798 105852 11023.5000   34    1 11016.0000 11023.5269  0.07%   1.4   15s
+ 518185 148259 11022.1017   99    1 11016.0000 11023.3864  0.07%   1.4   20s
+ 653266 187056     cutoff   71      11016.0000 11023.2619  0.07%   1.4   25s
+
+Gurobi 9.1.2 (win64, Java) logging started Wed Nov 17 16:02:15 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+Read MPS format model from file .\Istanze\mps\SCmps\test5x500-SC(1).mps
+Reading time = 0.00 seconds
+HELLO: 501 rows, 505 columns, 1505 nonzeros
+Warning: parameter changes on this environment will not affect existing models.
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 502 rows, 505 columns and 2010 nonzeros
+Model fingerprint: 0x4a6469aa
+Variable types: 0 continuous, 505 integer (505 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [1e+01, 1e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+04, 1e+04]
+Found heuristic solution: objective -0.0000000
+Presolve time: 0.02s
+Presolved: 502 rows, 505 columns, 2010 nonzeros
+Variable types: 0 continuous, 505 integer (505 binary)
+
+Root relaxation: objective 1.100000e+04, 523 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 11000.0000    0  152   -0.00000 11000.0000      -     -    0s
+H    0     0                    4154.0000000 11000.0000   165%     -    0s
+H    0     0                    10793.000000 11000.0000  1.92%     -    0s
+H    0     0                    10833.000000 11000.0000  1.54%     -    0s
+H    0     0                    10843.000000 11000.0000  1.45%     -    0s
+H    0     0                    10873.000000 11000.0000  1.17%     -    0s
+H    0     0                    10950.000000 11000.0000  0.46%     -    0s
+H    0     0                    10981.000000 11000.0000  0.17%     -    0s
+H    0     0                    10996.000000 11000.0000  0.04%     -    0s
+H    0     0                    11000.000000 11000.0000  0.00%     -    0s
+     0     0 11000.0000    0  308 11000.0000 11000.0000  0.00%     -    0s
+
+Cutting planes:
+  Gomory: 1
+  MIR: 1
+  RLT: 1
+
+Explored 1 nodes (1660 simplex iterations) in 0.16 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 10: 11000 10996 10981 ... -0
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.100000000000e+04, best bound 1.100000000000e+04, gap 0.0000%
+
+Gurobi 9.1.2 (win64, Java) logging started Wed Nov 17 16:03:17 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+Read MPS format model from file .\Istanze\mps\SCmps\test5x500-SC(2).mps
+Reading time = 0.03 seconds
+HELLO: 501 rows, 505 columns, 1505 nonzeros
+Warning: parameter changes on this environment will not affect existing models.
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 502 rows, 505 columns and 2010 nonzeros
+Model fingerprint: 0xf15b636e
+Variable types: 0 continuous, 505 integer (505 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [1e+01, 1e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+04, 1e+04]
+Found heuristic solution: objective -0.0000000
+Presolve time: 0.00s
+Presolved: 502 rows, 505 columns, 2010 nonzeros
+Variable types: 0 continuous, 505 integer (505 binary)
+
+Root relaxation: objective 1.100000e+04, 560 iterations, 0.02 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 11000.0000    0   86   -0.00000 11000.0000      -     -    0s
+H    0     0                    10018.000000 11000.0000  9.80%     -    0s
+H    0     0                    10596.000000 11000.0000  3.81%     -    0s
+H    0     0                    10652.000000 11000.0000  3.27%     -    0s
+     0     0 11000.0000    0  101 10652.0000 11000.0000  3.27%     -    0s
+     0     0 11000.0000    0  198 10652.0000 11000.0000  3.27%     -    0s
+H    0     0                    10954.000000 11000.0000  0.42%     -    0s
+H    0     0                    10963.000000 11000.0000  0.34%     -    0s
+H    0     0                    10964.000000 11000.0000  0.33%     -    0s
+     0     0 10970.3265    0  117 10964.0000 10970.3265  0.06%     -    0s
+     0     0 10970.2626    0  256 10964.0000 10970.2626  0.06%     -    0s
+     0     0 10970.2626    0  144 10964.0000 10970.2626  0.06%     -    0s
+     0     2 10970.2626    0  144 10964.0000 10970.2626  0.06%     -    0s
+ 104777 12148 10969.0000   36    1 10964.0000 10969.0538  0.05%   2.3    5s
+ 273489 19180 10965.2121   86    1 10964.0000 10968.2000  0.04%   2.4   10s
+ 434095 17126 10966.5882   49    1 10964.0000 10967.7000  0.03%   2.5   15s
+ 595891  8291 10965.8824   50    1 10964.0000 10967.1000  0.03%   2.5   20s
+
+Explored 668884 nodes (1659418 simplex iterations) in 22.18 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 7: 10964 10963 10954 ... -0
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.096400000000e+04, best bound 1.096500000000e+04, gap 0.0091%
+
+Gurobi 9.1.2 (win64, Java) logging started Wed Nov 17 16:33:30 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+Read MPS format model from file .\Istanze\mps\SCmps\test5x500-SC(2).mps
+Reading time = 0.00 seconds
+HELLO: 501 rows, 505 columns, 1505 nonzeros
+Warning: parameter changes on this environment will not affect existing models.
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 501 rows, 505 columns and 1505 nonzeros
+Model fingerprint: 0xd9f7b9da
+Variable types: 0 continuous, 505 integer (505 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 8e+02]
+  Objective range  [1e+01, 1e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+04, 1e+04]
+Found heuristic solution: objective -0.0000000
+Presolve time: 0.01s
+Presolved: 501 rows, 505 columns, 1505 nonzeros
+Variable types: 0 continuous, 505 integer (505 binary)
+
+Root relaxation: objective 1.106140e+04, 667 iterations, 0.01 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 11061.3961    0  117   -0.00000 11061.3961      -     -    0s
+H    0     0                    5659.0000000 11061.3961  95.5%     -    0s
+H    0     0                    10914.000000 11061.3961  1.35%     -    0s
+H    0     0                    10964.000000 11061.3961  0.89%     -    0s
+     0     0 10970.5000    0  328 10964.0000 10970.5000  0.06%     -    0s
+     0     0 10970.3265    0  232 10964.0000 10970.3265  0.06%     -    0s
+     0     0 10970.3265    0  232 10964.0000 10970.3265  0.06%     -    0s
+     0     2 10970.3265    0  232 10964.0000 10970.3265  0.06%     -    0s
+
+Cutting planes:
+  Gomory: 1
+  RLT: 1
+
+Explored 59008 nodes (72104 simplex iterations) in 3.44 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 4: 10964 10914 5659 -0 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.096400000000e+04, best bound 1.096400000000e+04, gap 0.0000%

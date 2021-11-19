@@ -58,8 +58,8 @@ public class Model {
 		try {
 			model.update();
 			ModelDescriber md = new ModelDescriber(model);
-			System.out.println("PRERESOLVE, PRINT MODEL:");
-			md.printModel();
+			//System.out.println("PRERESOLVE, PRINT MODEL:");
+			//md.printModel();
 
 			model.optimize();
 			System.out.println("***STATUS***: "+Status.values()[model.get(IntAttr.Status)]);
@@ -112,8 +112,8 @@ public class Model {
 	public void disableItems(List<Item> items) {
 		try {
 			for(Item it : items) {
-				if(it.getName().startsWith("Y")) // PREVENT FAMILIES VARIABLES DISABLING
-					continue;
+				//if(it.getName().startsWith("Y")) // PREVENT FAMILIES VARIABLES DISABLING
+				//	continue;
 				String constrName = "FIX_VAR_" + it.getName();
 				model.addConstr(model.getVarByName(it.getName()), GRB.EQUAL, 0, constrName);
 			}

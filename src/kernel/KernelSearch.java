@@ -124,6 +124,8 @@ public class KernelSearch {
 			// Ad ogni iterazione ricostruisci il Model da capo e disabilita
 			model.buildModel();
 			model.disableItems(toDisable);
+			for (Item it: b.getItems())
+				System.out.print(it.getName()+" ");
 			// La bucketConstraint impone di scegliere almeno una variabile del Bucket
 			model.addBucketConstraint(b.getItems()); // can we use this constraint regardless of the type of variables chosen as items?
 			if(!bestSolution.isEmpty()) { // Se esiste una soluzione

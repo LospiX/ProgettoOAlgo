@@ -8,8 +8,8 @@ import kernel.ModelDescriber;
 public class MipResolver {
 
     public static void main(String[] args) throws GRBException {
-        //String pth =".\\Istanze\\mps\\SCmps\\test5x500-SC(2).mps";
-        String pth =".\\Istanze\\mps\\Class1Mps\\prob1_050_040_060_005_015_02.mps";
+        String pth =".\\Istanze\\mps\\SCmps\\test5x500-SC(2).mps";
+        //String pth =".\\Istanze\\mps\\Class1Mps\\prob1_050_040_060_005_015_01.mps";
 
         GRBEnv env = new GRBEnv("logMIP");
 
@@ -31,11 +31,12 @@ public class MipResolver {
         for (int i=0; i< objectiveFun.size(); i++){
             lexpr.addTerm(objectiveFun.getCoeff(i), objectiveFun.getVar(i));
         }
-        //GRBConstr c0 = model.addConstr(lexpr, GRB.LESS_EQUAL, 11000, "c0");
+        //GRBConstr c0 = model.addConstr(lexpr, GRB.LESS_EQUAL, 11005, "c0");
         model.update();
         model.optimize();
 
         ModelDescriber desc = new ModelDescriber(model);
         desc.printModel();
+        desc.printSolTable(7);
     }
 }

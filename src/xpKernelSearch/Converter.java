@@ -14,7 +14,7 @@ public class Converter {
     private Path destinationFolder;
 
     public static void main(String[] args) {
-        Converter conv = new Converter(".\\Istanze\\KPS_Class1\\Class1\\prob1_050_040_060_005_015_02.txt", ".\\Istanze\\mps\\Class1Mps");
+        Converter conv = new Converter(".\\Istanze\\KPS_Class3\\Class3\\prob3_100_090_110_035_045_01.txt", ".\\Istanze\\mps\\Class1Mps");
         //Converter conv = new Converter(".\\Istanze\\InstancesCorrect\\test5x500-SC(5).txt", ".\\Istanze\\mps\\SCmps");
         conv.convert();
     }
@@ -31,9 +31,9 @@ public class Converter {
             int numOfVars = Integer.parseInt(lines.get(0));
             int numbOfFamilies = Integer.parseInt(lines.get(1));
             int capacity = Integer.parseInt(lines.get(2));
-            int[] dimOfFamilies =  Arrays.stream(lines.get(3).split(" ")).mapToInt(Integer::parseInt).toArray();
-            int[] costsSetupOfFamilies =  Arrays.stream(lines.get(4).split(" ")).mapToInt(Integer::parseInt).toArray();
-            int[] costsOfFamilies =  Arrays.stream(lines.get(5).split(" ")).mapToInt(Integer::parseInt).toArray();
+            int[] dimOfFamilies =  Arrays.stream(lines.get(3).split("\s+")).mapToInt(Integer::parseInt).toArray();
+            int[] costsSetupOfFamilies =  Arrays.stream(lines.get(4).split("\s+")).mapToInt(Integer::parseInt).toArray();
+            int[] costsOfFamilies =  Arrays.stream(lines.get(5).split("\s+")).mapToInt(Integer::parseInt).toArray();
             int[] profits= new int[numOfVars];
             int[] costs= new int[numOfVars];
             for (int i=0; i<=5; i++)
