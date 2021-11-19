@@ -113,8 +113,10 @@ public class Model {
 	public void disableItems(List<Item> items) {
 		try {
 			for(Item it : items) {
-				if(it.getName().startsWith("Y")) // PREVENT FAMILIES VARIABLES DISABLING
-					continue;
+				// RIDONDANTE
+				// if(it.getName().startsWith("Y")) // PREVENT FAMILIES VARIABLES DISABLING
+				//	continue;
+
 				String constrName = "FIX_VAR_" + it.getName();
 				model.addConstr(model.getVarByName(it.getName()), GRB.EQUAL, 0, constrName);
 			}

@@ -7,14 +7,18 @@ public class KernelBuilderPercentage implements KernelBuilder {
 		Kernel kernel = new Kernel();
 		//ADD FAMILIES VARS TO KERNEL:
 		for (Item it : items){
-			//if(it.getName().startsWith("Y") && (kernel.size() < Math.round(config.getKernelSize()*items.size())))
-			if((kernel.size() < Math.round(config.getKernelSize()*items.size())))
+			if(it.getName().startsWith("Y") && (kernel.size() < Math.round(config.getKernelSize()*items.size())))
 				kernel.addItem(it);
 		}
 		for(Item it : items) {
-			if(kernel.size() < Math.round(config.getKernelSize()*items.size()))
+			if((kernel.size() < Math.round(config.getKernelSize()*items.size())) && !it.getName().startsWith("Y"))
 				kernel.addItem(it);
-		}	
+		}
+		//for(Item it : items) {
+		//	if((kernel.size() < Math.round(config.getKernelSize()*items.size())))
+		//		kernel.addItem(it);
+		//}
+
 		return kernel;
 	}
 }
