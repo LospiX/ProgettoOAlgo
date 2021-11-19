@@ -1,0 +1,3 @@
+OBJ:-0.0  -  TIME: 32 s.
+OBJ:767012.0  -  TIME: 32 s.
+OBJ:1934850.0  -  TIME: 78 s.
