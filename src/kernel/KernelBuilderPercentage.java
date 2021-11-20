@@ -6,7 +6,7 @@ public class KernelBuilderPercentage implements KernelBuilder {
 	public Kernel build(List<Item> items, Configuration config) {
 		Kernel kernel = new Kernel();
 		//ADD FAMILIES VARS TO KERNEL:
-/*
+		//*
 		for (Item it : items){
 			if(it.getName().startsWith("Y") && (kernel.size() < Math.round(config.getKernelSize()*items.size())))
 				kernel.addItem(it);
@@ -18,7 +18,7 @@ public class KernelBuilderPercentage implements KernelBuilder {
 		for(Item it : items) {
 			if((kernel.size() < Math.round(config.getKernelSize()*items.size())))
 				kernel.addItem(it);
-		}
+		}*/
 
 		return kernel;
 	}

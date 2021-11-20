@@ -1,4 +1,2 @@
-OBJ:-0.0  -  TIME: 0 s.
-OBJ:148665.0  -  TIME: 1 s.
-OBJ:182971.0  -  TIME: 1 s.
-OBJ:200122.0  -  TIME: 1 s.
+OBJ:-0.0  -  TIME: 5 s.
+OBJ:323891.0  -  TIME: 5 s.
