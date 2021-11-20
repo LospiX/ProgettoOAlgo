@@ -3320,3 +3320,777 @@ H 4304  1535                    55701.000000 55852.5071  0.27%   4.9    5s
  864182 234800 55744.6344   43   82 55701.0000 55788.4649  0.16%   3.3  335s
  877651 237192 55755.6126   45   86 55701.0000 55788.1420  0.16%   3.3  340s
  893108 240064 55717.0233   49   87 55701.0000 55787.7937  0.16%   3.3  345s
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:18:24 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:18:24 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:18:24 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:18:24 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:18:24 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:18:24 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:18:24 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:18:24 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:18:24 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:18:24 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:18:24 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:18:24 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:18:24 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:18:24 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:18:24 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:18:24 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:23:14 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:23:14 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:23:14 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:23:14 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:23:14 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:23:14 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:23:14 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:23:14 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:23:14 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:23:14 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:23:14 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:23:14 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:23:14 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:23:14 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:23:14 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:23:14 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:25:10 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:25:10 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:25:10 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:25:10 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:25:10 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:25:10 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:25:10 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:25:10 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:25:10 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:25:10 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:25:10 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:25:10 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:25:10 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:25:10 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:25:10 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:25:10 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:29:21 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:30:15 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:33:04 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:34:08 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:35:44 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:39:38 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+Read MPS format model from file .\Istanze\mps\Class1Mps\prob1_050_090_110_025_035_01.mps
+Reading time = 0.02 seconds
+HELLO: 5007 rows, 5056 columns, 15068 nonzeros
+Warning: parameter changes on this environment will not affect existing models.
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 5007 rows, 5056 columns and 15068 nonzeros
+Model fingerprint: 0xaa0884e6
+Variable types: 0 continuous, 5056 integer (5056 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+05]
+  Objective range  [1e+01, 2e+05]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+07, 1e+07]
+Found heuristic solution: objective -0.0000000
+Presolve time: 0.03s
+Presolved: 5007 rows, 5056 columns, 15068 nonzeros
+Variable types: 0 continuous, 5056 integer (5056 binary)
+
+Root relaxation: objective 7.898838e+06, 4805 iterations, 0.15 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 7898838.18    0   80   -0.00000 7898838.18      -     -    0s
+H    0     0                    7851399.0000 7898838.18  0.60%     -    0s
+H    0     0                    7860926.0000 7898838.18  0.48%     -    0s
+H    0     0                    7897533.0000 7898838.18  0.02%     -    0s
+H    0     0                    7898108.0000 7898838.18  0.01%     -    0s
+H    0     0                    7898122.0000 7898838.18  0.01%     -    0s
+
+Cutting planes:
+  Gomory: 1
+
+Explored 1 nodes (4805 simplex iterations) in 0.53 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 6: 7.89812e+06 7.89811e+06 7.89753e+06 ... -0
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.898122000000e+06, best bound 7.898694145450e+06, gap 0.0072%
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:39:59 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:40:08 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:40:28 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:41:00 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:41:17 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+Read MPS format model from file .\Istanze\mps\Class1Mps\prob1_050_090_110_025_035_01.mps
+Reading time = 0.02 seconds
+HELLO: 5007 rows, 5056 columns, 15068 nonzeros
+Warning: parameter changes on this environment will not affect existing models.
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 5007 rows, 5056 columns and 15068 nonzeros
+Model fingerprint: 0xaa0884e6
+Variable types: 0 continuous, 5056 integer (5056 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+05]
+  Objective range  [1e+01, 2e+05]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+07, 1e+07]
+Found heuristic solution: objective -0.0000000
+Presolve time: 0.03s
+Presolved: 5007 rows, 5056 columns, 15068 nonzeros
+Variable types: 0 continuous, 5056 integer (5056 binary)
+
+Root relaxation: objective 7.898838e+06, 4805 iterations, 0.17 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 7898838.18    0   80   -0.00000 7898838.18      -     -    0s
+H    0     0                    7851399.0000 7898838.18  0.60%     -    0s
+H    0     0                    7860926.0000 7898838.18  0.48%     -    0s
+H    0     0                    7897533.0000 7898838.18  0.02%     -    0s
+H    0     0                    7898108.0000 7898838.18  0.01%     -    0s
+H    0     0                    7898122.0000 7898838.18  0.01%     -    0s
+
+Cutting planes:
+  Gomory: 1
+
+Explored 1 nodes (4805 simplex iterations) in 0.54 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 6: 7.89812e+06 7.89811e+06 7.89753e+06 ... -0
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.898122000000e+06, best bound 7.898694145450e+06, gap 0.0072%
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:44:56 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:46:54 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 12:47:21 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 15:21:59 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 15:23:23 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 15:25:00 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 15:25:45 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 15:27:18 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+Read MPS format model from file .\Istanze\mps\SCmps\test5x500-SC(6).mps
+Reading time = 0.01 seconds
+HELLO: 501 rows, 505 columns, 1505 nonzeros
+Warning: parameter changes on this environment will not affect existing models.
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 501 rows, 505 columns and 1505 nonzeros
+Model fingerprint: 0xe62fac51
+Variable types: 0 continuous, 505 integer (505 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+02]
+  Objective range  [1e+01, 1e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+04, 1e+04]
+Found heuristic solution: objective -0.0000000
+Presolve time: 0.01s
+Presolved: 501 rows, 505 columns, 1505 nonzeros
+Variable types: 0 continuous, 505 integer (505 binary)
+
+Root relaxation: objective 1.136199e+04, 653 iterations, 0.01 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 11361.9884    0  119   -0.00000 11361.9884      -     -    0s
+H    0     0                    10393.000000 11361.9884  9.32%     -    0s
+H    0     0                    11167.000000 11361.9884  1.75%     -    0s
+H    0     0                    11244.000000 11361.9884  1.05%     -    0s
+     0     0 11252.8660    0   90 11244.0000 11252.8660  0.08%     -    0s
+     0     0 11252.6598    0  179 11244.0000 11252.6598  0.08%     -    0s
+     0     0 11252.5870    0  274 11244.0000 11252.5870  0.08%     -    0s
+     0     0 11252.5870    0  274 11244.0000 11252.5870  0.08%     -    0s
+     0     2 11252.5870    0  274 11244.0000 11252.5870  0.08%     -    0s
+ 172172 14206 11248.4231  117    1 11244.0000 11251.0787  0.06%   2.2    5s
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 15:28:21 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 15:29:18 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 15:29:37 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 15:30:08 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 15:30:28 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 15:31:27 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 15:41:29 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+Read MPS format model from file .\Istanze\mps\SCmps\test5x500-SC(6).mps
+Reading time = 0.00 seconds
+HELLO: 501 rows, 505 columns, 1505 nonzeros
+Warning: parameter changes on this environment will not affect existing models.
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 501 rows, 505 columns and 1505 nonzeros
+Model fingerprint: 0xe62fac51
+Variable types: 0 continuous, 505 integer (505 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+02]
+  Objective range  [1e+01, 1e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+04, 1e+04]
+Found heuristic solution: objective -0.0000000
+Presolve time: 0.00s
+Presolved: 501 rows, 505 columns, 1505 nonzeros
+Variable types: 0 continuous, 505 integer (505 binary)
+
+Root relaxation: objective 1.136199e+04, 653 iterations, 0.02 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 11361.9884    0  119   -0.00000 11361.9884      -     -    0s
+H    0     0                    10393.000000 11361.9884  9.32%     -    0s
+H    0     0                    11167.000000 11361.9884  1.75%     -    0s
+H    0     0                    11244.000000 11361.9884  1.05%     -    0s
+     0     0 11252.8660    0   90 11244.0000 11252.8660  0.08%     -    0s
+     0     0 11252.6598    0  179 11244.0000 11252.6598  0.08%     -    0s
+     0     0 11252.5870    0  274 11244.0000 11252.5870  0.08%     -    0s
+     0     0 11252.5870    0  274 11244.0000 11252.5870  0.08%     -    0s
+     0     2 11252.5870    0  274 11244.0000 11252.5870  0.08%     -    0s
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 16:18:36 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+Read MPS format model from file .\Istanze\mps\Class1Mps\prob1_050_090_110_025_035_01.mps
+Reading time = 0.02 seconds
+HELLO: 5007 rows, 5056 columns, 15068 nonzeros
+Warning: parameter changes on this environment will not affect existing models.
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 5007 rows, 5056 columns and 15068 nonzeros
+Model fingerprint: 0xaa0884e6
+Variable types: 0 continuous, 5056 integer (5056 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+05]
+  Objective range  [1e+01, 2e+05]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+07, 1e+07]
+Found heuristic solution: objective -0.0000000
+Presolve time: 0.02s
+Presolved: 5007 rows, 5056 columns, 15068 nonzeros
+Variable types: 0 continuous, 5056 integer (5056 binary)
+
+Root relaxation: objective 7.898838e+06, 4805 iterations, 0.11 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 7898838.18    0   80   -0.00000 7898838.18      -     -    0s
+H    0     0                    7851399.0000 7898838.18  0.60%     -    0s
+H    0     0                    7860926.0000 7898838.18  0.48%     -    0s
+H    0     0                    7897533.0000 7898838.18  0.02%     -    0s
+H    0     0                    7898108.0000 7898838.18  0.01%     -    0s
+H    0     0                    7898122.0000 7898838.18  0.01%     -    0s
+
+Cutting planes:
+  Gomory: 1
+
+Explored 1 nodes (4805 simplex iterations) in 0.38 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 6: 7.89812e+06 7.89811e+06 7.89753e+06 ... -0
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.898122000000e+06, best bound 7.898694145450e+06, gap 0.0072%
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 16:18:36 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+Read MPS format model from file .\Istanze\mps\Class1Mps\prob1_050_090_110_025_035_02.mps
+Reading time = 0.01 seconds
+HELLO: 4972 rows, 5021 columns, 14963 nonzeros
+Warning: parameter changes on this environment will not affect existing models.
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 4972 rows, 5021 columns and 14963 nonzeros
+Model fingerprint: 0x42bc5c5b
+Variable types: 0 continuous, 5021 integer (5021 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+05]
+  Objective range  [1e+01, 2e+05]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+07, 1e+07]
+Found heuristic solution: objective -0.0000000
+Presolve time: 0.02s
+Presolved: 4972 rows, 5021 columns, 14963 nonzeros
+Variable types: 0 continuous, 5021 integer (5021 binary)
+
+Root relaxation: objective 7.863388e+06, 4890 iterations, 0.11 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 7863388.49    0   79   -0.00000 7863388.49      -     -    0s
+H    0     0                    7833603.0000 7863388.49  0.38%     -    0s
+H    0     0                    7839771.0000 7863388.49  0.30%     -    0s
+H    0     0                    7848876.0000 7863388.49  0.18%     -    0s
+H    0     0                    7849410.0000 7863388.49  0.18%     -    0s
+H    0     0                    7850091.0000 7863388.49  0.17%     -    0s
+H    0     0                    7851086.0000 7863388.49  0.16%     -    0s
+H    0     0                    7858429.0000 7863388.49  0.06%     -    0s
+H    0     0                    7859208.0000 7861042.76  0.02%     -    0s
+H    0     0                    7859328.0000 7861042.76  0.02%     -    0s
+H    0     0                    7859515.0000 7859955.84  0.01%     -    0s
+
+Cutting planes:
+  Gomory: 1
+
+Explored 1 nodes (4890 simplex iterations) in 0.54 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 10: 7.85952e+06 7.85933e+06 7.85921e+06 ... 7.8336e+06
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.859515000000e+06, best bound 7.859955841536e+06, gap 0.0056%
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 16:18:37 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+Read MPS format model from file .\Istanze\mps\Class1Mps\prob1_100_090_110_015_025_01.mps
+Reading time = 0.04 seconds
+HELLO: 9977 rows, 10076 columns, 30028 nonzeros
+Warning: parameter changes on this environment will not affect existing models.
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 9977 rows, 10076 columns and 30028 nonzeros
+Model fingerprint: 0xbf9af0cb
+Variable types: 0 continuous, 10076 integer (10076 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+04]
+  Objective range  [1e+01, 1e+05]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [3e+07, 3e+07]
+Found heuristic solution: objective -0.0000000
+Presolve time: 0.03s
+Presolved: 9977 rows, 10076 columns, 30028 nonzeros
+Variable types: 0 continuous, 10076 integer (10076 binary)
+
+Root relaxation: objective 2.516936e+07, 8978 iterations, 0.40 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 2.5169e+07    0   55   -0.00000 2.5169e+07      -     -    0s
+H    0     0                    2.514125e+07 2.5169e+07  0.11%     -    0s
+H    0     0                    2.516658e+07 2.5169e+07  0.01%     -    0s
+H    0     0                    2.516790e+07 2.5169e+07  0.01%     -    0s
+
+Cutting planes:
+  Gomory: 1
+
+Explored 1 nodes (8978 simplex iterations) in 0.89 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 4: 2.51679e+07 2.51666e+07 2.51413e+07 -0 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.516790000000e+07, best bound 2.516935531224e+07, gap 0.0058%
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 16:18:38 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+Read MPS format model from file .\Istanze\mps\Class1Mps\prob1_100_090_110_015_025_02.mps
+Reading time = 0.03 seconds
+HELLO: 10052 rows, 10151 columns, 30253 nonzeros
+Warning: parameter changes on this environment will not affect existing models.
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 10052 rows, 10151 columns and 30253 nonzeros
+Model fingerprint: 0x8f85414c
+Variable types: 0 continuous, 10151 integer (10151 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+05]
+  Objective range  [1e+01, 1e+05]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [3e+07, 3e+07]
+Found heuristic solution: objective -0.0000000
+Presolve time: 0.03s
+Presolved: 10052 rows, 10151 columns, 30253 nonzeros
+Variable types: 0 continuous, 10151 integer (10151 binary)
+
+Root relaxation: objective 2.490154e+07, 8915 iterations, 0.40 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 2.4902e+07    0   53   -0.00000 2.4902e+07      -     -    0s
+H    0     0                    2.487962e+07 2.4902e+07  0.09%     -    0s
+H    0     0                    2.490015e+07 2.4902e+07  0.01%     -    0s
+
+Explored 1 nodes (8915 simplex iterations) in 0.54 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 3: 2.49001e+07 2.48796e+07 -0 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.490014900000e+07, best bound 2.490153663883e+07, gap 0.0056%
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 16:18:38 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+Read MPS format model from file .\Istanze\mps\Class5Mps\prob5_005_050000_01.mps
+Reading time = 0.09 seconds
+HELLO: 50001 rows, 50005 columns, 150005 nonzeros
+Warning: parameter changes on this environment will not affect existing models.
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 50001 rows, 50005 columns and 150005 nonzeros
+Model fingerprint: 0x537c75bb
+Variable types: 0 continuous, 50005 integer (50005 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+05]
+  Objective range  [2e+01, 2e+05]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+06, 1e+06]
+Found heuristic solution: objective -0.0000000
+Presolve time: 0.12s
+Presolved: 50001 rows, 50005 columns, 150005 nonzeros
+Variable types: 0 continuous, 50005 integer (50005 binary)
+
+Deterministic concurrent LP optimizer: primal and dual simplex
+Showing first log only...
+
+Concurrent spin time: 0.18s
+
+Solved with primal simplex
+
+Root relaxation: objective 9.789090e+05, 50079 iterations, 0.55 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 978909.020    0 9928   -0.00000 978909.020      -     -    1s
+H    0     0                    972816.00000 978909.020  0.63%     -    1s
+     0     0 978903.996    0 9928 972816.000 978903.996  0.63%     -    7s
+     0     2 978903.996    0 9928 972816.000 978903.996  0.63%     -    9s
+     1     4 978903.996    1 10001 972816.000 978903.996  0.63%   3.0   10s
+H    5     6                    975236.00000 978833.923  0.37%  12.4   10s
+H    7     6                    977514.00000 978665.969  0.12%  19.6   10s
+
+Explored 19 nodes (50653 simplex iterations) in 13.80 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 4: 977514 975236 972816 -0 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 9.775140000000e+05, best bound 9.775236000000e+05, gap 0.0010%
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 16:18:52 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+Read MPS format model from file .\Istanze\mps\Class5Mps\prob5_005_050000_02.mps
+Reading time = 0.09 seconds
+HELLO: 50001 rows, 50005 columns, 150005 nonzeros
+Warning: parameter changes on this environment will not affect existing models.
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 50001 rows, 50005 columns and 150005 nonzeros
+Model fingerprint: 0x4854fe9f
+Variable types: 0 continuous, 50005 integer (50005 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+05]
+  Objective range  [2e+01, 2e+05]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+06, 1e+06]
+Found heuristic solution: objective -0.0000000
+Presolve time: 0.11s
+Presolved: 50001 rows, 50005 columns, 150005 nonzeros
+Variable types: 0 continuous, 50005 integer (50005 binary)
+
+Deterministic concurrent LP optimizer: primal and dual simplex
+Showing first log only...
+
+Concurrent spin time: 0.13s
+
+Solved with primal simplex
+
+Root relaxation: objective 1.011029e+06, 50010 iterations, 0.37 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 1011028.82    0 10344   -0.00000 1011028.82      -     -    0s
+H    0     0                    540816.00000 1011028.82  86.9%     -    0s
+H    0     0                    983123.00000 1011028.82  2.84%     -    1s
+H    0     0                    987893.00000 1011028.82  2.34%     -    1s
+H    0     0                    987903.00000 1011028.82  2.34%     -    7s
+H    0     0                    997502.00000 1011028.82  1.36%     -    7s
+     0     0 1010834.16    0 10344 997502.000 1010834.16  1.34%     -    9s
+     0     2 1010834.16    0 10344 997502.000 1010834.16  1.34%     -   11s
+H    8     7                    1005145.0000 1010834.01  0.57%   1.6   13s
+H   13     8                    1010642.0000 1010787.40  0.01%  38.3   13s
+    18     2 1010746.87    3 9727 1010642.00 1010746.87  0.01%  33.2   15s
+
+Explored 20 nodes (50712 simplex iterations) in 15.45 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 8: 1.01064e+06 1.00515e+06 997502 ... -0
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.010642000000e+06, best bound 1.010658100000e+06, gap 0.0016%
+
+Gurobi 9.1.2 (win64, Java) logging started Sat Nov 20 16:19:08 2021
+
+Academic license - for non-commercial use only - expires 2022-10-01
+Read MPS format model from file .\Istanze\mps\Class5Mps\prob5_010_020000_01.mps
+Reading time = 0.04 seconds
+HELLO: 20001 rows, 20010 columns, 60010 nonzeros
+Warning: parameter changes on this environment will not affect existing models.
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 20001 rows, 20010 columns and 60010 nonzeros
+Model fingerprint: 0x0586d4d7
+Variable types: 0 continuous, 20010 integer (20010 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+04]
+  Objective range  [2e+01, 2e+04]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [6e+05, 6e+05]
+Found heuristic solution: objective -0.0000000
+Presolve time: 0.04s
+Presolved: 20001 rows, 20010 columns, 60010 nonzeros
+Variable types: 0 continuous, 20010 integer (20010 binary)
+
+Root relaxation: objective 4.816741e+05, 25918 iterations, 4.40 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 481674.085    0 1867   -0.00000 481674.085      -     -    4s
+H    0     0                    424660.00000 481674.085  13.4%     -    4s
+H    0     0                    465140.00000 481674.085  3.55%     -    4s
+H    0     0                    468670.00000 481674.085  2.77%     -    4s
+H    0     0                    468810.00000 481674.085  2.74%     -    4s
+H    0     0                    468940.00000 481674.085  2.72%     -    7s
+H    0     0                    469030.00000 481667.309  2.69%     -    9s
+     0     0 481473.231    0 1867 469030.000 481473.231  2.65%     -   10s
+H    0     0                    469360.00000 481473.231  2.58%     -   10s
+     0     2 481473.231    0 1867 469360.000 481473.231  2.58%     -   11s
+   106    39     cutoff   18      469360.000 481473.231  2.58%  19.5   18s
+   201    87 481131.598    7 1836 469360.000 481473.231  2.58%  14.5   25s
+   342   156 469360.632   72    1 469360.000 481473.231  2.58%  11.3   30s
+H  369   160                    469412.00000 481473.231  2.57%  11.5   34s
+   370   156     cutoff    8      469412.000 481473.231  2.57%  11.5   35s
+H  414   160                    470597.00000 481473.231  2.31%  10.9   39s
+   440   160 481349.308    7 2047 470597.000 481473.231  2.31%  10.6   43s
+H  454   160                    470617.00000 481473.231  2.31%  11.6   43s
+   496   155 481349.431    8 2047 470617.000 481473.231  2.31%  12.3   47s
+   537   162 481211.504    8 2070 470617.000 481337.575  2.28%  11.8   56s

@@ -5,6 +5,7 @@ import gurobi.*;
 import kernel.ModelDescriber;
 
 import java.io.File;
+import java.io.IOException;
 
 
 public class MipResolver {
@@ -12,16 +13,14 @@ public class MipResolver {
     MipResolver (File istFile) {
         this.file = istFile;
     }
-    public double solve () throws GRBException {
+    public double solve () throws GRBException, IOException {
         GRBEnv env = new GRBEnv("logMIP");
-
         GRBModel model = new GRBModel(env,  this.file.getPath());
         env.set(GRB.IntParam.Presolve, 2 );
         env.set(GRB.IntParam.Threads, 8);
         env.set(GRB.IntParam.MIPFocus, 2);
         env.set(GRB.DoubleParam.TimeLimit, 200);
         env.set(GRB.DoubleParam.MIPGap, 1e-12);
-
 
         GRBLinExpr objectiveFun =(GRBLinExpr) model.getObjective();
         model.update();
