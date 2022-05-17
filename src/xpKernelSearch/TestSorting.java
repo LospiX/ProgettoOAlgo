@@ -12,7 +12,7 @@ public class TestSorting {
             vars.add(new Variabile(String.valueOf(i), (int)Math.floor(Math.random()*(max-min+1)+min), (int)Math.floor(Math.random()*(max-min+1)+min)));
         }
         Famiglia fam = new Famiglia("fam", vars, 1, 1);
-        fam.getVariablesOrdered().forEach((e) -> System.out.println(e));
+       // fam.getVariablesOrdered().forEach((e) -> System.out.println(e));
 
     }
 }

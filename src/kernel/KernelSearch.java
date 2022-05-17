@@ -1,17 +1,18 @@
 package kernel;
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import gurobi.GRB;
 import gurobi.GRBCallback;
-import gurobi.GRBException;
-import xpKernelSearch.FamilyVar;
+import xpKernelSearch.Famiglia;
+import xpKernelSearch.ProblemaKnapSackSetup;
 
 public class KernelSearch {
+	private ProblemaKnapSackSetup problema;
 	private String instPath;
 	private String logPath;
 	private Configuration config;
@@ -29,15 +30,18 @@ public class KernelSearch {
 	private GRBCallback callback;
 	private int timeThreshold = 5;
 	private List<List<Double>> objValues;
-	
+	private List<Famiglia> families;
+	//private List<Famiglia> families;
+
 	private Instant startTime;
 	
-	public KernelSearch(String instPath, String logPath, Configuration config) {
-		this.instPath = instPath;
+	public KernelSearch(String instPath, String instPathMps, String logPath, Configuration config) throws IOException {
+		this.instPath = instPathMps;
 		this.logPath = logPath;
 		this.config = config;
 		bestSolution = new Solution();
 		objValues = new ArrayList<>();
+		this.problema = new ProblemaKnapSackSetup(new File(instPath));
 		configure(config);
 	}
 	
@@ -49,6 +53,7 @@ public class KernelSearch {
 		tlimKernel = config.getTimeLimitKernel();
 		numIterations = config.getNumIterations();
 		tlimBucket = config.getTimeLimitBucket();
+
 	}
 	
 	public Solution start() {
@@ -58,7 +63,7 @@ public class KernelSearch {
 		items = xpBuildItems();
 		//buildItems();
 		//sorter.sort(items);
-		kernel = kernelBuilder.build(items, config);
+		kernel = kernelBuilder.build(problema.getFamilies(), config);
 		buckets = bucketBuilder.build(items.stream().filter(it -> !kernel.contains(it)).collect(Collectors.toList()), config);
 		solveKernel();
 		iterateBuckets();
@@ -69,23 +74,13 @@ public class KernelSearch {
 		model.buildModel();
 		model.solve(); // SOLVE OF RELAXATION
 		List<Item> items = new ArrayList<>();
-		List<Item> familyVariablesOrdered =
-				model.getVarNames().stream().filter((v) -> v.startsWith("Y")).sorted(
-						(e1, e2) -> {
-							var valE1= model.getVarValue(e1);
-							var valE2= model.getVarValue(e2);
-							if(valE1 < valE2)
-								return 1;
-							else if(Math.abs(valE1) < 1e-5 && Math.abs(valE2) < 1e-5) {
-								if(Math.abs(model.getVarRC(e1)) > Math.abs(model.getVarRC(e2)))
-									return 1;
-							}
-							return -1;
-						}).map(it -> new FamilyVar(it)).collect(Collectors.toList());
+		model.getVarNames().stream().filter((v) -> v.startsWith("Y"))
+			.forEach(fam ->this.problema.setFamigliaStats(fam, model.getVarValue(fam), model.getVarRC(fam)));
+		problema.sortFamilies();
 		//familyVariablesOrdered.forEach(fv -> kernel.addItem(fv)); // Add everyFamilyVar To Kernel set
-		familyVariablesOrdered.forEach(fv -> items.add(fv)); // Add everyFamilyVar To Items
+		//familyVariablesOrdered.forEach(fv -> items.add(fv)); // Add everyFamilyVar To Items
 
-		familyVariablesOrdered.stream().forEachOrdered((nomeFam) -> System.out.println(nomeFam));
+		//familyVariablesOrdered.stream().forEachOrdered((nomeFam) -> System.out.println(nomeFam));
 		return items;
 	}
 	private List<Item> buildItems() {

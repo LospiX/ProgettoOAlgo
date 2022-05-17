@@ -1,5 +1,7 @@
 package xpKernelSearch;
 
+import kernel.Item;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -59,7 +61,7 @@ public class ProblemaKnapSackSetup {
 
     public void printFamily(int i) {
         System.out.println("Hello");
-        System.out.println(this.families.get(i).getVariablesOrdered().toString());
+        //System.out.println(this.families.get(i).getVariablesOrdered().toString());
     }
 
 
@@ -86,13 +88,27 @@ public class ProblemaKnapSackSetup {
     }
 
 
-    public List<Variabile> getOrderedListBestFamilyVariables(String nameOfFamily){
+    /*public List<Variabile> getOrderedListBestFamilyVariables(String nameOfFamily){
         for(Famiglia f : this.families){
             if(f.getName().equalsIgnoreCase(nameOfFamily)){
                 return f.getVariablesOrdered();
             }
         }
         throw new IllegalArgumentException("Family does Not exists");
+    }*/
+    public void sortFamilies(){
+        this.families.sort(
+                (e1, e2) -> {
+                    var valE1= e1.getXr();
+                    var valE2 =e2.getXr();
+                    if(valE1 < valE2)
+                        return 1;
+                    else if(Math.abs(valE1) < 1e-5 && Math.abs(valE2) < 1e-5) {
+                        if(Math.abs(e1.getRC()) > Math.abs(e2.getRC()))
+                            return 1;
+                    }
+                    return -1;
+                });
     }
     private List<String> extractFromFile (Path file) throws IOException {
         List<String> lines = new ArrayList<String>();
@@ -106,4 +122,21 @@ public class ProblemaKnapSackSetup {
         return lines;
     }
 
+    public Famiglia getFamigliaById(String it) {
+        for(Famiglia f : this.families){
+            if(f.getVarName().equals(it))
+                return f;
+        }
+        return null;
+    }
+
+    public void setFamigliaStats(String fam, double Xr, double RC) {
+        Famiglia f = this.getFamigliaById(fam);
+        f.setXr(Xr);
+        f.setRc(RC);
+    }
+
+    public List<Famiglia> getFamilies() {
+        return this.families;
+    }
 }

@@ -18,7 +18,7 @@ class IstanzaMIP {
 
     public double solveKernelSearch (Configuration config) {
         try {
-            return new KernelSearch(this.istanzaFile.getPath(), this.PATHLOG, config).start().getObj();
+           // return new KernelSearch(this.istanzaFile.getPath(), this.PATHLOG, config).start().getObj();
         } catch (Exception e) {
             System.out.println("Unable to solve the relaxation of the instance: "+this.istanzaFile.getName());
             e.printStackTrace();

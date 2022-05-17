@@ -85,6 +85,9 @@ public class ConfigurationReader
         				case 1:
         					config.setKernelBuilder(new KernelBuilderPercentage());
         					break;
+						case 2:
+							config.setKernelBuilder(new KernelBuilderCooler());
+							break;
         				default:
         					System.out.println("Unrecognized kernel builder.");
         			}

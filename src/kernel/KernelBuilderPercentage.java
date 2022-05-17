@@ -2,8 +2,9 @@ package kernel;
 import java.util.List;
 
 public class KernelBuilderPercentage implements KernelBuilder {
+
 	@Override
-	public Kernel build(List<Item> items, Configuration config) {
+	public Kernel build(List<? extends Item> items, Configuration config) {
 		Kernel kernel = new Kernel();
 		//ADD FAMILIES VARS TO KERNEL:
 		//*
