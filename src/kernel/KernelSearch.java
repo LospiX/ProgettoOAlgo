@@ -9,7 +9,9 @@ import java.util.stream.Collectors;
 
 import gurobi.GRBCallback;
 import xpKernelSearch.Famiglia;
+import xpKernelSearch.Itm;
 import xpKernelSearch.ProblemaKnapSackSetup;
+import xpKernelSearch.Variabile;
 
 public class KernelSearch {
 	private ProblemaKnapSackSetup problema;
@@ -42,6 +44,7 @@ public class KernelSearch {
 		bestSolution = new Solution();
 		objValues = new ArrayList<>();
 		this.problema = new ProblemaKnapSackSetup(new File(instPath));
+		config.setCapZaino(this.problema.getCapZaino());
 		configure(config);
 	}
 	
@@ -59,11 +62,17 @@ public class KernelSearch {
 	public Solution start() {
 		startTime = Instant.now();
 		callback = new CustomCallback(logPath, startTime);
-		kernel = new Kernel();
 		items = xpBuildItems();
 		//buildItems();
 		//sorter.sort(items);
 		kernel = kernelBuilder.build(problema.getFamilies(), config);
+		System.out.println("Ker Size::: "+kernel.size());
+		int sum=0;
+		for(Item it : kernel.getItems()){
+			if(it instanceof Variabile)
+				sum+= ((Variabile) it).getPeso();
+		}
+		System.out.println("Consumo dello zaino da parte degli item:: "+sum);
 		buckets = bucketBuilder.build(items.stream().filter(it -> !kernel.contains(it)).collect(Collectors.toList()), config);
 		solveKernel();
 		iterateBuckets();

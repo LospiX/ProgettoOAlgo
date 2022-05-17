@@ -31,6 +31,7 @@ public class Famiglia implements Item {
         this.variablesOrdered = variables.stream().sorted(comparator).collect(Collectors.toList());;
         this.setUpCost = setUpCost;
         this.pesoFamiglia = pesoFamiglia;
+        this.subsetItems= new ArrayList<>();
         this.subSetGenerator();
         this.indexOfLastSubsetSelected=0;
         //this.var = new FamilyVar(id, variables.stream().map(v -> new ItemVar(v.id(), this.var)).collect(Collectors.toList()));
@@ -49,11 +50,16 @@ public class Famiglia implements Item {
             v = this.variablesOrdered.get(i);
             sum += v.getProfitto();
             subSet.add(v);
-            if(sum > this.setUpCost) {
+            if(sum > Math.abs(this.setUpCost)) {
                 this.subsetItems.add(subSet);
                 subSet = new ArrayList<>();
+                sum = 0;
             }
         }
+        /*System.out.println("Famiglie.susetGen  Dim of all subset  "+this.subsetItems.size());
+        for(var v1 : this.subsetItems){
+            System.out.println("\t subset dim: "+v1.size());
+        }*/
         if(subSet.size()>0)
             this.subsetItems.add(subSet);
     }
@@ -74,7 +80,7 @@ public class Famiglia implements Item {
 
     public List<Variabile> getNextSubset() {
         if(this.indexOfLastSubsetSelected <= this.subsetItems.size()-1){
-            return this.subsetItems.get(++this.indexOfLastSubsetSelected);
+            return this.subsetItems.get(this.indexOfLastSubsetSelected++);
         }
         return new ArrayList<>();
     }
@@ -94,5 +100,9 @@ public class Famiglia implements Item {
     }
     public void setRc(double rc) {
         this.RC= rc;
+    }
+
+    public int getPeso() {
+        return this.pesoFamiglia;
     }
 }

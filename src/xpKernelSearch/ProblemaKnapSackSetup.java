@@ -13,6 +13,7 @@ import java.util.List;
 
 public class ProblemaKnapSackSetup {
     private final List<Famiglia> families;
+    private final int capacity;
     private final int numOfFamilies;
     private final int[] dimOfFamilies;
     private final int[] costsSetupOfFamilies;
@@ -28,7 +29,7 @@ public class ProblemaKnapSackSetup {
         List<String> lines = this.extractFromFile(f.toPath());
         this.numOfItems = Integer.parseInt(lines.get(0));
         this.numOfFamilies = Integer.parseInt(lines.get(1));
-        int capacity = Integer.parseInt(lines.get(2));
+        this.capacity = Integer.parseInt(lines.get(2));
         this.dimOfFamilies =  Arrays.stream(lines.get(3).split("\s+")).mapToInt(Integer::parseInt).toArray();
         this.costsSetupOfFamilies =  Arrays.stream(lines.get(4).split("\s+")).mapToInt(Integer::parseInt).toArray();
         this.costsOfFamilies =  Arrays.stream(lines.get(5).split("\s+")).mapToInt(Integer::parseInt).toArray();
@@ -138,5 +139,9 @@ public class ProblemaKnapSackSetup {
 
     public List<Famiglia> getFamilies() {
         return this.families;
+    }
+
+    public int getCapZaino() {
+        return this.capacity;
     }
 }

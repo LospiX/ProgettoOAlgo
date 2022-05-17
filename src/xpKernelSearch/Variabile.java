@@ -34,4 +34,8 @@ public class Variabile implements Item {
     public int getProfitto() {
         return this.profitto;
     }
+
+    public int getPeso() {
+        return this.peso;
+    }
 }
