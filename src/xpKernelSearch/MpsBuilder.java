@@ -51,7 +51,7 @@ public class MpsBuilder {
 
     private void buildVariables() {
         int dimX = this.costs.length;
-        String[] names = new String[dimX];
+        //String[] names = new String[dimX];
         this.varX =new String[dimX];
         String name="";
         for (int i=0; i<dimX; i++){
@@ -178,4 +178,10 @@ public class MpsBuilder {
         return res;
     }
 
+    public String[] getNameOfItems() {
+        return this.varX;
+    }
+    public String[] getNameOfFamilies() {
+        return this.varY;
+    }
 }

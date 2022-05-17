@@ -62,7 +62,7 @@ public class Model {
 			//System.out.println("PRERESOLVE, PRINT MODEL:");
 			//md.printModel();
 
-			model.optimize();
+			model.optimize(); // SOLVE!
 			System.out.println("***STATUS***: "+Status.values()[model.get(IntAttr.Status)]);
 
 			if(model.get(IntAttr.SolCount) > 0) {
@@ -117,8 +117,8 @@ public class Model {
 				// if(it.getName().startsWith("Y")) // PREVENT FAMILIES VARIABLES DISABLING
 				//	continue;
 
-				String constrName = "FIX_VAR_" + it.getName();
-				model.addConstr(model.getVarByName(it.getName()), GRB.EQUAL, 0, constrName);
+				String constrName = "FIX_VAR_" + it.getVarName();
+				model.addConstr(model.getVarByName(it.getVarName()), GRB.EQUAL, 0, constrName);
 			}
 		} catch(Exception ex) {
 			ex.printStackTrace();
@@ -174,7 +174,7 @@ public class Model {
 		GRBLinExpr expr = new GRBLinExpr();
 		try {
 			for(Item it : items)
-				expr.addTerm(1, model.getVarByName(it.getName()));
+				expr.addTerm(1, model.getVarByName(it.getVarName()));
 			model.addConstr(expr, GRB.GREATER_EQUAL, 1, "bucketConstraint");
 		} catch (GRBException e) {
 			e.printStackTrace();
@@ -193,7 +193,7 @@ public class Model {
 		List<Item> selected = new ArrayList<>();
 		for(Item it : items) {
 			try {
-				if(model.getVarByName(it.getName()).get(DoubleAttr.X)> positiveThreshold)
+				if(model.getVarByName(it.getVarName()).get(DoubleAttr.X)> positiveThreshold)
 					selected.add(it);
 			} catch (GRBException e) {
 				e.printStackTrace();
@@ -205,4 +205,14 @@ public class Model {
 	public void setCallback(GRBCallback callback) {
 		model.setCallback(callback);
 	}
+
+	/*public void getProfit(String v) {
+		try {
+			GRBLinExpr objectiveFun = (GRBLinExpr)model.getObjective();
+			objectiveFun.
+		} catch (GRBException e) {
+			throw new RuntimeException(e);
+		}
+		model.getVarByName(v).
+	}*/
 }

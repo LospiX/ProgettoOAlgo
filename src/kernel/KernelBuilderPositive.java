@@ -10,10 +10,10 @@ public class KernelBuilderPositive implements KernelBuilder
 		
 		for(Item it : items)
 		{
-			if(it.getXr()> 0)
+			/*if(it.getXr()> 0)
 			{
 				kernel.addItem(it);
-			}
+			}*/
 		}
 		return kernel;
 	}

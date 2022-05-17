@@ -2,12 +2,14 @@ package kernel;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import gurobi.GRB;
 import gurobi.GRBCallback;
 import gurobi.GRBException;
+import xpKernelSearch.FamilyVar;
 
 public class KernelSearch {
 	private String instPath;
@@ -52,25 +54,50 @@ public class KernelSearch {
 	public Solution start() {
 		startTime = Instant.now();
 		callback = new CustomCallback(logPath, startTime);
-		items = buildItems();
-		sorter.sort(items);	
+		kernel = new Kernel();
+		items = xpBuildItems();
+		//buildItems();
+		//sorter.sort(items);
 		kernel = kernelBuilder.build(items, config);
 		buckets = bucketBuilder.build(items.stream().filter(it -> !kernel.contains(it)).collect(Collectors.toList()), config);
 		solveKernel();
 		iterateBuckets();
 		return bestSolution;
 	}
+	private List<Item> xpBuildItems(){
+		Model model = new Model(instPath, logPath, config.getTimeLimit(), config, true); // time limit equal to the global time limit
+		model.buildModel();
+		model.solve(); // SOLVE OF RELAXATION
+		List<Item> items = new ArrayList<>();
+		List<Item> familyVariablesOrdered =
+				model.getVarNames().stream().filter((v) -> v.startsWith("Y")).sorted(
+						(e1, e2) -> {
+							var valE1= model.getVarValue(e1);
+							var valE2= model.getVarValue(e2);
+							if(valE1 < valE2)
+								return 1;
+							else if(Math.abs(valE1) < 1e-5 && Math.abs(valE2) < 1e-5) {
+								if(Math.abs(model.getVarRC(e1)) > Math.abs(model.getVarRC(e2)))
+									return 1;
+							}
+							return -1;
+						}).map(it -> new FamilyVar(it)).collect(Collectors.toList());
+		//familyVariablesOrdered.forEach(fv -> kernel.addItem(fv)); // Add everyFamilyVar To Kernel set
+		familyVariablesOrdered.forEach(fv -> items.add(fv)); // Add everyFamilyVar To Items
 
+		familyVariablesOrdered.stream().forEachOrdered((nomeFam) -> System.out.println(nomeFam));
+		return items;
+	}
 	private List<Item> buildItems() {
 		Model model = new Model(instPath, logPath, config.getTimeLimit(), config, true); // time limit equal to the global time limit
 		model.buildModel();
-		model.solve();
+		model.solve(); // SOLVE OF RELAXATION
 		List<Item> items = new ArrayList<>();
 		List<String> varNames = model.getVarNames();
 		for(String v : varNames) {
 			double value = model.getVarValue(v);
 			double rc = model.getVarRC(v); // can be called only after solving the LP relaxation
-			Item it = new Item(v, value, rc);
+			Item it = new StdItem(v, value, rc);
 			items.add(it);
 		}
 		return items;
@@ -82,7 +109,7 @@ public class KernelSearch {
 		objValues.add(new ArrayList<>());
 
 		if(!bestSolution.isEmpty()) {
-			model.addObjConstraint(bestSolution.getObj());		
+			model.addObjConstraint(bestSolution.getObj()); // SE esiste una già una soluzione ottima aggiungi vincolo
 			model.readSolution(bestSolution);
 		}
 		
@@ -93,7 +120,6 @@ public class KernelSearch {
 		if(model.hasSolution()) {
 			bestSolution = model.getSolution();
 			model.exportSolution();
-			
 			objValues.get(objValues.size()-1).add(bestSolution.getObj());
 		}
 		else {
@@ -141,8 +167,9 @@ public class KernelSearch {
 			model.solve();
 			
 			if(model.hasSolution()) {
-				bestSolution = model.getSolution();
-				List<Item> selected = model.getSelectedItems(b.getItems());
+				bestSolution = model.getSolution();  // Il vincolo implica che la soluzione è migliore di quella precedente
+
+				List<Item> selected = model.getSelectedItems(b.getItems());  // Dal Bucket prendo le variabili con XR positivo
 				selected.forEach(it -> kernel.addItem(it));
 				selected.forEach(it -> b.removeItem(it)); // ***** ?????
 				model.exportSolution();

@@ -23,7 +23,7 @@ public class Kernel
 	
 	public boolean contains(Item it)
 	{
-		return items.stream().anyMatch(it2 -> it2.getName().equals(it.getName()));
+		return items.stream().anyMatch(it2 -> it2.getVarName().equals(it.getVarName()));
 	}
 	
 	public int size()

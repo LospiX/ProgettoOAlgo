@@ -28,7 +28,7 @@ public class Bucket
 	
 	public boolean contains(Item it)
 	{
-		return items.stream().anyMatch(it2 -> it2.getName().equals(it.getName()));
+		return items.stream().anyMatch(it2 -> it2.getVarName().equals(it.getVarName()));
 	}
 	
 	public void removeItem(Item it)
@@ -36,7 +36,7 @@ public class Bucket
 		for(int i = 0; i< items.size(); i++)
 		{
 			Item it2 = items.get(i);
-			if(it2.getName().equals(it.getName()))
+			if(it2.getVarName().equals(it.getVarName()))
 			{
 				items.remove(it2);
 				break;
