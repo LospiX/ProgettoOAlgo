@@ -31,6 +31,11 @@ public class Variabile implements Item {
         return 0;
     }
 
+    @Override
+    public double getRc() {
+        return 0;
+    }
+
     public int getProfitto() {
         return this.profitto;
     }

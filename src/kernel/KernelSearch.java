@@ -62,17 +62,17 @@ public class KernelSearch {
 	public Solution start() {
 		startTime = Instant.now();
 		callback = new CustomCallback(logPath, startTime);
-		items = xpBuildItems();
-		//buildItems();
-		//sorter.sort(items);
+		this.items = xpBuildItems();
+//		this.items= buildItems();
+//		sorter.sort(items);
 		kernel = kernelBuilder.build(problema.getFamilies(), config);
 		System.out.println("Ker Size::: "+kernel.size());
-		int sum=0;
+		/*int sum=0;
 		for(Item it : kernel.getItems()){
 			if(it instanceof Variabile)
 				sum+= ((Variabile) it).getPeso();
 		}
-		System.out.println("Consumo dello zaino da parte degli item:: "+sum);
+		System.out.println("Consumo dello zaino da parte degli item:: "+sum);*/
 		buckets = bucketBuilder.build(items.stream().filter(it -> !kernel.contains(it)).collect(Collectors.toList()), config);
 		solveKernel();
 		iterateBuckets();
@@ -86,11 +86,20 @@ public class KernelSearch {
 		model.getVarNames().stream().filter((v) -> v.startsWith("Y"))
 			.forEach(fam ->this.problema.setFamigliaStats(fam, model.getVarValue(fam), model.getVarRC(fam)));
 		problema.sortFamilies();
+		problema.getFamilies().forEach(fam -> fam.getVariablesOrdered().forEach(it -> items.add(it)));
+		return items;
+		/*List<String> varNames = model.getVarNames();
+		for(String v : varNames) {
+			double value = model.getVarValue(v);
+			double rc = model.getVarRC(v); // can be called only after solving the LP relaxation
+			Item it = new StdItem(v, value, rc);
+			items.add(it);
+		}
 		//familyVariablesOrdered.forEach(fv -> kernel.addItem(fv)); // Add everyFamilyVar To Kernel set
 		//familyVariablesOrdered.forEach(fv -> items.add(fv)); // Add everyFamilyVar To Items
 
 		//familyVariablesOrdered.stream().forEachOrdered((nomeFam) -> System.out.println(nomeFam));
-		return items;
+		return items;*/
 	}
 	private List<Item> buildItems() {
 		Model model = new Model(instPath, logPath, config.getTimeLimit(), config, true); // time limit equal to the global time limit

@@ -15,4 +15,9 @@ public record FamilyVar(String varName, double Xr) implements Item {
     public double getXr() {
         return this.Xr;
     }
+
+    @Override
+    public double getRc() {
+        return 0;
+    }
 }

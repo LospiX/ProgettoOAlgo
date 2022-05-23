@@ -21,8 +21,9 @@ public class Famiglia implements Item {
     private Comparator< Variabile> comparator = (v1, v2) -> {
         if(v1.getRapportoProfPeso()>v2.getRapportoProfPeso())
             return  -1;
-        else
+        else if(v1.getRapportoProfPeso()<v2.getRapportoProfPeso())
             return 1;
+        return 0;
     };
     private double Xr;
 
@@ -51,6 +52,9 @@ public class Famiglia implements Item {
             sum += v.getProfitto();
             subSet.add(v);
             if(sum > Math.abs(this.setUpCost)) {
+                if (this.subsetItems.size() == 0) {
+                    System.out.println("SIZE DEL PRIMO SUBSET: " +subSet.size()+ "  della famiglia: "+this.id);
+                }
                 this.subsetItems.add(subSet);
                 subSet = new ArrayList<>();
                 sum = 0;
@@ -85,6 +89,9 @@ public class Famiglia implements Item {
         return new ArrayList<>();
     }
 
+    public List<Variabile> getActualSubset() {
+        return this.subsetItems.get(this.indexOfLastSubsetSelected);
+    }
     @Override
     public String getVarName() {
         return this.id;
@@ -94,6 +101,12 @@ public class Famiglia implements Item {
     public double getXr() {
         return Xr;
     }
+
+    @Override
+    public double getRc() {
+        return 0;
+    }
+
     public double getRC(){return RC;}
     public void setXr(double xr) {
         this.Xr= xr;
@@ -104,5 +117,8 @@ public class Famiglia implements Item {
 
     public int getPeso() {
         return this.pesoFamiglia;
+    }
+    public List<Variabile> getVariablesOrdered () {
+        return this.variablesOrdered;
     }
 }

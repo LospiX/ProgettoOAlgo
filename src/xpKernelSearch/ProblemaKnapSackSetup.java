@@ -1,5 +1,6 @@
 package xpKernelSearch;
 
+import kernel.Bucket;
 import kernel.Item;
 
 import java.io.BufferedReader;
@@ -23,6 +24,7 @@ public class ProblemaKnapSackSetup {
     private String[] varX;
     private String[] varY;
     private int numOfItems;
+    private KernelSetState kerSetState;
 
     public ProblemaKnapSackSetup(File f) throws IOException {
         this.families = new ArrayList<>();
@@ -43,6 +45,8 @@ public class ProblemaKnapSackSetup {
             this.costs[i]= Integer.parseInt(lines.get(i).split("\s+")[1].trim());
         }
         this.buildVariables();
+        this.kerSetState= new KernelSetState();
+        this.kerSetState.initFamilies(this.families);
         this.build();
     }
     public void build() {
@@ -143,5 +147,10 @@ public class ProblemaKnapSackSetup {
 
     public int getCapZaino() {
         return this.capacity;
+    }
+
+    public Bucket getNextBucket(){
+        Bucket b = new Bucket();
+        return b;
     }
 }

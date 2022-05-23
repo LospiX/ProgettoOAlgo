@@ -1,6 +1,8 @@
 package xpKernelSearch;
 
+import kernel.Bucket;
 import kernel.Item;
+import kernel.Kernel;
 import kernel.Model;
 import xpKernelSearch.Variabile;
 
@@ -16,22 +18,20 @@ public class KernelSetState {
     private Map<String, Boolean> familiesPartOfSolution;
     private ArrayList<String> familiesEjected;
 
+    private Bucket lastSubmittedBucket;
+
     public KernelSetState() {
         this.newFamiliesSelected = new ArrayList<>();
         //itemsOfFamilyPartOfKS = new HashMap<String, List<String>>();
         familiesPartOfSolution = new HashMap<String, Boolean>();
 
     }
-    public void initFamilies(List<FamilyVar> families) {
-        for(FamilyVar f: families) {
-            this.familiesPartOfSolution.put(f.varName(), false); // Nessuna famiglia parte della soluzione
+    public void initFamilies(List<Famiglia> families) {
+        for(Famiglia f : families) {
+            this.familiesPartOfSolution.put(f.getVarName(), false); // Nessuna famiglia parte della soluzione
             //this.itemsOfFamilyPartOfKS.put(f.varName(), new ArrayList<>());
         }
     }
-
-
-
-
     public void init(List<Item> itemsOfKS, Model model){
         for(Item it : itemsOfKS){
             if(it instanceof FamilyVar){
@@ -40,7 +40,6 @@ public class KernelSetState {
 
             }
         }
-
     }
     public void update(Model model){
         this.newFamiliesSelected = new ArrayList<>();
@@ -54,7 +53,6 @@ public class KernelSetState {
         }
     }
     public void addNewVars(List<Variabile> vars){
-
     }
     public List<String> getSelectedFamilies(){
         return this.newFamiliesSelected;
@@ -62,5 +60,7 @@ public class KernelSetState {
     public List<String> getEjectedFamilies(){
         return this.familiesEjected;
     }
+
+
 }
 
