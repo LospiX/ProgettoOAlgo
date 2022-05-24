@@ -74,8 +74,8 @@ public class KernelSearch {
 		}
 		System.out.println("Consumo dello zaino da parte degli item:: "+sum);*/
 		buckets = bucketBuilder.build(items.stream().filter(it -> !kernel.contains(it)).collect(Collectors.toList()), config);
-		solveKernel();
-		iterateBuckets();
+
+		iterateBuckets(solveKernel());
 		return bestSolution;
 	}
 	private List<Item> xpBuildItems(){
@@ -116,7 +116,7 @@ public class KernelSearch {
 		return items;
 	}
 	
-	private void solveKernel() {
+	private Model solveKernel() {
 		Model model = new Model(instPath, logPath, Math.min(tlimKernel, getRemainingTime()), config, false);	
 		model.buildModel();
 		objValues.add(new ArrayList<>());
@@ -138,9 +138,10 @@ public class KernelSearch {
 		else {
 			objValues.get(objValues.size()-1).add(0.0);
 		}
+		return model;
 	}
 	
-	private void iterateBuckets() {
+	private void iterateBuckets(Model model) {
 		for (int i = 0; i < numIterations; i++) {
 			if(getRemainingTime() <= timeThreshold)
 				return;
@@ -148,10 +149,59 @@ public class KernelSearch {
 				objValues.add(new ArrayList<>());
 			
 			System.out.println("\n\n\n\t\t******** Iteration "+i+" ********\n\n\n");
-			solveBuckets();			
+			mySolveBuckets(model);
 		}		
 	}
 
+	private void mySolveBuckets(Model mdl) {
+		this.problema.buildFirstMarketList();
+		Bucket b = this.problema.genNextBucket(mdl, true);
+		int count = 0;
+		while (b!= null) {
+			System.out.println("\n\n\n\n\t\t** Solving bucket "+count++ +" **\n");
+			// SE il kernel non contiene l'item ED il bucket nemmeno => disabilita le variabili;
+			Bucket finalB = b;
+			List<Item> toDisable = items.stream().filter(it -> !kernel.contains(it) && !finalB.contains(it)).collect(Collectors.toList());
+
+			Model model = new Model(instPath, logPath, Math.min(tlimBucket, getRemainingTime()), config, false);
+			// Ad ogni iterazione ricostruisci il Model da capo e disabilita
+			model.buildModel();
+			model.disableItems(toDisable);
+
+			// PRINT BUCKET ITEMS
+			// for (Item it: b.getItems())
+			// System.out.print(it.getName()+" ");
+
+			// La bucketConstraint impone di scegliere almeno una variabile del Bucket
+			model.addBucketConstraint(b.getItems()); // can we use this constraint regardless of the type of variables chosen as items?
+			if(!bestSolution.isEmpty()) { // Se esiste una soluzione
+				// ***** //
+				model.addObjConstraint(bestSolution.getObj()); // -> model.getEnv().set(GRB.DoubleParam.Cutoff, obj);
+				model.readSolution(bestSolution);
+			}
+
+			model.setCallback(callback);
+			model.solve();
+
+			if(model.hasSolution()) {
+				bestSolution = model.getSolution();  // Il vincolo implica che la soluzione è migliore di quella precedente
+				List<Item> selected = model.getSelectedItems(b.getItems());  // Dal Bucket prendo le variabili con XR positivo
+				selected.forEach(it -> kernel.addItem(it));
+				//selected.forEach(it -> b.removeItem(it)); // ***** ?????
+				model.exportSolution();
+			}
+			if(!bestSolution.isEmpty())
+				objValues.get(objValues.size()-1).add(bestSolution.getObj());
+			else
+				objValues.get(objValues.size()-1).add(0.0);
+
+			if(getRemainingTime() <= timeThreshold) {
+				System.out.println("Treshold superata?");
+				return;
+			}
+			b = this.problema.genNextBucket(model, false);
+		}
+	}
 	private void solveBuckets() {
 		int count = 0;
 		for(Bucket b : buckets) {

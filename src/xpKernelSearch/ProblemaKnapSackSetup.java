@@ -1,7 +1,8 @@
 package xpKernelSearch;
 
 import kernel.Bucket;
-import kernel.Item;
+import kernel.KernelBuilder;
+import kernel.Model;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -10,7 +11,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ProblemaKnapSackSetup {
     private final List<Famiglia> families;
@@ -24,8 +27,10 @@ public class ProblemaKnapSackSetup {
     private String[] varX;
     private String[] varY;
     private int numOfItems;
-    private KernelSetState kerSetState;
+    //private KernelSetState kerSetState;
 
+    private List<Candidato> lastSubmittedCandidati;
+    private final LinkedList<Candidato> marketList;
     public ProblemaKnapSackSetup(File f) throws IOException {
         this.families = new ArrayList<>();
         List<String> lines = this.extractFromFile(f.toPath());
@@ -45,9 +50,11 @@ public class ProblemaKnapSackSetup {
             this.costs[i]= Integer.parseInt(lines.get(i).split("\s+")[1].trim());
         }
         this.buildVariables();
-        this.kerSetState= new KernelSetState();
-        this.kerSetState.initFamilies(this.families);
+        //this.kerSetState= new KernelSetState();
+        //this.kerSetState.initFamilies(this.families);
         this.build();
+        this.marketList = new LinkedList<>();
+        this.lastSubmittedCandidati= new ArrayList<>();
     }
     public void build() {
         int idxLastRowOfItems= 0;
@@ -60,7 +67,7 @@ public class ProblemaKnapSackSetup {
                 variables.add(new Variabile(this.varX[j], profits[j], costs[j]));
             }
             idxLastRowOfItems= j;
-            families.add(new Famiglia(this.varY[i], variables, costsSetupOfFamilies[i], costsOfFamilies[i]));
+            this.families.add(new Famiglia(this.varY[i], variables, costsSetupOfFamilies[i], costsOfFamilies[i]));
         }
     }
 
@@ -149,8 +156,83 @@ public class ProblemaKnapSackSetup {
         return this.capacity;
     }
 
-    public Bucket getNextBucket(){
-        Bucket b = new Bucket();
-        return b;
+    public Bucket genNextBucket(Model model, boolean firstTime){
+        System.out.println("GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG");
+        if(firstTime == false ) this.updateMarketList(model);// Update della Market List
+        List<Candidato> newCandidati = new ArrayList<>();
+        int maxDim= 850;
+        int dim= 0;
+        Candidato c;
+        System.out.println("MARKET LIST DIM :: "+this.marketList.size());
+        while (dim < maxDim && this.marketList.size()>0) {
+            c= this.marketList.pollFirst();
+            System.out.println("BucketSize:  "+dim);
+            dim+= c.getDim();
+            newCandidati.add(c);
+        }
+        this.lastSubmittedCandidati = newCandidati;
+        if(newCandidati.size()> 0)
+            return this.fromCandidatiToBucket(newCandidati);
+        else
+            return null;
     }
+
+    private Bucket fromCandidatiToBucket(List<Candidato> lisCandidati) {
+        Bucket bckt = new Bucket();
+        for(Candidato c: lisCandidati) {
+            c.getSubsets().forEach(sub -> sub.getSet().forEach(v -> bckt.addItem(v)));
+        }
+        return bckt;
+    }
+
+    public void buildFirstMarketList () {
+        Candidato c;
+        System.out.println("BUILDING FIRST MARKETLIST");
+        for(Famiglia f: this.families) {
+            System.out.println("Family: "+f.getVarName());
+            c = new Candidato(f);
+            c.addSubSet();
+            System.out.println("\tSize of subset added:  "+c.getDim());
+            this.marketList.add(c);
+        }
+    }
+
+    private void updateMarketList (Model model) {
+        List<Variabile> selectedVars;
+        boolean failed = true;
+        for (Candidato c : this.lastSubmittedCandidati) {
+            for(SubSet s: c.getSubsets()) {
+                selectedVars = s.getSet().stream()
+                    .filter(v -> model.getVarValue(v.getVarName())>0)
+                    .peek(v -> v.setSelected())
+                    .collect(Collectors.toList());
+                if(selectedVars.size() > 0)
+                    failed= false;
+                selectedVars.forEach(varToRmv -> s.getSet().remove(varToRmv));
+            }
+            if(failed == true ) { // If now has failed -> no vars of the candidate has been selected
+                System.out.println("Candidato ha failed");
+                if(c.hasFailed() == true){ // if the last time failed
+                    System.out.println("\tCandidato Second time faild add to market List");
+                } else {
+                    System.out.println("\tCandidato first time faild add to market List");
+                    c.setFailed();
+                    c.addSubSet();
+                    this.marketList.addLast(c);
+                    // Aggiungi il candidato con il subset successivo IN FONDO alla marketlist
+                }
+            } else {  // If now has succeeded -> some vars of the candidate has been selected
+                System.out.println("Candidato Not Failed time add to market List");
+                // Aggiungi il candidato con il subset successivo All'inizio della marketlist
+                c.addSubSet();
+                this.marketList.addFirst(c);
+                if(c.hasFailed() == false){  // Reset if the last time failed
+                    c.resetFailed();
+                }
+            }
+            failed = true;
+        }
+    }
+
+
 }

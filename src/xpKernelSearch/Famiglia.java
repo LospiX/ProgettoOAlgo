@@ -16,7 +16,7 @@ public class Famiglia implements Item {
     private final List<Variabile> variablesOrdered;
     private final int setUpCost;
     private final int pesoFamiglia;
-    private List<List<Variabile>> subsetItems;
+    private List<SubSet> subsetItems;
 
     private Comparator< Variabile> comparator = (v1, v2) -> {
         if(v1.getRapportoProfPeso()>v2.getRapportoProfPeso())
@@ -52,10 +52,8 @@ public class Famiglia implements Item {
             sum += v.getProfitto();
             subSet.add(v);
             if(sum > Math.abs(this.setUpCost)) {
-                if (this.subsetItems.size() == 0) {
-                    System.out.println("SIZE DEL PRIMO SUBSET: " +subSet.size()+ "  della famiglia: "+this.id);
-                }
-                this.subsetItems.add(subSet);
+                System.out.println("SIZE DEL "+(i+1)+" SUBSET: " +subSet.size()+ "  della famiglia: "+this.id);
+                this.subsetItems.add(new SubSet(subSet));
                 subSet = new ArrayList<>();
                 sum = 0;
             }
@@ -64,8 +62,10 @@ public class Famiglia implements Item {
         for(var v1 : this.subsetItems){
             System.out.println("\t subset dim: "+v1.size());
         }*/
-        if(subSet.size()>0)
-            this.subsetItems.add(subSet);
+        if(subSet.size()>0){
+            this.subsetItems.add(new SubSet(subSet));
+            System.out.println("SIZE DELL'Ultimo SUBSET: " +subSet.size()+ "  della famiglia: "+this.id);
+        }
     }
 
     @Override
@@ -82,14 +82,18 @@ public class Famiglia implements Item {
         return this.id;
     }
 
-    public List<Variabile> getNextSubset() {
+    /**
+     *
+     * @return empty SubSet if thereAreNoMore subsets
+     */
+    public SubSet getNextSubset() {
         if(this.indexOfLastSubsetSelected <= this.subsetItems.size()-1){
             return this.subsetItems.get(this.indexOfLastSubsetSelected++);
         }
-        return new ArrayList<>();
+        return new SubSet(new ArrayList<>());
     }
 
-    public List<Variabile> getActualSubset() {
+    public SubSet getActualSubset() {
         return this.subsetItems.get(this.indexOfLastSubsetSelected);
     }
     @Override

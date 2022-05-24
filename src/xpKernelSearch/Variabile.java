@@ -6,11 +6,12 @@ public class Variabile implements Item {
     private final String id;
     private final int profitto;
     private final int peso;
-
+    private boolean selected;
     public Variabile(String id, int profitto, int peso){
         this.id = id;
         this.profitto = profitto;
         this.peso = peso;
+        this.selected = false;
     }
     public double getRapportoProfPeso() {
         return ((double) profitto) / ((double) peso);
@@ -42,5 +43,11 @@ public class Variabile implements Item {
 
     public int getPeso() {
         return this.peso;
+    }
+    public boolean gotSelected() {
+        return selected;
+    }
+    public void setSelected() {
+        this.selected = true;
     }
 }

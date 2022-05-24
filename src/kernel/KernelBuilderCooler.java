@@ -1,6 +1,7 @@
 package kernel;
 
 import xpKernelSearch.Famiglia;
+import xpKernelSearch.SubSet;
 import xpKernelSearch.Variabile;
 
 import java.util.List;
@@ -27,12 +28,13 @@ public class KernelBuilderCooler implements KernelBuilder {
                 }
             } else {*/
             for (Famiglia f : (List<Famiglia>) families) {
-                if (cnt == 0) {
-                    ker.addItem(f);
-                    consumoZaino += f.getPeso();
+                if (cnt == 0) { // Solo per la prima iterazione
+                    ker.addItem(f); // Aggiungo tutte le famiglie al KerSet
                 }
-                if (f.getXr() > 1e-5) {
+                if (f.getXr() > 0.0) {
                     this.addSubset(f.getNextSubset());
+                    if (cnt == 0)
+                        consumoZaino += f.getPeso(); // Aggiungo tutti i pesi delle famiglie al KerSet
                 }
             }
 //            }
@@ -47,8 +49,8 @@ public class KernelBuilderCooler implements KernelBuilder {
     }
 
 
-    private void addSubset(List<Variabile> varsToAdd) {
-        for(Variabile v: varsToAdd) {
+    private void addSubset(SubSet subSet) {
+        for(Variabile v: subSet.getSet()) {
             consumoZaino += v.getPeso();
             ker.addItem(v);
         }
