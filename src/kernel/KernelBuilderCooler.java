@@ -39,7 +39,7 @@ public class KernelBuilderCooler implements KernelBuilder {
             }
 //            }
             System.out.println("CCAAAP :: "+config.getCapZaino());
-            if(consumoZaino > config.getCapZaino()) {
+            if(consumoZaino > config.getCapZaino()*1.05) {
                 zainoRiempito = true;
             }
             cnt++;

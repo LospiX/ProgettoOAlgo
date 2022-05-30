@@ -175,7 +175,9 @@ public class ProblemaKnapSackSetup {
             return this.fromCandidatiToBucket(newCandidati);
         else
             return null;
+
     }
+
 
     private Bucket fromCandidatiToBucket(List<Candidato> lisCandidati) {
         Bucket bckt = new Bucket();
