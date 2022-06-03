@@ -19,6 +19,8 @@ public class Model {
 	private GRBModel model;
 	private boolean hasSolution;
 	private double positiveThreshold = 1e-5;
+
+	private double ottimo;
 	
 	public Model(String mpsFilePath, String logPath, int timeLimit, Configuration config, boolean lpRelaxation) {
 		this.mpsFilePath = mpsFilePath;
@@ -63,6 +65,7 @@ public class Model {
 			//md.printModel();
 
 			model.optimize(); // SOLVE!
+			this.ottimo = model.get(DoubleAttr.ObjVal);
 			System.out.println("***STATUS***: "+Status.values()[model.get(IntAttr.Status)]);
 
 			if(model.get(IntAttr.SolCount) > 0) {
@@ -204,6 +207,10 @@ public class Model {
 	
 	public void setCallback(GRBCallback callback) {
 		model.setCallback(callback);
+	}
+
+	public double getOttimo() {
+		return this.ottimo;
 	}
 
 	/*public void getProfit(String v) {

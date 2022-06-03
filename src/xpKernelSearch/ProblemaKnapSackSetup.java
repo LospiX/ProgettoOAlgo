@@ -243,4 +243,7 @@ public class ProblemaKnapSackSetup {
     }
 
 
+    public int getNumOfVariables() {
+        return this.numOfItems;
+    }
 }

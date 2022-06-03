@@ -34,6 +34,7 @@ public class KernelSearch {
 	private List<List<Double>> objValues;
 	private List<Famiglia> families;
 	//private List<Famiglia> families;
+	private double ottimoRilassato;
 
 	private Instant startTime;
 	
@@ -82,6 +83,7 @@ public class KernelSearch {
 		Model model = new Model(instPath, logPath, config.getTimeLimit(), config, true); // time limit equal to the global time limit
 		model.buildModel();
 		model.solve(); // SOLVE OF RELAXATION
+		ottimoRilassato = model.getOttimo();
 		List<Item> items = new ArrayList<>();
 		model.getVarNames().stream().filter((v) -> v.startsWith("Y"))
 			.forEach(fam ->this.problema.setFamigliaStats(fam, model.getVarValue(fam), model.getVarRC(fam)));
@@ -114,6 +116,16 @@ public class KernelSearch {
 			items.add(it);
 		}
 		return items;
+	}
+	public double getOttimoRilassato() {
+		return this.ottimoRilassato;
+	}
+
+	public int getNumOfFamilies() {
+		return this.problema.getFamilies().size();
+	}
+	public int getNumOfVariables() {
+		return this.problema.getNumOfVariables();
 	}
 	
 	private Model solveKernel() {

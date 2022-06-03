@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="KernelSearchProj:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/KernelSearchProj_jar</output-path>
+    <root id="archive" name="KernelSearchProj.jar">
+      <element id="module-output" name="KernelSearchProj" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../../../../../../gurobi912/win64/lib/gurobi.jar" path-in-jar="/" />
+      <element id="file-copy" path="$PROJECT_DIR$/loglog.txt" />
+      <element id="file-copy" path="$PROJECT_DIR$/config.txt" />
+      <element id="dir-copy" path="$PROJECT_DIR$/Istanze" />
+    </root>
+  </artifact>
+</component>
