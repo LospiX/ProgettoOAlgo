@@ -1,7 +1,6 @@
 package xpKernelSearch;
 
 import kernel.Bucket;
-import kernel.KernelBuilder;
 import kernel.Model;
 
 import java.io.BufferedReader;
@@ -16,6 +15,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class ProblemaKnapSackSetup {
+
+    private final static int NUMBEROFTENTATIVI = 3;
+    private static final int BUCKETDIM = 850;
     private final List<Famiglia> families;
     private final int capacity;
     private final int numOfFamilies;
@@ -30,7 +32,7 @@ public class ProblemaKnapSackSetup {
     //private KernelSetState kerSetState;
 
     private List<Candidato> lastSubmittedCandidati;
-    private final LinkedList<Candidato> marketList;
+    private final LinkedList<Candidato> annaList;
     public ProblemaKnapSackSetup(File f) throws IOException {
         this.families = new ArrayList<>();
         List<String> lines = this.extractFromFile(f.toPath());
@@ -53,7 +55,7 @@ public class ProblemaKnapSackSetup {
         //this.kerSetState= new KernelSetState();
         //this.kerSetState.initFamilies(this.families);
         this.build();
-        this.marketList = new LinkedList<>();
+        this.annaList = new LinkedList<>();
         this.lastSubmittedCandidati= new ArrayList<>();
     }
     public void build() {
@@ -110,17 +112,17 @@ public class ProblemaKnapSackSetup {
     }*/
     public void sortFamilies(){
         this.families.sort(
-                (e1, e2) -> {
-                    var valE1= e1.getXr();
-                    var valE2 =e2.getXr();
-                    if(valE1 < valE2)
+            (e1, e2) -> {
+                var valE1= e1.getXr();
+                var valE2 =e2.getXr();
+                if(valE1 < valE2)
+                    return 1;
+                else if(Math.abs(valE1) < 1e-5 && Math.abs(valE2) < 1e-5) {
+                    if(Math.abs(e1.getRC()) > Math.abs(e2.getRC()))
                         return 1;
-                    else if(Math.abs(valE1) < 1e-5 && Math.abs(valE2) < 1e-5) {
-                        if(Math.abs(e1.getRC()) > Math.abs(e2.getRC()))
-                            return 1;
-                    }
-                    return -1;
-                });
+                }
+                return -1;
+            });
     }
     private List<String> extractFromFile (Path file) throws IOException {
         List<String> lines = new ArrayList<String>();
@@ -160,12 +162,11 @@ public class ProblemaKnapSackSetup {
         System.out.println("GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG");
         if(firstTime == false ) this.updateMarketList(model);// Update della Market List
         List<Candidato> newCandidati = new ArrayList<>();
-        int maxDim= 850;
         int dim= 0;
         Candidato c;
-        System.out.println("MARKET LIST DIM :: "+this.marketList.size());
-        while (dim < maxDim && this.marketList.size()>0) {
-            c= this.marketList.pollFirst();
+        System.out.println("MARKET LIST DIM :: "+this.annaList.size());
+        while (dim < BUCKETDIM && this.annaList.size()>0) {
+            c= this.annaList.pollFirst();
             System.out.println("BucketSize:  "+dim);
             dim+= c.getDim();
             newCandidati.add(c);
@@ -195,7 +196,7 @@ public class ProblemaKnapSackSetup {
             c = new Candidato(f);
             c.addSubSet();
             System.out.println("\tSize of subset added:  "+c.getDim());
-            this.marketList.add(c);
+            this.annaList.add(c);
         }
     }
 
@@ -214,20 +215,25 @@ public class ProblemaKnapSackSetup {
             }
             if(failed == true ) { // If now has failed -> no vars of the candidate has been selected
                 System.out.println("Candidato ha failed");
+                c.setFailed();
                 if(c.hasFailed() == true){ // if the last time failed
+                    if(c.getNumOfFails() < ProblemaKnapSackSetup.NUMBEROFTENTATIVI) {
+                        c.addSubSet();
+                        this.annaList.addLast(c);
+                    }
                     System.out.println("\tCandidato Second time faild add to market List");
                 } else {
                     System.out.println("\tCandidato first time faild add to market List");
                     c.setFailed();
                     c.addSubSet();
-                    this.marketList.addLast(c);
+                    this.annaList.addLast(c);
                     // Aggiungi il candidato con il subset successivo IN FONDO alla marketlist
                 }
             } else {  // If now has succeeded -> some vars of the candidate has been selected
                 System.out.println("Candidato Not Failed time add to market List");
                 // Aggiungi il candidato con il subset successivo All'inizio della marketlist
                 c.addSubSet();
-                this.marketList.addFirst(c);
+                this.annaList.addFirst(c);
                 if(c.hasFailed() == false){  // Reset if the last time failed
                     c.resetFailed();
                 }
