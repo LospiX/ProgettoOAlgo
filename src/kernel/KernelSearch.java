@@ -9,9 +9,7 @@ import java.util.stream.Collectors;
 
 import gurobi.GRBCallback;
 import xpKernelSearch.Famiglia;
-import xpKernelSearch.Itm;
 import xpKernelSearch.ProblemaKnapSackSetup;
-import xpKernelSearch.Variabile;
 
 public class KernelSearch {
 	private ProblemaKnapSackSetup problema;
@@ -35,8 +33,9 @@ public class KernelSearch {
 	private List<Famiglia> families;
 	//private List<Famiglia> families;
 	private double ottimoRilassato;
-
 	private Instant startTime;
+
+	private int bucketSolver;
 	
 	public KernelSearch(String instPath, String instPathMps, String logPath, Configuration config) throws IOException {
 		this.instPath = instPathMps;
@@ -44,16 +43,19 @@ public class KernelSearch {
 		this.config = config;
 		bestSolution = new Solution();
 		objValues = new ArrayList<>();
-		this.problema = new ProblemaKnapSackSetup(new File(instPath));
-		config.setCapZaino(this.problema.getCapZaino());
 		configure(config);
+		this.problema = new ProblemaKnapSackSetup(new File(instPath), sorter);
+		config.setCapZaino(this.problema.getCapZaino());
+
 	}
 	
 	private void configure(Configuration configuration) {
 		sorter = config.getItemSorter();
+		System.out.println(sorter);
 		tlim = config.getTimeLimit();
 		bucketBuilder = config.getBucketBuilder();
 		kernelBuilder = config.getKernelBuilder();
+		bucketSolver = config.getBucketResolver();
 		tlimKernel = config.getTimeLimitKernel();
 		numIterations = config.getNumIterations();
 		tlimBucket = config.getTimeLimitBucket();
@@ -66,6 +68,7 @@ public class KernelSearch {
 		this.items = xpBuildItems();
 //		this.items= buildItems();
 //		sorter.sort(items);
+		// TODO: Fare una chiamata tipo problemaKnapsack.sortItem in modo da avere una cosa più chiara e non tutto nascosto
 		kernel = kernelBuilder.build(problema.getFamilies(), config);
 		System.out.println("Ker Size::: "+kernel.size());
 		/*int sum=0;
@@ -74,7 +77,6 @@ public class KernelSearch {
 				sum+= ((Variabile) it).getPeso();
 		}
 		System.out.println("Consumo dello zaino da parte degli item:: "+sum);*/
-		buckets = bucketBuilder.build(items.stream().filter(it -> !kernel.contains(it)).collect(Collectors.toList()), config);
 
 		iterateBuckets(solveKernel());
 		return bestSolution;
@@ -161,7 +163,15 @@ public class KernelSearch {
 				objValues.add(new ArrayList<>());
 			
 			System.out.println("\n\n\n\t\t******** Iteration "+i+" ********\n\n\n");
-			mySolveBuckets(model);
+			switch (bucketSolver)
+			{
+				case 0:
+					buckets = bucketBuilder.build(items.stream().filter(it -> !kernel.contains(it)).collect(Collectors.toList()), config);
+					defaultBucketSolver();
+					break;
+				case 1:
+					mySolveBuckets(model);
+			}
 		}		
 	}
 
@@ -214,7 +224,7 @@ public class KernelSearch {
 			b = this.problema.genNextBucket(model, false);
 		}
 	}
-	private void solveBuckets() {
+	private void defaultBucketSolver() {
 		int count = 0;
 		for(Bucket b : buckets) {
 			System.out.println("\n\n\n\n\t\t** Solving bucket "+count++ +" **\n");

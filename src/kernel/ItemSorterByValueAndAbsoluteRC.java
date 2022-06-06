@@ -1,4 +1,6 @@
 package kernel;
+import xpKernelSearch.Variabile;
+
 import java.util.Comparator;
 import java.util.List;
 
@@ -24,8 +26,9 @@ public class ItemSorterByValueAndAbsoluteRC implements ItemSorter
 			return 0;
 		};
 	@Override
-	public void sort(List<Item> items) {
+	public List<Variabile> sort(List<Variabile> items) {
 		items.sort(this.comparator);
+		return items;
 	}
 
 }

@@ -15,6 +15,11 @@ public class StdItem implements Item {
         return rc;
     }
 
+    @Override
+    public double getRapportoProfPeso() {
+        return 0;
+    }
+
     public double getXr() {
         return xr;
     }

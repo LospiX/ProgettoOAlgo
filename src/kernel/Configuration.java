@@ -14,6 +14,7 @@ public class Configuration
 	private int numIterations;
 	private int timeLimitBucket;
 	private int capacityZaino;
+	private int bucketResolver;
 
 	public BucketBuilder getBucketBuilder()
 	{
@@ -135,8 +136,18 @@ public class Configuration
 		this.timeLimitKernel = timeLimitKernel;
 	}
 
+	public void setBucketResolver(int bucketResolver)
+	{
+		this.bucketResolver = bucketResolver;
+	}
+
 	public void setCapZaino(int capZaino) {
 		this.capacityZaino = capZaino;
 	}
 	public int getCapZaino(){return  this.capacityZaino;}
+
+	public int getBucketResolver()
+	{
+		return bucketResolver;
+	}
 }

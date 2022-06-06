@@ -1,6 +1,8 @@
 package xpKernelSearch;
 
 import kernel.Bucket;
+import kernel.Item;
+import kernel.ItemSorter;
 import kernel.Model;
 
 import java.io.BufferedReader;
@@ -29,11 +31,13 @@ public class ProblemaKnapSackSetup {
     private String[] varX;
     private String[] varY;
     private int numOfItems;
+
+    private ItemSorter sorter;
     //private KernelSetState kerSetState;
 
     private List<Candidato> lastSubmittedCandidati;
     private final LinkedList<Candidato> annaList;
-    public ProblemaKnapSackSetup(File f) throws IOException {
+    public ProblemaKnapSackSetup(File f, ItemSorter itemSorter) throws IOException {
         this.families = new ArrayList<>();
         List<String> lines = this.extractFromFile(f.toPath());
         this.numOfItems = Integer.parseInt(lines.get(0));
@@ -54,6 +58,7 @@ public class ProblemaKnapSackSetup {
         this.buildVariables();
         //this.kerSetState= new KernelSetState();
         //this.kerSetState.initFamilies(this.families);
+        this.sorter = itemSorter;
         this.build();
         this.annaList = new LinkedList<>();
         this.lastSubmittedCandidati= new ArrayList<>();
@@ -69,7 +74,7 @@ public class ProblemaKnapSackSetup {
                 variables.add(new Variabile(this.varX[j], profits[j], costs[j]));
             }
             idxLastRowOfItems= j;
-            this.families.add(new Famiglia(this.varY[i], variables, costsSetupOfFamilies[i], costsOfFamilies[i]));
+            this.families.add(new Famiglia(this.varY[i], variables, costsSetupOfFamilies[i], costsOfFamilies[i], sorter));
         }
     }
 
@@ -121,7 +126,7 @@ public class ProblemaKnapSackSetup {
                     if(Math.abs(e1.getRC()) > Math.abs(e2.getRC()))
                         return 1;
                 }
-                return -1;
+                return 0;
             });
     }
     private List<String> extractFromFile (Path file) throws IOException {

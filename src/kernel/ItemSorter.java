@@ -1,8 +1,10 @@
 package kernel;
+import xpKernelSearch.Variabile;
+
 import java.util.List;
 
 public interface ItemSorter
 {
 
-	public void sort(List<Item> items);
+	public List<Variabile> sort(List<Variabile> items);
 }
