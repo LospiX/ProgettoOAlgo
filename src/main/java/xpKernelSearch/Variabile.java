@@ -13,6 +13,7 @@ public class Variabile implements Item {
         this.peso = peso;
         this.selected = false;
     }
+    @Override
     public double getRapportoProfPeso() {
         return ((double) profitto) / ((double) peso);
     }

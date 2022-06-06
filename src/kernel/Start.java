@@ -49,7 +49,7 @@ public class Start
 		String pathInstancemps = ".\\Istanze\\mps\\Class3Mps\\prob3_050_090_110_005_015_01.mps";
 //		String pathInstancemps = ".\\Istanze\\mps\\SCmps\\test20x10000-SC(1).mps";
 		//String pathmps = ".\\Istanze\\mps\\Class2Mps\\prob2_100_090_110_035_045_10.mps";*/
-
+		// TODO: Guarda perchè prob3_050_090_110_005_015_01 è cursata
 
 
 
@@ -65,7 +65,6 @@ public class Start
 		sol.setOttimoRilassato(ks.getOttimoRilassato());
 		sol.setNumeroFamiglie(ks.getNumOfFamilies());
 		sol.setNumeroVariabili(ks.getNumOfVariables());
-
 		System.out.println("USED MEMORY IN BYTES " +memory);
 		System.out.println("USED MEMORY IN MEGABYTES " +memory/(1024L*1024L));
 	}

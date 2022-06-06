@@ -1,6 +1,7 @@
 package xpKernelSearch;
 
 import kernel.Item;
+import kernel.ItemSorter;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -18,7 +19,9 @@ public class Famiglia implements Item {
     private final int pesoFamiglia;
     private List<SubSet> subsetItems;
 
-    private Comparator< Variabile> comparator = (v1, v2) -> {
+    private ItemSorter sorter;
+
+    private Comparator<Variabile> comparator = (v1, v2) -> {
         if(v1.getRapportoProfPeso()>v2.getRapportoProfPeso())
             return  -1;
         else if(v1.getRapportoProfPeso()<v2.getRapportoProfPeso())
@@ -27,9 +30,10 @@ public class Famiglia implements Item {
     };
     private double Xr;
 
-    public Famiglia(String id, List<Variabile> variables, int setUpCost, int pesoFamiglia) {
+    public Famiglia(String id, List<Variabile> variables, int setUpCost, int pesoFamiglia, ItemSorter sorter) {
         this.id = id;
-        this.variablesOrdered = variables.stream().sorted(comparator).collect(Collectors.toList());;
+        this.sorter = sorter;
+        this.variablesOrdered = sorter.sort(variables);
         this.setUpCost = setUpCost;
         this.pesoFamiglia = pesoFamiglia;
         this.subsetItems= new ArrayList<>();
@@ -111,6 +115,10 @@ public class Famiglia implements Item {
         return 0;
     }
 
+    @Override
+    public double getRapportoProfPeso() {
+        return 0;
+    }
     public double getRC(){return RC;}
     public void setXr(double xr) {
         this.Xr= xr;
