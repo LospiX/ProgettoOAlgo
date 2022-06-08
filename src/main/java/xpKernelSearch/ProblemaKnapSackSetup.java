@@ -1,7 +1,6 @@
 package xpKernelSearch;
 
 import kernel.Bucket;
-import kernel.Item;
 import kernel.ItemSorter;
 import kernel.Model;
 
@@ -20,7 +19,7 @@ public class ProblemaKnapSackSetup {
 
     private final static int NUMBEROFTENTATIVI = 3;
     private static final int BUCKETDIM = 850;
-    private final List<Famiglia> families;
+    private final List<Famiglia> families = new ArrayList<>();;
     private final int capacity;
     private final int numOfFamilies;
     private final int[] dimOfFamilies;
@@ -32,13 +31,13 @@ public class ProblemaKnapSackSetup {
     private String[] varY;
     private int numOfItems;
 
-    private ItemSorter sorter;
+    private ItemSorter itemFamSorter;
     //private KernelSetState kerSetState;
 
-    private List<Candidato> lastSubmittedCandidati;
-    private final LinkedList<Candidato> annaList;
+    private List<Candidato> lastSubmittedCandidati = new  ArrayList<>();
+    private final LinkedList<Candidato> annaList = new LinkedList<>();
+
     public ProblemaKnapSackSetup(File f, ItemSorter itemSorter) throws IOException {
-        this.families = new ArrayList<>();
         List<String> lines = this.extractFromFile(f.toPath());
         this.numOfItems = Integer.parseInt(lines.get(0));
         this.numOfFamilies = Integer.parseInt(lines.get(1));
@@ -55,36 +54,43 @@ public class ProblemaKnapSackSetup {
             this.profits[i]= Integer.parseInt(lines.get(i).split("\s+")[0].trim());
             this.costs[i]= Integer.parseInt(lines.get(i).split("\s+")[1].trim());
         }
-        this.buildVariables();
-        //this.kerSetState= new KernelSetState();
-        //this.kerSetState.initFamilies(this.families);
-        this.sorter = itemSorter;
-        this.build();
-        this.annaList = new LinkedList<>();
-        this.lastSubmittedCandidati= new ArrayList<>();
+        this.buildVariablesNames();
+        this.itemFamSorter = itemSorter;
+        this.buildFamilies();
     }
-    public void build() {
+    public void buildFamilies() {
         int idxLastRowOfItems= 0;
         int j= 0;
         List<Variabile> variables;
-
         for(int i = 0; i < numOfFamilies; i++) {
             variables = new ArrayList<>();
             for(; j<idxLastRowOfItems+dimOfFamilies[i]; j++){
-                variables.add(new Variabile(this.varX[j], profits[j], costs[j]));
+                variables.add(new Variabile(this.varX[j], profits[j], costs[j])); // Create a variable
             }
             idxLastRowOfItems= j;
-            this.families.add(new Famiglia(this.varY[i], variables, costsSetupOfFamilies[i], costsOfFamilies[i], sorter));
+            this.families.add(new Famiglia(this.varY[i], variables, costsSetupOfFamilies[i], costsOfFamilies[i], itemFamSorter));
         }
     }
 
+    public void updateXrRc(Model model) {
+        for (Famiglia family : families) {
+            family.setXr(model.getVarValue(family.getVarName()));
+            family.setRc(model.getVarRC(family.getVarName()));
+            family.getVariables().forEach(
+                v -> {
+                    v.setXr(model.getVarValue(v.getVarName()));
+                    v.setRc(model.getVarRC(v.getVarName()));
+                }
+            );
+        }
+    }
     public void printFamily(int i) {
         System.out.println("Hello");
         //System.out.println(this.families.get(i).getVariablesOrdered().toString());
     }
 
 
-    private void buildVariables() {
+    private void buildVariablesNames() {
         int dimX = this.numOfItems;
         this.varX =new String[dimX];
         String name="";
@@ -250,5 +256,14 @@ public class ProblemaKnapSackSetup {
 
     public int getNumOfVariables() {
         return this.numOfItems;
+    }
+
+    public void setUp(Model model) {
+        this.updateXrRc(model); // Assign Xr and Rc to all variables
+        this.sortFamilies();
+        families.forEach(f -> {
+            f.sortVariables();
+            f.generateSubsets();
+        });
     }
 }

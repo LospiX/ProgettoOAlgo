@@ -8,12 +8,13 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Famiglia implements Item {
+    private List<Variabile> variables;
     private double RC;
     private final String id;
 
     private boolean isPartOfSolution = false;
     private int indexOfLastSubsetSelected;
-    private final List<Variabile> variablesOrdered;
+
     private final int setUpCost;
     private final int pesoFamiglia;
     private List<SubSet> subsetItems;
@@ -32,23 +33,28 @@ public class Famiglia implements Item {
     public Famiglia(String id, List<Variabile> variables, int setUpCost, int pesoFamiglia, ItemSorter sorter) {
         this.id = id;
         this.sorter = sorter;
-        this.variablesOrdered = sorter.sort(variables);
+        this.variables = variables;
+//        this.variablesOrdered = sorter.sort(variables);
         this.setUpCost = setUpCost;
         this.pesoFamiglia = pesoFamiglia;
         this.subsetItems= new ArrayList<>();
-        this.subSetGenerator();
+//        this.generateSubsets();
         this.indexOfLastSubsetSelected=0;
     }
     public void setPartOfSolution(){
         this.isPartOfSolution = true;
     }
 
-    public void subSetGenerator() {
+    public List<Variabile> getVariables() {
+        return this.variables;
+    }
+
+    public void generateSubsets() {
         int sum = 0;
         List<Variabile> subSet = new ArrayList<>();
         Variabile v;
-        for(int i = 0; i< this.variablesOrdered.size(); i++){
-            v = this.variablesOrdered.get(i);
+        for(int i = 0; i< this.variables.size(); i++){
+            v = this.variables.get(i);
             sum += v.getProfitto();
             subSet.add(v);
             if(sum > Math.abs(this.setUpCost)) {
@@ -70,7 +76,7 @@ public class Famiglia implements Item {
     public String toString(){
         String result ="";
         result += "Famiglia:: "+ id+ "   setupCost:: "+ setUpCost+ "  pesoFamiglia:: "+pesoFamiglia+"\n";
-        for(Variabile vr: this.variablesOrdered){
+        for(Variabile vr: this.variables){
             result += "\t"+ vr.toString()+"\n";
         }
         return result;
@@ -125,7 +131,8 @@ public class Famiglia implements Item {
     public int getPeso() {
         return this.pesoFamiglia;
     }
-    public List<Variabile> getVariablesOrdered () {
-        return this.variablesOrdered;
+
+    public void sortVariables() {
+        this.variables= this.sorter.sort(this.variables);
     }
 }

@@ -68,6 +68,7 @@ public class KernelSearch {
 		this.items = xpBuildItems();
 //		this.items= buildItems();
 //		sorter.sort(items);
+
 		// TODO: Fare una chiamata tipo problemaKnapsack.sortItem in modo da avere una cosa più chiara e non tutto nascosto
 		kernel = kernelBuilder.build(problema.getFamilies(), config);
 		System.out.println("Ker Size::: "+kernel.size());
@@ -86,33 +87,13 @@ public class KernelSearch {
 		model.buildModel();
 		model.solve(); // SOLVE OF RELAXATION
 		ottimoRilassato = model.getOttimo();
+		problema.setUp(model);
 		List<Item> items = new ArrayList<>();
-		model.getVarNames().stream().filter((v) -> v.startsWith("Y"))
-			.forEach(fam ->this.problema.setFamigliaStats(fam, model.getVarValue(fam), model.getVarRC(fam)));
-		problema.sortFamilies();
-		problema.getFamilies().forEach(fam -> fam.getVariablesOrdered().forEach(it -> items.add(it)));
-		items.forEach(it -> {
-			it
-		})
-		for(String v : varNames) {
-			double value = model.getVarValue(v);
-			double rc = model.getVarRC(v); // can be called only after solving the LP relaxation
-			Item it = new StdItem(v, value, rc);
-			items.add(it);
-		}
+		problema.getFamilies().forEach(fam -> fam.getVariables().forEach(it -> items.add(it)));
 		return items;
-		/*List<String> varNames = model.getVarNames();
-		for(String v : varNames) {
-			double value = model.getVarValue(v);
-			double rc = model.getVarRC(v); // can be called only after solving the LP relaxation
-			Item it = new StdItem(v, value, rc);
-			items.add(it);
-		}
+
 		//familyVariablesOrdered.forEach(fv -> kernel.addItem(fv)); // Add everyFamilyVar To Kernel set
 		//familyVariablesOrdered.forEach(fv -> items.add(fv)); // Add everyFamilyVar To Items
-
-		//familyVariablesOrdered.stream().forEachOrdered((nomeFam) -> System.out.println(nomeFam));
-		return items;*/
 	}
 	private List<Item> buildItems() {
 		Model model = new Model(instPath, logPath, config.getTimeLimit(), config, true); // time limit equal to the global time limit

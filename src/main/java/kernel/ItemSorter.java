@@ -5,6 +5,5 @@ import java.util.List;
 
 public interface ItemSorter
 {
-
 	public List<Variabile> sort(List<Variabile> items);
 }

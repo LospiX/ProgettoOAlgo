@@ -16,6 +16,17 @@ public class StdItem implements Item {
     }
 
     @Override
+    public void setXr(double Xr) {
+        this.xr = Xr;
+    }
+
+    @Override
+    public void setRc(double Rc) {
+        this.rc = Rc;
+
+    }
+
+    @Override
     public double getRapportoProfPeso() {
         return 0;
     }
