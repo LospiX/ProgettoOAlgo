@@ -91,6 +91,15 @@ public class KernelSearch {
 			.forEach(fam ->this.problema.setFamigliaStats(fam, model.getVarValue(fam), model.getVarRC(fam)));
 		problema.sortFamilies();
 		problema.getFamilies().forEach(fam -> fam.getVariablesOrdered().forEach(it -> items.add(it)));
+		items.forEach(it -> {
+			it
+		})
+		for(String v : varNames) {
+			double value = model.getVarValue(v);
+			double rc = model.getVarRC(v); // can be called only after solving the LP relaxation
+			Item it = new StdItem(v, value, rc);
+			items.add(it);
+		}
 		return items;
 		/*List<String> varNames = model.getVarNames();
 		for(String v : varNames) {

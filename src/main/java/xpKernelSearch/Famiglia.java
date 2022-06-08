@@ -6,7 +6,6 @@ import kernel.ItemSorter;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Famiglia implements Item {
     private double RC;
@@ -39,9 +38,6 @@ public class Famiglia implements Item {
         this.subsetItems= new ArrayList<>();
         this.subSetGenerator();
         this.indexOfLastSubsetSelected=0;
-        //this.var = new FamilyVar(id, variables.stream().map(v -> new ItemVar(v.id(), this.var)).collect(Collectors.toList()));
-        //this.var = new FamilyVar(id, variables.stream().map(v -> new ItemVar(v.id(), this.var)).collect(Collectors.toList()));
-
     }
     public void setPartOfSolution(){
         this.isPartOfSolution = true;
@@ -56,19 +52,17 @@ public class Famiglia implements Item {
             sum += v.getProfitto();
             subSet.add(v);
             if(sum > Math.abs(this.setUpCost)) {
-                System.out.println("SIZE DEL "+(i+1)+" SUBSET: " +subSet.size()+ "  della famiglia: "+this.id);
                 this.subsetItems.add(new SubSet(subSet));
                 subSet = new ArrayList<>();
                 sum = 0;
             }
         }
-        /*System.out.println("Famiglie.susetGen  Dim of all subset  "+this.subsetItems.size());
-        for(var v1 : this.subsetItems){
-            System.out.println("\t subset dim: "+v1.size());
-        }*/
-        if(subSet.size()>0){
+        if(subSet.size()>0)
             this.subsetItems.add(new SubSet(subSet));
-            System.out.println("SIZE DELL'Ultimo SUBSET: " +subSet.size()+ "  della famiglia: "+this.id);
+        System.out.println("Famiglia: "+this.id+ "   contains: "+this.subsetItems.stream().map(e -> e.getDim()).mapToInt(Integer::intValue).sum()+" items in "+this.subsetItems.size()+ " subsets.");
+        for(var v1 : this.subsetItems){
+            System.out.println("\t subset dim: "+v1.getDim());
+            v1.getSet().forEach(v2 -> System.out.println("Var:: "+v2 + "  prof: "+v2.getProfitto()+ "  peso: "+v2.getPeso()+ "  rapporto: "+v2.getRapportoProfPeso()));
         }
     }
 
@@ -114,6 +108,7 @@ public class Famiglia implements Item {
     public double getRc() {
         return 0;
     }
+
 
     @Override
     public double getRapportoProfPeso() {

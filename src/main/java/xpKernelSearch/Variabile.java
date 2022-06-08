@@ -7,6 +7,9 @@ public class Variabile implements Item {
     private final int profitto;
     private final int peso;
     private boolean selected;
+    private double Xr;
+    private double Rc;
+
     public Variabile(String id, int profitto, int peso){
         this.id = id;
         this.profitto = profitto;
@@ -30,13 +33,24 @@ public class Variabile implements Item {
 
     @Override
     public double getXr() {
-        return 0;
+        return this.Xr;
     }
 
     @Override
     public double getRc() {
-        return 0;
+        return this.Rc;
     }
+
+    @Override
+    public void setXr(double Xr) {
+        this.Xr= Xr;
+    }
+
+    @Override
+    public void setRc(double Rc) {
+        this.Rc= Rc;
+    }
+
 
     public int getProfitto() {
         return this.profitto;
