@@ -6,6 +6,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -20,17 +21,19 @@ public class Start
 	private static String CLASSPATH;
 	public static void main(String[] args) throws Exception {
 		System.out.println("Working directory ::" +System.getProperty("user.dir"));
-		CLASSPATH = System.getProperty("java.class.path");
-		Path classPath = Path.of(CLASSPATH);
-		Path jarDirHome = classPath.getParent();
-//		location.toAbsolutePath();
-
-		String pathlog  =  Path.of(jarDirHome.toAbsolutePath().toString(), "log.txt").toString();
-//		Start.class.getResource("/Istanze/")
+		/*CLASSPATH = Arrays.stream(System.getProperty("java.class.path").split(";")).filter(e -> e.endsWith("classes")|| e.endsWith(".jar")).findFirst().orElseThrow();
+		Path classPath = Path.of(CLASSPATH);*/
+		Path jarDirHome = Path.of(System.getProperty("user.dir"));
+		String pathlog  =  Path.of(jarDirHome.toAbsolutePath().toString(), "log").toString();
 		String pathConfig  =  Path.of(jarDirHome.toAbsolutePath().toString(), "config.txt").toString();
 		Configuration config = ConfigurationReader.read(pathConfig);
 		List<OutputSolution> solutions = new ArrayList<>();
-		Explorer exp = new Explorer("Istanze");
+		System.out.println("Start.class.getResource(\"/Istanze\")= "+Start.class.getResource("/Istanze"));
+		System.out.println("Start.class.getResource(\"/Istanze\toUri\")= "+Start.class.getResource("/Istanze").toURI());
+		System.out.println("Start.class.getResource(\"/Istanze\"getPath)= "+Start.class.getResource("/Istanze").toURI().getPath());
+		String pathOfIstanze = Start.class.getResource("/Istanze").toURI().getPath().substring(1); // substring to remove the leading a slash
+		System.out.println("pathOfIstanze = " + pathOfIstanze);
+		Explorer exp = new Explorer(pathOfIstanze);
 
 		List<String[]> istanze = Arrays.stream(args)
 			.map(ist -> new String[]{ist + ".txt", ist + ".mps"})
