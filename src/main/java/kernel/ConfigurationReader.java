@@ -53,6 +53,7 @@ public class ConfigurationReader {
 					}
 				}
 				case "BUCKETRESOLVER" -> config.setBucketResolver(Integer.parseInt(valToParse));
+				case "SUBSETFACTOR" -> config.setSubsetFactor(Double.parseDouble(valToParse));
 			}
         }
         return config;

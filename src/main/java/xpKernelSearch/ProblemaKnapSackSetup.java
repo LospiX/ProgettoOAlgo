@@ -1,6 +1,7 @@
 package xpKernelSearch;
 
 import kernel.Bucket;
+import kernel.Configuration;
 import kernel.ItemSorter;
 import kernel.Model;
 
@@ -27,6 +28,7 @@ public class ProblemaKnapSackSetup {
     private final int[] profits;
     private final int[] costs;
     private final int[] costsOfFamilies;
+    private final double subsetFactor;
     private String[] varX;
     private String[] varY;
     private int numOfItems;
@@ -37,7 +39,7 @@ public class ProblemaKnapSackSetup {
     private List<Candidato> lastSubmittedCandidati = new  ArrayList<>();
     private final LinkedList<Candidato> annaList = new LinkedList<>();
 
-    public ProblemaKnapSackSetup(File f, ItemSorter itemSorter) throws IOException {
+    public ProblemaKnapSackSetup(File f, Configuration config) throws IOException {
         List<String> lines = this.extractFromFile(f.toPath());
         this.numOfItems = Integer.parseInt(lines.get(0));
         this.numOfFamilies = Integer.parseInt(lines.get(1));
@@ -55,7 +57,8 @@ public class ProblemaKnapSackSetup {
             this.costs[i]= Integer.parseInt(lines.get(i).split("\s+")[1].trim());
         }
         this.buildVariablesNames();
-        this.itemFamSorter = itemSorter;
+        this.itemFamSorter = config.getItemSorter();
+        this.subsetFactor = config.getSubsetFactor();
         this.buildFamilies();
     }
     public void buildFamilies() {
@@ -263,7 +266,7 @@ public class ProblemaKnapSackSetup {
         this.sortFamilies();
         families.forEach(f -> {
             f.sortVariables();
-            f.generateSubsets();
+            f.generateSubsets(this.subsetFactor);
         });
     }
 }

@@ -8,7 +8,7 @@ public class OutputSolution {
     private int ottimoAtteso;
     private int ottimoRaggiunto;
     private double scarto;
-    private int tempoImpiegato;
+    private long tempoImpiegato;
     private double risorseUtilizzate;
     private int mod;
 
@@ -38,7 +38,7 @@ public class OutputSolution {
         this.ottimoRaggiunto = ottimoRaggiunto;
     }
 
-    public void setTempoImpiegato(int tempoImpiegato) {
+    public void setTempoImpiegato(long tempoImpiegato) {
         this.tempoImpiegato = tempoImpiegato;
     }
 
@@ -62,7 +62,7 @@ public class OutputSolution {
         res+= String.valueOf(this.ottimoAtteso)+";";
         res+= String.valueOf(this.ottimoRaggiunto)+";";
         res+= String.valueOf(this.calcScarto())+";";
-        /*res+= String.valueOf(this.tempoImpiegato)+";";
+        res+= String.valueOf(this.tempoImpiegato)+";";/*
         res+= String.valueOf(this.risorseUtilizzate)+";";*/
         return res;
     }

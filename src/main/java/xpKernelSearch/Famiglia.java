@@ -49,19 +49,25 @@ public class Famiglia implements Item {
         return this.variables;
     }
 
-    public void generateSubsets() {
+    public void generateSubsets(double subsetFactor) {
         int sum = 0;
         List<Variabile> subSet = new ArrayList<>();
         Variabile v;
+        int dimOfFirstSubset = this.calcNumVarToBeatSetupCost(subsetFactor);
+        int count = 0;
+        int dimNextSubset = dimOfFirstSubset;
+        double  percentage = 1;
         for(int i = 0; i< this.variables.size(); i++){
             v = this.variables.get(i);
-            sum += v.getProfitto();
             subSet.add(v);
-            if(sum > Math.abs(this.setUpCost)) {
+            if(count >= dimNextSubset) {
                 this.subsetItems.add(new SubSet(subSet));
+                dimNextSubset = (int) Math.round((double) dimOfFirstSubset * percentage);
+                percentage = Math.max(percentage - 0.1, 0.5);
                 subSet = new ArrayList<>();
-                sum = 0;
+                count = 0;
             }
+            count++;
         }
         if(subSet.size()>0)
             this.subsetItems.add(new SubSet(subSet));
@@ -70,6 +76,16 @@ public class Famiglia implements Item {
             System.out.println("\t subset dim: "+v1.getDim());
             v1.getSet().forEach(v2 -> System.out.println("Var:: "+v2 + "  prof: "+v2.getProfitto()+ "  peso: "+v2.getPeso()+ "  rapporto: "+v2.getRapportoProfPeso()));
         }
+    }
+
+    private int calcNumVarToBeatSetupCost(double subsetFactor) {
+        int sum = 0;
+        for(int i = 0; i< this.variables.size(); i++){
+            sum += this.variables.get(i).getProfitto();
+            if(sum > Math.abs(this.setUpCost)*subsetFactor)
+                return i+1;
+        }
+        return this.variables.size()+1;
     }
 
     @Override

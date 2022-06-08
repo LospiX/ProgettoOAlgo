@@ -10,6 +10,8 @@ import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -73,8 +75,9 @@ public class Start
 		Runtime rtime = Runtime.getRuntime();
 		//rtime.gc();
 		long memory = rtime.totalMemory()-rtime.freeMemory();
-
+		var bef = Instant.now();
 		sol.setOttimoRaggiunto((int) ks.start().getObj());
+		sol.setTempoImpiegato(Duration.between(bef, Instant.now()).toMillis());
 		sol.setOttimoRilassato(ks.getOttimoRilassato());
 		sol.setNumeroFamiglie(ks.getNumOfFamilies());
 		sol.setNumeroVariabili(ks.getNumOfVariables());

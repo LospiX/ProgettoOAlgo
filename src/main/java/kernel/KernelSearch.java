@@ -44,7 +44,7 @@ public class KernelSearch {
 		bestSolution = new Solution();
 		objValues = new ArrayList<>();
 		configure(config);
-		this.problema = new ProblemaKnapSackSetup(new File(instPath), sorter);
+		this.problema = new ProblemaKnapSackSetup(new File(instPath), config);
 		config.setCapZaino(this.problema.getCapZaino());
 
 	}
@@ -87,13 +87,10 @@ public class KernelSearch {
 		model.buildModel();
 		model.solve(); // SOLVE OF RELAXATION
 		ottimoRilassato = model.getOttimo();
-		problema.setUp(model);
+		problema.setUp(model); // set Xr and Rc of variables and sort families; generate subsets of families
 		List<Item> items = new ArrayList<>();
-		problema.getFamilies().forEach(fam -> fam.getVariables().forEach(it -> items.add(it)));
+		problema.getFamilies().forEach(fam -> items.addAll(fam.getVariables()));
 		return items;
-
-		//familyVariablesOrdered.forEach(fv -> kernel.addItem(fv)); // Add everyFamilyVar To Kernel set
-		//familyVariablesOrdered.forEach(fv -> items.add(fv)); // Add everyFamilyVar To Items
 	}
 	private List<Item> buildItems() {
 		Model model = new Model(instPath, logPath, config.getTimeLimit(), config, true); // time limit equal to the global time limit

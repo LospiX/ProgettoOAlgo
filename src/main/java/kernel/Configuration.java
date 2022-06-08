@@ -15,6 +15,7 @@ public class Configuration
 	private int timeLimitBucket;
 	private int capacityZaino;
 	private int bucketResolver;
+	private double subsetFactor;
 
 	public BucketBuilder getBucketBuilder()
 	{
@@ -149,5 +150,12 @@ public class Configuration
 	public int getBucketResolver()
 	{
 		return bucketResolver;
+	}
+
+	public void setSubsetFactor(double subsetFactor) {
+		this.subsetFactor = subsetFactor;
+	}
+	public double getSubsetFactor() {
+		return subsetFactor;
 	}
 }
