@@ -64,7 +64,7 @@ public class KernelSearch {
 	
 	public Solution start() {
 		startTime = Instant.now();
-		callback = new CustomCallback(logPath, startTime);
+//		callback = new CustomCallback(logPath, startTime);
 		this.items = xpBuildItems();
 //		this.items= buildItems();
 //		sorter.sort(items);
@@ -129,7 +129,7 @@ public class KernelSearch {
 		
 		List<Item> toDisable = items.stream().filter(it -> !kernel.contains(it)).collect(Collectors.toList());
 		model.disableItems(toDisable);
-		model.setCallback(callback);
+//		model.setCallback(callback);
 		model.solve();
 		if(model.hasSolution()) {
 			bestSolution = model.getSolution();
@@ -164,7 +164,7 @@ public class KernelSearch {
 
 	private void mySolveBuckets(Model mdl) {
 		this.problema.buildFirstMarketList();
-		Bucket b = this.problema.genNextBucket(mdl, true);
+		Bucket b = this.problema.genNextBucket(mdl, true, this.kernel.size());
 		int count = 0;
 		while (b!= null) {
 			System.out.println("\n\n\n\n\t\t** Solving bucket "+count++ +" **\n");
@@ -189,7 +189,7 @@ public class KernelSearch {
 				model.readSolution(bestSolution);
 			}
 
-			model.setCallback(callback);
+//			model.setCallback(callback);
 			model.solve();
 
 			if(model.hasSolution()) {
@@ -208,7 +208,7 @@ public class KernelSearch {
 				System.out.println("Treshold superata?");
 				return;
 			}
-			b = this.problema.genNextBucket(model, false);
+			b = this.problema.genNextBucket(model, false, this.kernel.size());
 		}
 	}
 	private void defaultBucketSolver() {
@@ -235,7 +235,7 @@ public class KernelSearch {
 				model.readSolution(bestSolution);
 			}
 			
-			model.setCallback(callback);
+//			model.setCallback(callback);
 			model.solve();
 			
 			if(model.hasSolution()) {

@@ -72,10 +72,10 @@ public class Famiglia implements Item {
         if(subSet.size()>0)
             this.subsetItems.add(new SubSet(subSet));
         System.out.println("Famiglia: "+this.id+ "   contains: "+this.subsetItems.stream().map(e -> e.getDim()).mapToInt(Integer::intValue).sum()+" items in "+this.subsetItems.size()+ " subsets.");
-        for(var v1 : this.subsetItems){
+        /*for(var v1 : this.subsetItems){
             System.out.println("\t subset dim: "+v1.getDim());
             v1.getSet().forEach(v2 -> System.out.println("Var:: "+v2 + "  prof: "+v2.getProfitto()+ "  peso: "+v2.getPeso()+ "  rapporto: "+v2.getRapportoProfPeso()));
-        }
+        }*/
     }
 
     private int calcNumVarToBeatSetupCost(double subsetFactor) {

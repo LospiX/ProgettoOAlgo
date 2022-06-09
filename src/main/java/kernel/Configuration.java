@@ -16,6 +16,9 @@ public class Configuration
 	private int capacityZaino;
 	private int bucketResolver;
 	private double subsetFactor;
+	private double kernelSetDimension;
+	private double bucketDimension;
+	private int numberOfTries;
 
 	public BucketBuilder getBucketBuilder()
 	{
@@ -157,5 +160,29 @@ public class Configuration
 	}
 	public double getSubsetFactor() {
 		return subsetFactor;
+	}
+
+	public void setKernelSetDimension(double kerDim) {
+		this.kernelSetDimension = kerDim;
+	}
+
+	public double getKernelSetDimension() {
+		return kernelSetDimension;
+	}
+
+	public void setBucketDimension(double bucketDim) {
+		this.bucketDimension= bucketDim;
+	}
+
+	public double getBucketDimension() {
+		return bucketDimension;
+	}
+
+	public void setNumberOfTries(int numTries) {
+		this.numberOfTries = numTries;
+	}
+
+	public int getNumberOfTries() {
+		return numberOfTries;
 	}
 }

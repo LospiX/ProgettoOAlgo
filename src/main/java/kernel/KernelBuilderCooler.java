@@ -19,14 +19,6 @@ public class KernelBuilderCooler implements KernelBuilder {
        this.consumoZaino = 0;
         int cnt = 0;
         while(!zainoRiempito) {
-            /*if (cnt == 0) {
-                for (Famiglia f : (List<Famiglia>) families) {
-                    ker.addItem(f);
-                    consumoZaino+= f.getPeso();
-                    // System.out.println("Subset dim :: "+ f.getNextSubset().size());
-                    this.addSubset(f.getNextSubset());
-                }
-            } else {*/
             for (Famiglia f : (List<Famiglia>) families) {
                 if (cnt == 0) { // Solo per la prima iterazione
                     ker.addItem(f); // Aggiungo tutte le famiglie al KerSet
@@ -37,13 +29,11 @@ public class KernelBuilderCooler implements KernelBuilder {
                         consumoZaino += f.getPeso(); // Aggiungo tutti i pesi delle famiglie al KerSet
                 }
             }
-//            }
-            System.out.println("CCAAAP :: "+config.getCapZaino());
-            if(consumoZaino > config.getCapZaino()) {
+            if(consumoZaino > config.getCapZaino()*config.getKernelSetDimension()) {
                 zainoRiempito = true;
             }
             cnt++;
-            System.out.println("Consumo Totale iterazione :: " + cnt+"   valore :: "+consumoZaino);
+            System.out.println("Iterazione :: " + cnt+"   Consumo Zaino :: "+consumoZaino+"/"+config.getCapZaino()*config.getKernelSetDimension());
         }
         return ker;
     }

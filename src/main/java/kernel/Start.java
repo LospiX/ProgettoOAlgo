@@ -48,6 +48,8 @@ public class Start
 			solution.setNomeIstanza(nomeIstanza);
 			solution.setOttimoAtteso((int) getOptimum("/risultati/KPS_results.CSV", nomeIstanza));
 			var pth = exp.retrieveFiles(ist);
+			System.out.println("Start.main        line: 51");   /*  TAG: #newCmmt */
+			pth.forEach(e -> System.out.println(e));
 			ks = new KernelSearch(pth.get(0).getPath(), pth.get(1).getPath(), pathlog, config);
 			System.out.println("Inizio ad eseguire il KernelSearch sull'istanza chiamata: "+ist[0]+"  "+ist[1]);
 			runKerSearch(ks, solution);

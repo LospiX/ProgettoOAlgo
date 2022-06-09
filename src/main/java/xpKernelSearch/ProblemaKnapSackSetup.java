@@ -18,8 +18,6 @@ import java.util.stream.Collectors;
 
 public class ProblemaKnapSackSetup {
 
-    private final static int NUMBEROFTENTATIVI = 3;
-    private static final int BUCKETDIM = 850;
     private final List<Famiglia> families = new ArrayList<>();;
     private final int capacity;
     private final int numOfFamilies;
@@ -29,6 +27,7 @@ public class ProblemaKnapSackSetup {
     private final int[] costs;
     private final int[] costsOfFamilies;
     private final double subsetFactor;
+    private final int numberOfTentativi;
     private String[] varX;
     private String[] varY;
     private int numOfItems;
@@ -38,6 +37,7 @@ public class ProblemaKnapSackSetup {
 
     private List<Candidato> lastSubmittedCandidati = new  ArrayList<>();
     private final LinkedList<Candidato> annaList = new LinkedList<>();
+    private final double bucketDimFactor;
 
     public ProblemaKnapSackSetup(File f, Configuration config) throws IOException {
         List<String> lines = this.extractFromFile(f.toPath());
@@ -59,6 +59,8 @@ public class ProblemaKnapSackSetup {
         this.buildVariablesNames();
         this.itemFamSorter = config.getItemSorter();
         this.subsetFactor = config.getSubsetFactor();
+        this.numberOfTentativi = config.getNumberOfTries();
+        this.bucketDimFactor = config.getBucketDimension();
         this.buildFamilies();
     }
     public void buildFamilies() {
@@ -172,19 +174,20 @@ public class ProblemaKnapSackSetup {
         return this.capacity;
     }
 
-    public Bucket genNextBucket(Model model, boolean firstTime){
-        System.out.println("GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG");
+    public Bucket genNextBucket(Model model, boolean firstTime, int dimKerSet){
         if(firstTime == false ) this.updateMarketList(model);// Update della Market List
         List<Candidato> newCandidati = new ArrayList<>();
         int dim= 0;
         Candidato c;
         System.out.println("MARKET LIST DIM :: "+this.annaList.size());
-        while (dim < BUCKETDIM && this.annaList.size()>0) {
+        while (dim < Math.floor(this.bucketDimFactor*dimKerSet) && this.annaList.size()>0) {
             c= this.annaList.pollFirst();
             System.out.println("BucketSize:  "+dim);
             dim+= c.getDim();
             newCandidati.add(c);
         }
+        System.out.println("Max bucket dim: "+bucketDimFactor*dimKerSet);
+        System.out.println("BucketDimension: "+dim  );
         this.lastSubmittedCandidati = newCandidati;
         if(newCandidati.size()> 0)
             return this.fromCandidatiToBucket(newCandidati);
@@ -231,7 +234,7 @@ public class ProblemaKnapSackSetup {
                 System.out.println("Candidato ha failed");
                 c.setFailed();
                 if(c.hasFailed() == true){ // if the last time failed
-                    if(c.getNumOfFails() < ProblemaKnapSackSetup.NUMBEROFTENTATIVI) {
+                    if(c.getNumOfFails() < this.numberOfTentativi) {
                         c.addSubSet();
                         this.annaList.addLast(c);
                     }
