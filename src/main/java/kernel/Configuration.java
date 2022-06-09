@@ -20,6 +20,18 @@ public class Configuration
 	private double bucketDimension;
 	private int numberOfTries;
 
+	private double decreasing_percentage;
+
+	private double min_percentage_dim;
+
+	public int getItemBuilder() { return itemBuilder;
+	}
+
+	public void setItemBuilder(int itemBuilder) { this.itemBuilder = itemBuilder;
+	}
+
+	private int itemBuilder;
+
 	public BucketBuilder getBucketBuilder()
 	{
 		return bucketBuilder;
@@ -79,6 +91,10 @@ public class Configuration
 	{
 		return timeLimitKernel;
 	}
+
+	public double getDecreasingPercentage() { return decreasing_percentage; }
+
+	public void setDecreasingPercentage(double decreasing_percentage) { this.decreasing_percentage = decreasing_percentage; }
 
 	public void setBucketBuilder(BucketBuilder bucketBuilder)
 	{
@@ -185,4 +201,8 @@ public class Configuration
 	public int getNumberOfTries() {
 		return numberOfTries;
 	}
+
+	public void setMinPercentage(double min_percentage_dim) { this.min_percentage_dim = min_percentage_dim; }
+
+	public double getMInPercentageDim() { return this.min_percentage_dim; }
 }

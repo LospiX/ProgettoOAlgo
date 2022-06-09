@@ -39,6 +39,10 @@ public class ProblemaKnapSackSetup {
     private final LinkedList<Candidato> annaList = new LinkedList<>();
     private final double bucketDimFactor;
 
+    private final double decreasing_percentage;
+
+    private final double min_percentage;
+
     public ProblemaKnapSackSetup(File f, Configuration config) throws IOException {
         List<String> lines = this.extractFromFile(f.toPath());
         this.numOfItems = Integer.parseInt(lines.get(0));
@@ -61,6 +65,8 @@ public class ProblemaKnapSackSetup {
         this.subsetFactor = config.getSubsetFactor();
         this.numberOfTentativi = config.getNumberOfTries();
         this.bucketDimFactor = config.getBucketDimension();
+        this.decreasing_percentage = config.getDecreasingPercentage();
+        this.min_percentage = config.getMInPercentageDim();
         this.buildFamilies();
     }
     public void buildFamilies() {
@@ -269,7 +275,7 @@ public class ProblemaKnapSackSetup {
         this.sortFamilies();
         families.forEach(f -> {
             f.sortVariables();
-            f.generateSubsets(this.subsetFactor);
+            f.generateSubsets(this.subsetFactor, this.decreasing_percentage, this.min_percentage);
         });
     }
 }

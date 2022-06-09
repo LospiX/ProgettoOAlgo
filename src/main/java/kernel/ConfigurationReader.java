@@ -56,7 +56,10 @@ public class ConfigurationReader {
 				case "SUBSETFACTOR" -> config.setSubsetFactor(Double.parseDouble(valToParse));
 				case "KERNELSETDIMENSION" -> config.setKernelSetDimension(Double.parseDouble(valToParse));
 				case "BUCKETDIMENSION" -> config.setBucketDimension(Double.parseDouble(valToParse));
+				case "DECREASINGPERCENTAGE" -> config.setDecreasingPercentage(Double.parseDouble(valToParse));
+				case "MINSUBSETDIMPERCENTAGE" -> config.setMinPercentage(Double.parseDouble(valToParse));
 				case "NUMBEROFTRIES" -> config.setNumberOfTries(Integer.parseInt(valToParse));
+				case "ITEMBUILDER" -> config.setItemBuilder(Integer.parseInt(valToParse));
 			}
         }
         return config;

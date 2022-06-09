@@ -36,6 +36,8 @@ public class KernelSearch {
 	private Instant startTime;
 
 	private int bucketSolver;
+
+	private int itemBuilder;
 	
 	public KernelSearch(String instPath, String instPathMps, String logPath, Configuration config) throws IOException {
 		this.instPath = instPathMps;
@@ -59,13 +61,14 @@ public class KernelSearch {
 		tlimKernel = config.getTimeLimitKernel();
 		numIterations = config.getNumIterations();
 		tlimBucket = config.getTimeLimitBucket();
+		itemBuilder = config.getItemBuilder();
 
 	}
 	
 	public Solution start() {
 		startTime = Instant.now();
 //		callback = new CustomCallback(logPath, startTime);
-		this.items = xpBuildItems();
+		this.items = itemBuilder();
 //		this.items= buildItems();
 //		sorter.sort(items);
 
@@ -92,7 +95,7 @@ public class KernelSearch {
 		problema.getFamilies().forEach(fam -> items.addAll(fam.getVariables()));
 		return items;
 	}
-	private List<Item> buildItems() {
+	private List<Item> defaultBuildItem() {
 		Model model = new Model(instPath, logPath, config.getTimeLimit(), config, true); // time limit equal to the global time limit
 		model.buildModel();
 		model.solve(); // SOLVE OF RELAXATION
@@ -267,5 +270,17 @@ public class KernelSearch {
 	public List<List<Double>> getObjValues()
 	{
 		return objValues;
+	}
+
+	public List<Item> itemBuilder(){
+		switch(itemBuilder){
+			case 0:
+				return defaultBuildItem();
+			case 1:
+				return xpBuildItems();
+			default:
+				System.out.println("builder non riconosciuto");
+				return null;
+		}
 	}
 }
