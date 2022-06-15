@@ -1,4 +1,8 @@
 package kernel;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Configuration
 {
 	private int numThreads;
@@ -205,4 +209,17 @@ public class Configuration
 	public void setMinPercentage(double min_percentage_dim) { this.min_percentage_dim = min_percentage_dim; }
 
 	public double getMInPercentageDim() { return this.min_percentage_dim; }
+
+
+
+	/*
+        sorter
+        numiteration
+        subsetfactor
+        kernelsetdimension
+        bucketdimension
+        numbersoftries
+        decreasingpercentage
+        minsubsetdimpercentage
+         */
 }

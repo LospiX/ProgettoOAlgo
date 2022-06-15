@@ -31,6 +31,7 @@ public class Start
 		String pathlog  =  Path.of(jarDirHome.toAbsolutePath().toString(), "log").toString();
 		String pathConfig  =  Path.of(jarDirHome.toAbsolutePath().toString(), "config.txt").toString();
 		Configuration config = ConfigurationReader.read(pathConfig);
+		SolutionWriter solwriter = new SolutionWriter(pathConfig);
 		List<OutputSolution> solutions = new ArrayList<>();
 
 		Explorer exp = new Explorer(".\\istanze");
@@ -64,6 +65,11 @@ public class Start
 		}
 		solutions.forEach(s -> {
 			System.out.println("Soluzione istanza "+ "\n\t" + s.getCsvRes());
+			try {
+				solwriter.write_solution(s);
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
 		});
 		// TODO: Guarda perchè prob3_050_090_110_005_015_01 è cursata
 	}

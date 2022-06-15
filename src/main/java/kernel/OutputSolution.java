@@ -1,6 +1,12 @@
 package kernel;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class OutputSolution {
     private String nomeIstanza;
@@ -13,6 +19,8 @@ public class OutputSolution {
     private long tempoImpiegato;
     private double risorseUtilizzate;
     private int mod;
+
+    private String header;
 
     public OutputSolution(){
     }
@@ -79,7 +87,13 @@ public class OutputSolution {
 
         return res;*/
     }
-    public static String getHeader(List<String> lines) {
+    public static String getHeader(String path) {
+        List<String> lines = new ArrayList<>();
+        try (BufferedReader br = Files.newBufferedReader(Paths.get(path))) {
+            lines = br.lines().collect(Collectors.toList());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         String header = "";
         for (String line : lines) {
             header += switch (line.split("\\s+")[0]) {
