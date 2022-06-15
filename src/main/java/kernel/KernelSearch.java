@@ -283,4 +283,8 @@ public class KernelSearch {
 				return null;
 		}
 	}
+
+	public int getNumeroIterazioni() {
+		return this.problema.getNumeroDiIterazioni();
+	}
 }

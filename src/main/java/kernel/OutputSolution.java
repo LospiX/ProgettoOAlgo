@@ -15,10 +15,9 @@ public class OutputSolution {
     private double ottimoRilassato;
     private int ottimoAtteso;
     private int ottimoRaggiunto;
-    private double scarto;
     private long tempoImpiegato;
-    private double risorseUtilizzate;
-    private int mod;
+//    private double risorseUtilizzate;
+    private int numeroIterazioni;
 
     private String header;
 
@@ -52,12 +51,12 @@ public class OutputSolution {
         this.tempoImpiegato = tempoImpiegato;
     }
 
-    public void setRisorseUtilizzate(double risorseUtilizzate) {
-        this.risorseUtilizzate = risorseUtilizzate;
-    }
+//    public void setRisorseUtilizzate(double risorseUtilizzate) {
+//        this.risorseUtilizzate = risorseUtilizzate;
+//    }
 
-    public void setMod(int mod) {
-        this.mod = mod;
+    public void setNumeroIterazioni(int mod) {
+        this.numeroIterazioni = mod;
     }
     private double calcScarto(){
        return ((double) this.ottimoAtteso-(double) this.ottimoRaggiunto)/(double) this.ottimoAtteso*100.0;
@@ -72,14 +71,15 @@ public class OutputSolution {
         res+= String.valueOf(this.ottimoAtteso)+";";
         res+= String.valueOf(this.ottimoRaggiunto)+";";
         res+= String.valueOf(this.calcScarto())+";";
-        res+= String.valueOf(this.tempoImpiegato)+";";/*
+        res+= String.valueOf(this.tempoImpiegato)+";";
+        res+= String.valueOf(this.numeroIterazioni)+";";/*
         res+= String.valueOf(this.risorseUtilizzate)+";";*/
         return res;
     }
 
 
     public static String getCsvSolutionHeader() {
-        return "nomeIstanza;numeroFamiglie;numeroVariabili;ottimoRilassato;ottimoAtteso;ottimoRaggiunto;scarto;tempoImpiegato;risorseUtilizzate;mod";
+        return "nomeIstanza;numeroFamiglie;numeroVariabili;ottimoRilassato;ottimoAtteso;ottimoRaggiunto;scarto;tempoImpiegato;numeroIterazioni";
         /*String res = "";
         Arrays.stream(OutputSolution.class.getDeclaredFields()).forEach(f -> {
             System.out.print(f.getName()+";");

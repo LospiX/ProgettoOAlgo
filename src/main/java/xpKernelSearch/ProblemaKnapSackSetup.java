@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class ProblemaKnapSackSetup {
-
+    private int numeroDiIterazioni = 0;
     private final List<Famiglia> families = new ArrayList<>();;
     private final int capacity;
     private final int numOfFamilies;
@@ -181,6 +181,7 @@ public class ProblemaKnapSackSetup {
     }
 
     public Bucket genNextBucket(Model model, boolean firstTime, int dimKerSet){
+        this.numeroDiIterazioni++;
         if(firstTime == false ) this.updateMarketList(model);// Update della Market List
         List<Candidato> newCandidati = new ArrayList<>();
         int dim= 0;
@@ -277,5 +278,9 @@ public class ProblemaKnapSackSetup {
             f.sortVariables();
             f.generateSubsets(this.subsetFactor, this.decreasing_percentage, this.min_percentage);
         });
+    }
+
+    public int getNumeroDiIterazioni(){
+        return numeroDiIterazioni;
     }
 }

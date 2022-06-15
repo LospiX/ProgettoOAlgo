@@ -58,9 +58,8 @@ public class Start
 			solution.setNomeIstanza(nomeIstanza);
 			solution.setOttimoAtteso((int) getOptimum("/risultati/KPS_results.CSV", nomeIstanza));
 			var pth = exp.retrieveFiles(ist);
-			ks = new KernelSearch(pth.get(0).getPath(), pth.get(1).getPath(), pathlog, config);
 			System.out.println("Inizio ad eseguire il KernelSearch sull'istanza chiamata: "+ist[0]+"  "+ist[1]);
-			runKerSearch(ks, solution);
+			runKerSearch(pth, pathlog, config, solution);
 			solutions.add(solution);
 		}
 		solutions.forEach(s -> {
@@ -74,18 +73,21 @@ public class Start
 		// TODO: Guarda perchè prob3_050_090_110_005_015_01 è cursata
 	}
 
-	private static void runKerSearch(KernelSearch ks, OutputSolution sol) {
+	private static void runKerSearch(List<File> pth, String pathlog, Configuration config, OutputSolution sol) throws IOException {
 		Runtime rtime = Runtime.getRuntime();
 		//rtime.gc();
 		long memory = rtime.totalMemory()-rtime.freeMemory();
 		var bef = Instant.now();
+		KernelSearch ks = new KernelSearch(pth.get(0).getPath(), pth.get(1).getPath(), pathlog, config);
 		sol.setOttimoRaggiunto((int) ks.start().getObj());
-		sol.setTempoImpiegato(Duration.between(bef, Instant.now()).toMillis());
+		var timeBetween = Duration.between(bef, Instant.now()).toMillis();
+		sol.setTempoImpiegato(timeBetween);
 		sol.setOttimoRilassato(ks.getOttimoRilassato());
 		sol.setNumeroFamiglie(ks.getNumOfFamilies());
 		sol.setNumeroVariabili(ks.getNumOfVariables());
-		System.out.println("USED MEMORY IN BYTES " +memory);
-		System.out.println("USED MEMORY IN MEGABYTES " +memory/(1024L*1024L));
+		sol.setNumeroIterazioni(ks.getNumeroIterazioni());
+		/*System.out.println("USED MEMORY IN BYTES " +memory);
+		System.out.println("USED MEMORY IN MEGABYTES " +memory/(1024L*1024L));*/
 	}
 
 	public static long getOptimum(String resPath, String nomeIstanza){
