@@ -185,7 +185,7 @@ public class ProblemaKnapSackSetup {
         List<Candidato> newCandidati = new ArrayList<>();
         int dim= 0;
         Candidato c;
-        System.out.println("MARKET LIST DIM :: "+this.annaList.size());
+        System.out.println("ANNA LIST DIM :: "+this.annaList.size());
         while (dim < Math.floor(this.bucketDimFactor*dimKerSet) && this.annaList.size()>0) {
             c= this.annaList.pollFirst();
             System.out.println("BucketSize:  "+dim);
