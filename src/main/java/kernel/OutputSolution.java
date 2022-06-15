@@ -1,5 +1,7 @@
 package kernel;
 
+import java.util.List;
+
 public class OutputSolution {
     private String nomeIstanza;
     private int numeroFamiglie;
@@ -65,5 +67,41 @@ public class OutputSolution {
         res+= String.valueOf(this.tempoImpiegato)+";";/*
         res+= String.valueOf(this.risorseUtilizzate)+";";*/
         return res;
+    }
+
+
+    public static String getCsvSolutionHeader() {
+        return "nomeIstanza;numeroFamiglie;numeroVariabili;ottimoRilassato;ottimoAtteso;ottimoRaggiunto;scarto;tempoImpiegato;risorseUtilizzate;mod";
+        /*String res = "";
+        Arrays.stream(OutputSolution.class.getDeclaredFields()).forEach(f -> {
+            System.out.print(f.getName()+";");
+        });
+
+        return res;*/
+    }
+    public static String getHeader(List<String> lines) {
+        String header = "";
+        for (String line : lines) {
+            header += switch (line.split("\\s+")[0]) {
+                case "SORTER" -> "SORTER "+ getIntegerParam(line);
+                case "NUMITERATIONS" -> "NUMITERATIONS " + getIntegerParam(line);
+                case "NUMBEROFTRIES" -> "NUMBEROFTRIES " + getIntegerParam(line);
+
+                case "SUBSETFACTOR" -> "SUBSETFACTOR " + getDoubleParam(line);
+                case "KERNELSETDIMENSION" -> "KERNELSETDIMENSION "+ getDoubleParam(line);
+                case "BUCKETDIMENSION" -> "BUCKETDIMENSION "+ getDoubleParam(line);
+                case "DECREASINGPERCENTAGE" -> "DECREASINGPERCENTAGE "+ getDoubleParam(line);
+                case "MINSUBSETDIMPERCENTAGE" -> "MINSUBSETDIMPERCENTAGE " + getDoubleParam(line);
+                default -> "";
+            };
+        }
+        return header;
+    }
+
+    private static String getIntegerParam(String line) {
+        return line.split("\\s")[1]+"\n";
+    }
+    private static String getDoubleParam(String line) {
+        return line.split("\\s")[1]+"\n";
     }
 }
