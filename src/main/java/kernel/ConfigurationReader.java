@@ -8,9 +8,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class ConfigurationReader {
+
+	private static ArrayList<String> general_conf = new ArrayList<>();
 	public static Configuration read(String path) {
 		Configuration config = new Configuration();
-		
 		List<String> lines = new ArrayList<>();
 
         try (BufferedReader br = Files.newBufferedReader(Paths.get(path))) {
@@ -63,5 +64,30 @@ public class ConfigurationReader {
 			}
         }
         return config;
+	}
+
+	public static ArrayList<String> get_general_conf(String path){
+		List<String> lines = new ArrayList<>();
+		try (BufferedReader br = Files.newBufferedReader(Paths.get(path))) {
+			lines = br.lines().collect(Collectors.toList());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		for(String line : lines) {
+			String[] splitLine = line.split("\\s+");
+			String valToParse = splitLine[1];
+			switch(splitLine[0]) {
+				case "SORTER" -> general_conf.add(Integer.toString(Integer.parseInt(valToParse)));
+				case "NUMITERATIONS" -> general_conf.add(Integer.toString(Integer.parseInt(valToParse)));
+				case "BUCKETRESOLVER" -> general_conf.add(Integer.toString(Integer.parseInt(valToParse)));
+				case "SUBSETFACTOR" -> general_conf.add(Double.toString(Double.parseDouble(valToParse)));
+				case "KERNELSETDIMENSION" -> general_conf.add(Double.toString(Double.parseDouble(valToParse)));
+				case "BUCKETDIMENSION" -> general_conf.add(Double.toString(Double.parseDouble(valToParse)));
+				case "DECREASINGPERCENTAGE" -> general_conf.add(Double.toString(Double.parseDouble(valToParse)));
+				case "MINSUBSETDIMPERCENTAGE" -> general_conf.add(Double.toString(Double.parseDouble(valToParse)));
+				case "NUMBEROFTRIES" -> general_conf.add(Integer.toString(Integer.parseInt(valToParse)));
+			}
+		}
+		return general_conf;
 	}
 }

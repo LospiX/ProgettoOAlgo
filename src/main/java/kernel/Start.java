@@ -29,6 +29,7 @@ public class Start
 		String pathlog  =  Path.of(jarDirHome.toAbsolutePath().toString(), "log").toString();
 		String pathConfig  =  Path.of(jarDirHome.toAbsolutePath().toString(), "config.txt").toString();
 		Configuration config = ConfigurationReader.read(pathConfig);
+		SolutionWriter solwriter = new SolutionWriter(pathConfig);
 		List<OutputSolution> solutions = new ArrayList<>();
 		System.out.println("Start.class.getResource(\"/Istanze\")= "+Start.class.getResource("/Istanze"));
 		System.out.println("Start.class.getResource(\"/Istanze\toUri\")= "+Start.class.getResource("/Istanze").toURI());
@@ -57,6 +58,11 @@ public class Start
 		}
 		solutions.forEach(s -> {
 			System.out.println("Soluzione istanza "+ "\n\t" + s.getCsvRes());
+			try {
+				solwriter.write_solution(s);
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
 		});
 
 		/*
