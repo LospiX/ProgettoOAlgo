@@ -1,6 +1,7 @@
 package xpKernelSearch;
 
 import java.io.File;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -9,6 +10,11 @@ public class Explorer {
     private File root;
     public Explorer(String path) throws Exception {
         this.root= new File(path);
+        if(!this.root.isDirectory())
+            throw new Exception();
+    }
+    public Explorer(URI uri) throws Exception {
+        this.root= new File(uri);
         if(!this.root.isDirectory())
             throw new Exception();
     }

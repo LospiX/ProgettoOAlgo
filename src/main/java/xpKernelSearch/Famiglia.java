@@ -151,4 +151,11 @@ public class Famiglia implements Item {
     public void sortVariables() {
         this.variables= this.sorter.sort(this.variables);
     }
+
+    public int getIndexOfLastSubset() {
+        return this.indexOfLastSubsetSelected;
+    }
+    public int getNumOfSubsets() {
+        return this.subsetItems.size();
+    }
 }

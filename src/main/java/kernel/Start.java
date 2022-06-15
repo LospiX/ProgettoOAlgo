@@ -22,21 +22,30 @@ public class Start
 {
 	private static String CLASSPATH;
 	public static void main(String[] args) throws Exception {
+
+//		System.out.println(OutputSolution.getHeader(Files.readAllLines(Path.of(".\\config.txt"))));
 		System.out.println("Working directory ::" +System.getProperty("user.dir"));
-		/*CLASSPATH = Arrays.stream(System.getProperty("java.class.path").split(";")).filter(e -> e.endsWith("classes")|| e.endsWith(".jar")).findFirst().orElseThrow();
-		Path classPath = Path.of(CLASSPATH);*/
+		CLASSPATH = Arrays.stream(System.getProperty("java.class.path").split(";")).filter(e -> e.endsWith("classes")|| e.endsWith(".jar")).findFirst().orElseThrow();
+		Path classPath = Path.of(CLASSPATH);
 		Path jarDirHome = Path.of(System.getProperty("user.dir"));
 		String pathlog  =  Path.of(jarDirHome.toAbsolutePath().toString(), "log").toString();
 		String pathConfig  =  Path.of(jarDirHome.toAbsolutePath().toString(), "config.txt").toString();
 		Configuration config = ConfigurationReader.read(pathConfig);
 		List<OutputSolution> solutions = new ArrayList<>();
-		System.out.println("Start.class.getResource(\"/Istanze\")= "+Start.class.getResource("/Istanze"));
-		System.out.println("Start.class.getResource(\"/Istanze\toUri\")= "+Start.class.getResource("/Istanze").toURI());
-		System.out.println("Start.class.getResource(\"/Istanze\"getPath)= "+Start.class.getResource("/Istanze").toURI().getPath());
-		String pathOfIstanze = Start.class.getResource("/Istanze").toURI().getPath().substring(1); // substring to remove the leading a slash
-		System.out.println("pathOfIstanze = " + pathOfIstanze);
-		Explorer exp = new Explorer(pathOfIstanze);
 
+		Explorer exp = new Explorer(".\\istanze");
+		/*String pathOfIstanze;
+		if(Start.class.getResource("Start.class").toString().startsWith("jar")) {
+			System.out.println("The program is running as a jar");
+			exp = new Explorer(Start.class.getResource("/Istanze").toURI());
+		} else {
+			System.out.println("The program is NOT running as a jar");
+			pathOfIstanze = Start.class.getResource("/Istanze").toURI().getPath().substring(1); // substring to remove the leading a slash
+			exp = new Explorer(pathOfIstanze);
+		}*/
+		/*System.out.println("Start.class.getResource(\"/Istanze\")= "+Start.class.getResource("/Istanze"));
+		System.out.println("Start.class.getResource(\"/Istanze\toUri\")= "+Start.class.getResource("/Istanze").toURI());
+		System.out.println("Start.class.getResource(\"/Istanze\"getPath)= "+Start.class.getResource("/Istanze").toURI().getPath());*/
 		List<String[]> istanze = Arrays.stream(args)
 			.map(ist -> new String[]{ist + ".txt", ist + ".mps"})
 			.toList();
@@ -48,8 +57,6 @@ public class Start
 			solution.setNomeIstanza(nomeIstanza);
 			solution.setOttimoAtteso((int) getOptimum("/risultati/KPS_results.CSV", nomeIstanza));
 			var pth = exp.retrieveFiles(ist);
-			System.out.println("Start.main        line: 51");   /*  TAG: #newCmmt */
-			pth.forEach(e -> System.out.println(e));
 			ks = new KernelSearch(pth.get(0).getPath(), pth.get(1).getPath(), pathlog, config);
 			System.out.println("Inizio ad eseguire il KernelSearch sull'istanza chiamata: "+ist[0]+"  "+ist[1]);
 			runKerSearch(ks, solution);
@@ -58,22 +65,10 @@ public class Start
 		solutions.forEach(s -> {
 			System.out.println("Soluzione istanza "+ "\n\t" + s.getCsvRes());
 		});
-
-		/*
-		//String pathmps = ".\\Istanze\\mps\\SCmps\\test5x500-SC(3).mps";
-		String pathInstance = ".\\Istanze\\KPS_Class3\\Class3\\prob3_050_090_110_005_015_01.txt";
-//		String pathInstance = ".\\Istanze\\InstancesCorrect\\test20x10000-SC(1).txt";
-		String pathInstancemps = ".\\Istanze\\mps\\Class3Mps\\prob3_050_090_110_005_015_01.mps";
-//		String pathInstancemps = ".\\Istanze\\mps\\SCmps\\test20x10000-SC(1).mps";
-		//String pathmps = ".\\Istanze\\mps\\Class2Mps\\prob2_100_090_110_035_045_10.mps";*/
 		// TODO: Guarda perchè prob3_050_090_110_005_015_01 è cursata
-
-
-
 	}
 
 	private static void runKerSearch(KernelSearch ks, OutputSolution sol) {
-//		System.out.println("BEST SOLUTION:: "+ks.start().getObj());
 		Runtime rtime = Runtime.getRuntime();
 		//rtime.gc();
 		long memory = rtime.totalMemory()-rtime.freeMemory();

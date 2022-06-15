@@ -36121,3 +36121,1540 @@ Coefficient statistics:
 
 User MIP start did not produce a new incumbent solution
 User MIP start violates constraint buc
+Gurobi 9.1.2 (win64) logging started Wed Jun 15 11:10:51 2022
+
+Read MPS format model from file C:\Users\Xavier\Documents\XP-Documents\UNI\Magistrale 1 anno\Optimization Algorithms\Project\target\classes\Istanze\mps\Class4Mps\prob4_030_010000_10.mps
+Reading time = 0.04 seconds
+HELLO: 10001 rows, 10030 columns, 30030 nonzeros
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 10001 rows, 10030 columns and 30030 nonzeros
+Model fingerprint: 0xf740f8e9
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+03]
+  Objective range  [1e+01, 4e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [2e+05, 2e+05]
+
+Concurrent LP optimizer: primal simplex, dual simplex, and barrier
+Showing barrier log only...
+
+Presolve time: 0.04s
+Presolved: 10001 rows, 10030 columns, 30030 nonzeros
+
+Ordering time: 0.00s
+
+Barrier statistics:
+ Dense cols : 30
+ AA' NZ     : 5.786e+03
+ Factor NZ  : 9.130e+03 (roughly 2 MBytes of memory)
+ Factor Ops : 3.632e+04 (less than 1 second per iteration)
+ Threads    : 1
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   1.43434519e+07  3.16598943e+06  1.81e+05 2.13e-13  2.50e+04     0s
+   1   7.46594362e+06  3.44012782e+06  1.07e+05 1.58e+00  1.25e+04     0s
+   2   1.95101391e+05  3.17213308e+06  1.94e+03 2.76e-11  5.65e+02     0s
+   3   7.11664342e+04  8.36402211e+05  8.12e-02 4.39e-12  8.80e+01     0s
+   4   1.26842323e+05  6.36315873e+05  0.00e+00 2.76e-12  5.86e+01     0s
+   5   1.47033510e+05  4.68140710e+05  0.00e+00 1.56e-12  3.69e+01     0s
+   6   1.69743585e+05  2.98052337e+05  0.00e+00 5.04e-13  1.48e+01     0s
+   7   1.92351150e+05  2.18044709e+05  0.00e+00 1.16e-13  2.95e+00     0s
+   8   1.99094945e+05  2.00812465e+05  0.00e+00 1.23e-13  1.98e-01     0s
+   9   1.99859776e+05  2.00088142e+05  0.00e+00 8.96e-13  2.63e-02     0s
+  10   1.99971748e+05  1.99993926e+05  0.00e+00 1.33e-10  2.55e-03     0s
+  11   1.99988813e+05  1.99989613e+05  0.00e+00 1.58e-10  9.20e-05     0s
+  12   1.99989339e+05  1.99989502e+05  0.00e+00 6.32e-10  1.87e-05     0s
+  13   1.99989453e+05  1.99989455e+05  0.00e+00 6.43e-10  2.71e-07     0s
+  14   1.99989454e+05  1.99989454e+05  0.00e+00 8.23e-11  4.77e-13     0s
+
+Barrier solved model in 14 iterations and 0.10 seconds
+Optimal objective 1.99989454e+05
+
+Crossover log...
+
+    2717 DPushes remaining with DInf 0.0000000e+00                 0s
+       0 DPushes remaining with DInf 0.0000000e+00                 0s
+
+       0 PPushes remaining with PInf 0.0000000e+00                 0s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 1.1035617e-13      0s
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+    2696    1.9998945e+05   0.000000e+00   0.000000e+00      0s
+
+Use crossover to convert LP symmetric solution to basic solution...
+Crossover log...
+
+       0 DPushes remaining with DInf 0.0000000e+00                 0s
+
+       0 PPushes remaining with PInf 0.0000000e+00                 0s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 1.5248913e-13      0s
+
+
+Solved with primal simplex
+Solved in 12811 iterations and 0.16 seconds
+Optimal objective  1.999894544e+05
+
+Gurobi 9.1.2 (win64) logging started Wed Jun 15 11:10:51 2022
+
+Read MPS format model from file C:\Users\Xavier\Documents\XP-Documents\UNI\Magistrale 1 anno\Optimization Algorithms\Project\target\classes\Istanze\mps\Class4Mps\prob4_030_010000_10.mps
+Reading time = 0.02 seconds
+HELLO: 10001 rows, 10030 columns, 30030 nonzeros
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 15678 rows, 10030 columns and 35707 nonzeros
+Model fingerprint: 0x9291bd7e
+Variable types: 0 continuous, 10030 integer (10030 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+03]
+  Objective range  [1e+01, 4e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [2e+05, 2e+05]
+Found heuristic solution: objective -0.0000000
+Presolve removed 11354 rows and 5694 columns
+Presolve time: 0.13s
+Presolved: 4324 rows, 4336 columns, 12982 nonzeros
+Variable types: 0 continuous, 4336 integer (4336 binary)
+Presolved: 4324 rows, 4336 columns, 12982 nonzeros
+
+
+Root relaxation: objective 1.990149e+05, 2477 iterations, 0.29 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 199014.873    0  311   -0.00000 199014.873      -     -    0s
+H    0     0                    186555.00000 199014.873  6.68%     -    0s
+H    0     0                    198573.00000 199014.873  0.22%     -    0s
+H    0     0                    198683.00000 199014.873  0.17%     -    0s
+H    0     0                    198693.00000 199014.873  0.16%     -    0s
+     0     0 198695.300    0  311 198693.000 198695.300  0.00%     -    1s
+     0     2 198695.300    0  311 198693.000 198695.300  0.00%     -    1s
+
+Gurobi 9.1.2 (win64) logging started Wed Jun 15 11:32:21 2022
+
+Read MPS format model from file C:\Users\Xavier\Documents\XP-Documents\UNI\Magistrale 1 anno\Optimization Algorithms\Project\target\classes\Istanze\mps\Class4Mps\prob4_030_010000_10.mps
+Reading time = 0.02 seconds
+HELLO: 10001 rows, 10030 columns, 30030 nonzeros
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 10001 rows, 10030 columns and 30030 nonzeros
+Model fingerprint: 0xf740f8e9
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+03]
+  Objective range  [1e+01, 4e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [2e+05, 2e+05]
+
+Concurrent LP optimizer: primal simplex, dual simplex, and barrier
+Showing barrier log only...
+
+Presolve time: 0.03s
+Presolved: 10001 rows, 10030 columns, 30030 nonzeros
+
+Ordering time: 0.00s
+
+Barrier statistics:
+ Dense cols : 30
+ AA' NZ     : 5.786e+03
+ Factor NZ  : 9.130e+03 (roughly 2 MBytes of memory)
+ Factor Ops : 3.632e+04 (less than 1 second per iteration)
+ Threads    : 1
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   1.43434519e+07  3.16598943e+06  1.81e+05 2.13e-13  2.50e+04     0s
+   1   7.46594362e+06  3.44012782e+06  1.07e+05 1.58e+00  1.25e+04     0s
+   2   1.95101391e+05  3.17213308e+06  1.94e+03 2.76e-11  5.65e+02     0s
+   3   7.11664342e+04  8.36402211e+05  8.12e-02 4.39e-12  8.80e+01     0s
+   4   1.26842323e+05  6.36315873e+05  0.00e+00 2.76e-12  5.86e+01     0s
+   5   1.47033510e+05  4.68140710e+05  0.00e+00 1.56e-12  3.69e+01     0s
+   6   1.69743585e+05  2.98052337e+05  0.00e+00 5.04e-13  1.48e+01     0s
+   7   1.92351150e+05  2.18044709e+05  0.00e+00 1.16e-13  2.95e+00     0s
+   8   1.99094945e+05  2.00812465e+05  0.00e+00 1.23e-13  1.98e-01     0s
+   9   1.99859776e+05  2.00088142e+05  0.00e+00 8.96e-13  2.63e-02     0s
+  10   1.99971748e+05  1.99993926e+05  0.00e+00 1.33e-10  2.55e-03     0s
+  11   1.99988813e+05  1.99989613e+05  0.00e+00 1.58e-10  9.20e-05     0s
+  12   1.99989339e+05  1.99989502e+05  0.00e+00 6.32e-10  1.87e-05     0s
+  13   1.99989453e+05  1.99989455e+05  0.00e+00 6.43e-10  2.71e-07     0s
+  14   1.99989454e+05  1.99989454e+05  0.00e+00 8.23e-11  4.77e-13     0s
+
+Barrier solved model in 14 iterations and 0.09 seconds
+Optimal objective 1.99989454e+05
+
+Crossover log...
+
+    2717 DPushes remaining with DInf 0.0000000e+00                 0s
+       0 DPushes remaining with DInf 0.0000000e+00                 0s
+
+       0 PPushes remaining with PInf 0.0000000e+00                 0s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 1.1035617e-13      0s
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+    2696    1.9998945e+05   0.000000e+00   0.000000e+00      0s
+
+Use crossover to convert LP symmetric solution to basic solution...
+Crossover log...
+
+
+Solved with primal simplex
+Solved in 12811 iterations and 0.15 seconds
+Optimal objective  1.999894544e+05
+
+Gurobi 9.1.2 (win64) logging started Wed Jun 15 11:32:21 2022
+
+Read MPS format model from file C:\Users\Xavier\Documents\XP-Documents\UNI\Magistrale 1 anno\Optimization Algorithms\Project\target\classes\Istanze\mps\Class4Mps\prob4_030_010000_10.mps
+Reading time = 0.04 seconds
+HELLO: 10001 rows, 10030 columns, 30030 nonzeros
+
+Gurobi 9.1.2 (win64) logging started Wed Jun 15 11:34:24 2022
+
+Read MPS format model from file C:\Users\Xavier\Documents\XP-Documents\UNI\Magistrale 1 anno\Optimization Algorithms\Project\target\classes\Istanze\mps\Class4Mps\prob4_030_010000_10.mps
+Reading time = 0.03 seconds
+HELLO: 10001 rows, 10030 columns, 30030 nonzeros
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 10001 rows, 10030 columns and 30030 nonzeros
+Model fingerprint: 0xf740f8e9
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+03]
+  Objective range  [1e+01, 4e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [2e+05, 2e+05]
+
+Concurrent LP optimizer: primal simplex, dual simplex, and barrier
+Showing barrier log only...
+
+Presolve time: 0.04s
+Presolved: 10001 rows, 10030 columns, 30030 nonzeros
+
+Ordering time: 0.00s
+
+Barrier statistics:
+ Dense cols : 30
+ AA' NZ     : 5.786e+03
+ Factor NZ  : 9.130e+03 (roughly 2 MBytes of memory)
+ Factor Ops : 3.632e+04 (less than 1 second per iteration)
+ Threads    : 1
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   1.43434519e+07  3.16598943e+06  1.81e+05 2.13e-13  2.50e+04     0s
+   1   7.46594362e+06  3.44012782e+06  1.07e+05 1.58e+00  1.25e+04     0s
+   2   1.95101391e+05  3.17213308e+06  1.94e+03 2.76e-11  5.65e+02     0s
+   3   7.11664342e+04  8.36402211e+05  8.12e-02 4.39e-12  8.80e+01     0s
+   4   1.26842323e+05  6.36315873e+05  0.00e+00 2.76e-12  5.86e+01     0s
+   5   1.47033510e+05  4.68140710e+05  0.00e+00 1.56e-12  3.69e+01     0s
+   6   1.69743585e+05  2.98052337e+05  0.00e+00 5.04e-13  1.48e+01     0s
+   7   1.92351150e+05  2.18044709e+05  0.00e+00 1.16e-13  2.95e+00     0s
+   8   1.99094945e+05  2.00812465e+05  0.00e+00 1.23e-13  1.98e-01     0s
+   9   1.99859776e+05  2.00088142e+05  0.00e+00 8.96e-13  2.63e-02     0s
+  10   1.99971748e+05  1.99993926e+05  0.00e+00 1.33e-10  2.55e-03     0s
+  11   1.99988813e+05  1.99989613e+05  0.00e+00 1.58e-10  9.20e-05     0s
+  12   1.99989339e+05  1.99989502e+05  0.00e+00 6.32e-10  1.87e-05     0s
+  13   1.99989453e+05  1.99989455e+05  0.00e+00 6.43e-10  2.71e-07     0s
+  14   1.99989454e+05  1.99989454e+05  0.00e+00 8.23e-11  4.77e-13     0s
+
+Barrier solved model in 14 iterations and 0.10 seconds
+Optimal objective 1.99989454e+05
+
+Crossover log...
+
+    2717 DPushes remaining with DInf 0.0000000e+00                 0s
+       0 DPushes remaining with DInf 0.0000000e+00                 0s
+
+       0 PPushes remaining with PInf 0.0000000e+00                 0s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 1.1035617e-13      0s
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+    2696    1.9998945e+05   0.000000e+00   0.000000e+00      0s
+
+Use crossover to convert LP symmetric solution to basic solution...
+Crossover log...
+
+
+Solved with primal simplex
+Solved in 12811 iterations and 0.14 seconds
+Optimal objective  1.999894544e+05
+
+Gurobi 9.1.2 (win64) logging started Wed Jun 15 11:34:25 2022
+
+Read MPS format model from file C:\Users\Xavier\Documents\XP-Documents\UNI\Magistrale 1 anno\Optimization Algorithms\Project\target\classes\Istanze\mps\Class4Mps\prob4_030_010000_10.mps
+Reading time = 0.03 seconds
+HELLO: 10001 rows, 10030 columns, 30030 nonzeros
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 15678 rows, 10030 columns and 35707 nonzeros
+Model fingerprint: 0x9291bd7e
+Variable types: 0 continuous, 10030 integer (10030 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+03]
+  Objective range  [1e+01, 4e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [2e+05, 2e+05]
+Found heuristic solution: objective -0.0000000
+Presolve removed 11354 rows and 5694 columns
+Presolve time: 0.10s
+Presolved: 4324 rows, 4336 columns, 12982 nonzeros
+Variable types: 0 continuous, 4336 integer (4336 binary)
+Presolved: 4324 rows, 4336 columns, 12982 nonzeros
+
+
+Root relaxation: objective 1.990149e+05, 2477 iterations, 0.30 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 199014.873    0  311   -0.00000 199014.873      -     -    0s
+H    0     0                    186555.00000 199014.873  6.68%     -    0s
+H    0     0                    198573.00000 199014.873  0.22%     -    0s
+H    0     0                    198683.00000 199014.873  0.17%     -    0s
+H    0     0                    198693.00000 199014.873  0.16%     -    0s
+     0     0 198695.300    0  311 198693.000 198695.300  0.00%     -    1s
+     0     2 198695.300    0  311 198693.000 198695.300  0.00%     -    1s
+
+Gurobi 9.1.2 (win64) logging started Wed Jun 15 11:44:27 2022
+
+Read MPS format model from file C:\Users\Xavier\Documents\XP-Documents\UNI\Magistrale 1 anno\Optimization Algorithms\Project\.\istanze\mps\Class4Mps\prob4_030_010000_10.mps
+Reading time = 0.02 seconds
+HELLO: 10001 rows, 10030 columns, 30030 nonzeros
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 10001 rows, 10030 columns and 30030 nonzeros
+Model fingerprint: 0xf740f8e9
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+03]
+  Objective range  [1e+01, 4e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [2e+05, 2e+05]
+
+Concurrent LP optimizer: primal simplex, dual simplex, and barrier
+Showing barrier log only...
+
+Presolve time: 0.04s
+Presolved: 10001 rows, 10030 columns, 30030 nonzeros
+
+Ordering time: 0.00s
+
+Barrier statistics:
+ Dense cols : 30
+ AA' NZ     : 5.786e+03
+ Factor NZ  : 9.130e+03 (roughly 2 MBytes of memory)
+ Factor Ops : 3.632e+04 (less than 1 second per iteration)
+ Threads    : 1
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   1.43434519e+07  3.16598943e+06  1.81e+05 2.13e-13  2.50e+04     0s
+   1   7.46594362e+06  3.44012782e+06  1.07e+05 1.58e+00  1.25e+04     0s
+   2   1.95101391e+05  3.17213308e+06  1.94e+03 2.76e-11  5.65e+02     0s
+   3   7.11664342e+04  8.36402211e+05  8.12e-02 4.39e-12  8.80e+01     0s
+   4   1.26842323e+05  6.36315873e+05  0.00e+00 2.76e-12  5.86e+01     0s
+   5   1.47033510e+05  4.68140710e+05  0.00e+00 1.56e-12  3.69e+01     0s
+   6   1.69743585e+05  2.98052337e+05  0.00e+00 5.04e-13  1.48e+01     0s
+   7   1.92351150e+05  2.18044709e+05  0.00e+00 1.16e-13  2.95e+00     0s
+   8   1.99094945e+05  2.00812465e+05  0.00e+00 1.23e-13  1.98e-01     0s
+   9   1.99859776e+05  2.00088142e+05  0.00e+00 8.96e-13  2.63e-02     0s
+  10   1.99971748e+05  1.99993926e+05  0.00e+00 1.33e-10  2.55e-03     0s
+  11   1.99988813e+05  1.99989613e+05  0.00e+00 1.58e-10  9.20e-05     0s
+  12   1.99989339e+05  1.99989502e+05  0.00e+00 6.32e-10  1.87e-05     0s
+  13   1.99989453e+05  1.99989455e+05  0.00e+00 6.43e-10  2.71e-07     0s
+  14   1.99989454e+05  1.99989454e+05  0.00e+00 8.23e-11  4.77e-13     0s
+
+Barrier solved model in 14 iterations and 0.10 seconds
+Optimal objective 1.99989454e+05
+
+Crossover log...
+
+    2717 DPushes remaining with DInf 0.0000000e+00                 0s
+       0 DPushes remaining with DInf 0.0000000e+00                 0s
+
+       0 PPushes remaining with PInf 0.0000000e+00                 0s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 1.1035617e-13      0s
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+    2696    1.9998945e+05   0.000000e+00   0.000000e+00      0s
+
+Use crossover to convert LP symmetric solution to basic solution...
+Crossover log...
+
+       0 DPushes remaining with DInf 0.0000000e+00                 0s
+
+       0 PPushes remaining with PInf 0.0000000e+00                 0s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 1.5248913e-13      0s
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+   12330    1.9998945e+05   0.000000e+00   0.000000e+00      0s
+
+Solved with primal simplex
+Solved in 12811 iterations and 0.17 seconds
+Optimal objective  1.999894544e+05
+
+Gurobi 9.1.2 (win64) logging started Wed Jun 15 11:44:27 2022
+
+Read MPS format model from file C:\Users\Xavier\Documents\XP-Documents\UNI\Magistrale 1 anno\Optimization Algorithms\Project\.\istanze\mps\Class4Mps\prob4_030_010000_10.mps
+Reading time = 0.02 seconds
+HELLO: 10001 rows, 10030 columns, 30030 nonzeros
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 15678 rows, 10030 columns and 35707 nonzeros
+Model fingerprint: 0x9291bd7e
+Variable types: 0 continuous, 10030 integer (10030 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+03]
+  Objective range  [1e+01, 4e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [2e+05, 2e+05]
+Found heuristic solution: objective -0.0000000
+Presolve removed 11354 rows and 5694 columns
+Presolve time: 0.09s
+Presolved: 4324 rows, 4336 columns, 12982 nonzeros
+Variable types: 0 continuous, 4336 integer (4336 binary)
+Presolved: 4324 rows, 4336 columns, 12982 nonzeros
+
+
+Root relaxation: objective 1.990149e+05, 2477 iterations, 0.25 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 199014.873    0  311   -0.00000 199014.873      -     -    0s
+H    0     0                    186555.00000 199014.873  6.68%     -    0s
+H    0     0                    198573.00000 199014.873  0.22%     -    0s
+H    0     0                    198683.00000 199014.873  0.17%     -    0s
+H    0     0                    198693.00000 199014.873  0.16%     -    0s
+     0     0 198695.300    0  311 198693.000 198695.300  0.00%     -    1s
+     0     2 198695.300    0  311 198693.000 198695.300  0.00%     -    1s
+
+Gurobi 9.1.2 (win64) logging started Wed Jun 15 14:47:13 2022
+
+Read MPS format model from file C:\Users\Xavier\Documents\XP-Documents\UNI\Magistrale 1 anno\Optimization Algorithms\Project\.\istanze\mps\Class4Mps\prob4_030_010000_10.mps
+Reading time = 0.04 seconds
+HELLO: 10001 rows, 10030 columns, 30030 nonzeros
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 10001 rows, 10030 columns and 30030 nonzeros
+Model fingerprint: 0xf740f8e9
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+03]
+  Objective range  [1e+01, 4e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [2e+05, 2e+05]
+
+Concurrent LP optimizer: primal simplex, dual simplex, and barrier
+Showing barrier log only...
+
+Presolve time: 0.03s
+Presolved: 10001 rows, 10030 columns, 30030 nonzeros
+
+Ordering time: 0.00s
+
+Barrier statistics:
+ Dense cols : 30
+ AA' NZ     : 5.786e+03
+ Factor NZ  : 9.130e+03 (roughly 2 MBytes of memory)
+ Factor Ops : 3.632e+04 (less than 1 second per iteration)
+ Threads    : 1
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   1.43434519e+07  3.16598943e+06  1.81e+05 2.13e-13  2.50e+04     0s
+   1   7.46594362e+06  3.44012782e+06  1.07e+05 1.58e+00  1.25e+04     0s
+   2   1.95101391e+05  3.17213308e+06  1.94e+03 2.76e-11  5.65e+02     0s
+   3   7.11664342e+04  8.36402211e+05  8.12e-02 4.39e-12  8.80e+01     0s
+   4   1.26842323e+05  6.36315873e+05  0.00e+00 2.76e-12  5.86e+01     0s
+   5   1.47033510e+05  4.68140710e+05  0.00e+00 1.56e-12  3.69e+01     0s
+   6   1.69743585e+05  2.98052337e+05  0.00e+00 5.04e-13  1.48e+01     0s
+   7   1.92351150e+05  2.18044709e+05  0.00e+00 1.16e-13  2.95e+00     0s
+   8   1.99094945e+05  2.00812465e+05  0.00e+00 1.23e-13  1.98e-01     0s
+   9   1.99859776e+05  2.00088142e+05  0.00e+00 8.96e-13  2.63e-02     0s
+  10   1.99971748e+05  1.99993926e+05  0.00e+00 1.33e-10  2.55e-03     0s
+  11   1.99988813e+05  1.99989613e+05  0.00e+00 1.58e-10  9.20e-05     0s
+  12   1.99989339e+05  1.99989502e+05  0.00e+00 6.32e-10  1.87e-05     0s
+  13   1.99989453e+05  1.99989455e+05  0.00e+00 6.43e-10  2.71e-07     0s
+  14   1.99989454e+05  1.99989454e+05  0.00e+00 8.23e-11  4.77e-13     0s
+
+Barrier solved model in 14 iterations and 0.07 seconds
+Optimal objective 1.99989454e+05
+
+Crossover log...
+
+    2717 DPushes remaining with DInf 0.0000000e+00                 0s
+       0 DPushes remaining with DInf 0.0000000e+00                 0s
+
+       0 PPushes remaining with PInf 0.0000000e+00                 0s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 1.1035617e-13      0s
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+    2696    1.9998945e+05   0.000000e+00   0.000000e+00      0s
+
+Use crossover to convert LP symmetric solution to basic solution...
+Crossover log...
+
+       0 DPushes remaining with DInf 0.0000000e+00                 0s
+
+       0 PPushes remaining with PInf 0.0000000e+00                 0s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 1.5248913e-13      0s
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+   12330    1.9998945e+05   0.000000e+00   0.000000e+00      0s
+
+Solved with primal simplex
+Solved in 12811 iterations and 0.15 seconds
+Optimal objective  1.999894544e+05
+
+Gurobi 9.1.2 (win64) logging started Wed Jun 15 14:47:13 2022
+
+Read MPS format model from file C:\Users\Xavier\Documents\XP-Documents\UNI\Magistrale 1 anno\Optimization Algorithms\Project\.\istanze\mps\Class4Mps\prob4_030_010000_10.mps
+Reading time = 0.02 seconds
+HELLO: 10001 rows, 10030 columns, 30030 nonzeros
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 15678 rows, 10030 columns and 35707 nonzeros
+Model fingerprint: 0x9291bd7e
+Variable types: 0 continuous, 10030 integer (10030 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+03]
+  Objective range  [1e+01, 4e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [2e+05, 2e+05]
+Found heuristic solution: objective -0.0000000
+Presolve removed 11354 rows and 5694 columns
+Presolve time: 0.09s
+Presolved: 4324 rows, 4336 columns, 12982 nonzeros
+Variable types: 0 continuous, 4336 integer (4336 binary)
+Presolved: 4324 rows, 4336 columns, 12982 nonzeros
+
+
+Root relaxation: objective 1.990149e+05, 2477 iterations, 0.23 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 199014.873    0  311   -0.00000 199014.873      -     -    0s
+H    0     0                    186555.00000 199014.873  6.68%     -    0s
+H    0     0                    198573.00000 199014.873  0.22%     -    0s
+H    0     0                    198683.00000 199014.873  0.17%     -    0s
+H    0     0                    198693.00000 199014.873  0.16%     -    0s
+     0     0 198695.300    0  311 198693.000 198695.300  0.00%     -    0s
+     0     2 198695.300    0  311 198693.000 198695.300  0.00%     -    1s
+
+Gurobi 9.1.2 (win64) logging started Wed Jun 15 14:47:40 2022
+
+Read MPS format model from file C:\Users\Xavier\Documents\XP-Documents\UNI\Magistrale 1 anno\Optimization Algorithms\Project\.\istanze\mps\Class4Mps\prob4_030_010000_10.mps
+Reading time = 0.03 seconds
+HELLO: 10001 rows, 10030 columns, 30030 nonzeros
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 10001 rows, 10030 columns and 30030 nonzeros
+Model fingerprint: 0xf740f8e9
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+03]
+  Objective range  [1e+01, 4e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [2e+05, 2e+05]
+
+Concurrent LP optimizer: primal simplex, dual simplex, and barrier
+Showing barrier log only...
+
+Presolve time: 0.03s
+Presolved: 10001 rows, 10030 columns, 30030 nonzeros
+
+Ordering time: 0.00s
+
+Barrier statistics:
+ Dense cols : 30
+ AA' NZ     : 5.786e+03
+ Factor NZ  : 9.130e+03 (roughly 2 MBytes of memory)
+ Factor Ops : 3.632e+04 (less than 1 second per iteration)
+ Threads    : 1
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   1.43434519e+07  3.16598943e+06  1.81e+05 2.13e-13  2.50e+04     0s
+   1   7.46594362e+06  3.44012782e+06  1.07e+05 1.58e+00  1.25e+04     0s
+   2   1.95101391e+05  3.17213308e+06  1.94e+03 2.76e-11  5.65e+02     0s
+   3   7.11664342e+04  8.36402211e+05  8.12e-02 4.39e-12  8.80e+01     0s
+   4   1.26842323e+05  6.36315873e+05  0.00e+00 2.76e-12  5.86e+01     0s
+   5   1.47033510e+05  4.68140710e+05  0.00e+00 1.56e-12  3.69e+01     0s
+   6   1.69743585e+05  2.98052337e+05  0.00e+00 5.04e-13  1.48e+01     0s
+   7   1.92351150e+05  2.18044709e+05  0.00e+00 1.16e-13  2.95e+00     0s
+   8   1.99094945e+05  2.00812465e+05  0.00e+00 1.23e-13  1.98e-01     0s
+   9   1.99859776e+05  2.00088142e+05  0.00e+00 8.96e-13  2.63e-02     0s
+  10   1.99971748e+05  1.99993926e+05  0.00e+00 1.33e-10  2.55e-03     0s
+  11   1.99988813e+05  1.99989613e+05  0.00e+00 1.58e-10  9.20e-05     0s
+  12   1.99989339e+05  1.99989502e+05  0.00e+00 6.32e-10  1.87e-05     0s
+  13   1.99989453e+05  1.99989455e+05  0.00e+00 6.43e-10  2.71e-07     0s
+  14   1.99989454e+05  1.99989454e+05  0.00e+00 8.23e-11  4.77e-13     0s
+
+Barrier solved model in 14 iterations and 0.08 seconds
+Optimal objective 1.99989454e+05
+
+Crossover log...
+
+    2717 DPushes remaining with DInf 0.0000000e+00                 0s
+       0 DPushes remaining with DInf 0.0000000e+00                 0s
+
+       0 PPushes remaining with PInf 0.0000000e+00                 0s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 1.1035617e-13      0s
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+    2696    1.9998945e+05   0.000000e+00   0.000000e+00      0s
+
+Use crossover to convert LP symmetric solution to basic solution...
+Crossover log...
+
+
+Solved with primal simplex
+Solved in 12811 iterations and 0.15 seconds
+Optimal objective  1.999894544e+05
+
+Gurobi 9.1.2 (win64) logging started Wed Jun 15 14:47:40 2022
+
+Read MPS format model from file C:\Users\Xavier\Documents\XP-Documents\UNI\Magistrale 1 anno\Optimization Algorithms\Project\.\istanze\mps\Class4Mps\prob4_030_010000_10.mps
+Reading time = 0.03 seconds
+HELLO: 10001 rows, 10030 columns, 30030 nonzeros
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 15678 rows, 10030 columns and 35707 nonzeros
+Model fingerprint: 0x9291bd7e
+Variable types: 0 continuous, 10030 integer (10030 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+03]
+  Objective range  [1e+01, 4e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [2e+05, 2e+05]
+Found heuristic solution: objective -0.0000000
+Presolve removed 11354 rows and 5694 columns
+Presolve time: 0.09s
+Presolved: 4324 rows, 4336 columns, 12982 nonzeros
+Variable types: 0 continuous, 4336 integer (4336 binary)
+Presolved: 4324 rows, 4336 columns, 12982 nonzeros
+
+
+Root relaxation: objective 1.990149e+05, 2477 iterations, 0.21 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 199014.873    0  311   -0.00000 199014.873      -     -    0s
+H    0     0                    186555.00000 199014.873  6.68%     -    0s
+H    0     0                    198573.00000 199014.873  0.22%     -    0s
+H    0     0                    198683.00000 199014.873  0.17%     -    0s
+H    0     0                    198693.00000 199014.873  0.16%     -    0s
+     0     0 198695.300    0  311 198693.000 198695.300  0.00%     -    0s
+     0     2 198695.300    0  311 198693.000 198695.300  0.00%     -    1s
+  9352  1590 198694.538  337    1 198693.000 198695.300  0.00%   4.4    5s
+
+Cutting planes:
+  Cover: 4
+
+Explored 9362 nodes (43350 simplex iterations) in 5.03 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 5: 198693 198683 198573 ... -0
+
+Time limit reached
+Best objective 1.986930000000e+05, best bound 1.986950000000e+05, gap 0.0010%
+
+Gurobi 9.1.2 (win64) logging started Wed Jun 15 14:47:46 2022
+
+Read MPS format model from file C:\Users\Xavier\Documents\XP-Documents\UNI\Magistrale 1 anno\Optimization Algorithms\Project\.\istanze\mps\Class4Mps\prob4_030_010000_10.mps
+Reading time = 0.02 seconds
+HELLO: 10001 rows, 10030 columns, 30030 nonzeros
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 15419 rows, 10030 columns and 35707 nonzeros
+Model fingerprint: 0xbaa384e5
+Variable types: 0 continuous, 10030 integer (10030 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+03]
+  Objective range  [1e+01, 4e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+05]
+
+User MIP start did not produce a new incumbent solution
+User MIP start violates constraint bucketConstraint by 1.000000000
+
+Presolve removed 10834 rows and 5432 columns
+Presolve time: 0.08s
+Presolved: 4585 rows, 4598 columns, 14024 nonzeros
+Variable types: 0 continuous, 4598 integer (4598 binary)
+Presolved: 4585 rows, 4598 columns, 14024 nonzeros
+
+
+Root relaxation: objective 1.991059e+05, 2722 iterations, 0.25 seconds
+Another try with MIP start
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 199105.894    0  433          - 199105.894      -     -    0s
+
+Cutting planes:
+  MIR: 1
+
+Explored 1 nodes (2722 simplex iterations) in 0.89 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 0
+
+Model objective exceeds cutoff
+Best objective -, best bound -1.986929999801e+05, gap -
+
+Gurobi 9.1.2 (win64) logging started Wed Jun 15 14:47:47 2022
+
+Read MPS format model from file C:\Users\Xavier\Documents\XP-Documents\UNI\Magistrale 1 anno\Optimization Algorithms\Project\.\istanze\mps\Class4Mps\prob4_030_010000_10.mps
+Reading time = 0.03 seconds
+HELLO: 10001 rows, 10030 columns, 30030 nonzeros
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 15396 rows, 10030 columns and 35707 nonzeros
+Model fingerprint: 0x6a572f2d
+Variable types: 0 continuous, 10030 integer (10030 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+03]
+  Objective range  [1e+01, 4e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+05]
+
+User MIP start did not produce a new incumbent solution
+User MIP start violates constraint bucketConstraint by 1.000000000
+
+Presolve removed 10788 rows and 5409 columns
+Presolve time: 0.08s
+Presolved: 4608 rows, 4621 columns, 14116 nonzeros
+Variable types: 0 continuous, 4621 integer (4621 binary)
+Presolved: 4608 rows, 4621 columns, 14116 nonzeros
+
+
+Root relaxation: objective 1.993414e+05, 2911 iterations, 0.29 seconds
+Another try with MIP start
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 198697.400    0    1          - 198697.400      -     -    0s
+H    0     0                    198693.00000 198697.400  0.00%     -    0s
+     0     0     cutoff    0      198693.000 198693.000  0.00%     -    0s
+
+Cutting planes:
+  Cover: 1
+
+Explored 1 nodes (2942 simplex iterations) in 0.41 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 1: 198693 
+
+Optimal solution found (tolerance 1.00e-12)
+Best objective 1.986930000000e+05, best bound 1.986930000000e+05, gap 0.0000%
+
+Gurobi 9.1.2 (win64) logging started Wed Jun 15 14:47:48 2022
+
+Read MPS format model from file C:\Users\Xavier\Documents\XP-Documents\UNI\Magistrale 1 anno\Optimization Algorithms\Project\.\istanze\mps\Class4Mps\prob4_030_010000_10.mps
+Reading time = 0.02 seconds
+HELLO: 10001 rows, 10030 columns, 30030 nonzeros
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 15388 rows, 10030 columns and 35701 nonzeros
+Model fingerprint: 0x009fa352
+Variable types: 0 continuous, 10030 integer (10030 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+03]
+  Objective range  [1e+01, 4e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+05]
+
+User MIP start did not produce a new incumbent solution
+User MIP start violates constraint bucketConstraint by 1.000000000
+
+Presolve removed 10772 rows and 5401 columns
+Presolve time: 0.09s
+Presolved: 4616 rows, 4629 columns, 14142 nonzeros
+Variable types: 0 continuous, 4629 integer (4629 binary)
+Presolved: 4616 rows, 4629 columns, 14142 nonzeros
+
+
+Root relaxation: objective 1.994813e+05, 3033 iterations, 0.28 seconds
+Another try with MIP start
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+H    0     0                    198693.00000 261016.000  31.4%     -    0s
+     0     0 199481.349    0  299 198693.000 199481.349  0.40%     -    0s
+     0     0 198698.800    0  299 198693.000 198698.800  0.00%     -    0s
+     0     0 198698.758    0  299 198693.000 198698.758  0.00%     -    1s
+     0     0 198698.758    0  299 198693.000 198698.758  0.00%     -    1s
+     0     2 198698.758    0  299 198693.000 198698.758  0.00%     -    1s
+  5636  2943     cutoff  645      198693.000 198698.758  0.00%   2.3    5s
+
+Explored 6257 nodes (16614 simplex iterations) in 5.18 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 198693 198693 
+
+Optimal solution found (tolerance 1.00e-12)
+Best objective 1.986930000000e+05, best bound 1.986930000000e+05, gap 0.0000%
+
+Gurobi 9.1.2 (win64) logging started Wed Jun 15 14:47:54 2022
+
+Read MPS format model from file C:\Users\Xavier\Documents\XP-Documents\UNI\Magistrale 1 anno\Optimization Algorithms\Project\.\istanze\mps\Class4Mps\prob4_030_010000_10.mps
+Reading time = 0.02 seconds
+HELLO: 10001 rows, 10030 columns, 30030 nonzeros
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 15378 rows, 10030 columns and 35699 nonzeros
+Model fingerprint: 0x62093131
+Variable types: 0 continuous, 10030 integer (10030 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+03]
+  Objective range  [1e+01, 4e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+05]
+
+User MIP start did not produce a new incumbent solution
+User MIP start violates constraint bucketConstraint by 1.000000000
+
+Presolve removed 10752 rows and 5391 columns
+Presolve time: 0.08s
+Presolved: 4626 rows, 4639 columns, 14180 nonzeros
+Variable types: 0 continuous, 4639 integer (4639 binary)
+Presolved: 4626 rows, 4639 columns, 14180 nonzeros
+
+
+Root relaxation: objective 1.997879e+05, 3042 iterations, 0.28 seconds
+Another try with MIP start
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+H    0     0                    198693.00000 262180.000  32.0%     -    0s
+     0     0 199787.949    0  299 198693.000 199787.949  0.55%     -    0s
+     0     0 198699.162    0  299 198693.000 198699.162  0.00%     -    0s
+     0     2 198699.162    0  299 198693.000 198699.162  0.00%     -    0s
+
+Explored 34251 nodes (45258 simplex iterations) in 4.94 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 198693 198693 
+
+Optimal solution found (tolerance 1.00e-12)
+Best objective 1.986930000000e+05, best bound 1.986930000000e+05, gap 0.0000%
+
+Gurobi 9.1.2 (win64) logging started Wed Jun 15 14:47:59 2022
+
+Read MPS format model from file C:\Users\Xavier\Documents\XP-Documents\UNI\Magistrale 1 anno\Optimization Algorithms\Project\.\istanze\mps\Class4Mps\prob4_030_010000_10.mps
+Reading time = 0.02 seconds
+HELLO: 10001 rows, 10030 columns, 30030 nonzeros
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 15379 rows, 10030 columns and 35697 nonzeros
+Model fingerprint: 0x3b554790
+Variable types: 0 continuous, 10030 integer (10030 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+03]
+  Objective range  [1e+01, 4e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+05]
+
+User MIP start did not produce a new incumbent solution
+User MIP start violates constraint bucketConstraint by 1.000000000
+
+Presolve removed 10754 rows and 5392 columns
+Presolve time: 0.09s
+Presolved: 4625 rows, 4638 columns, 14174 nonzeros
+Variable types: 0 continuous, 4638 integer (4638 binary)
+Presolved: 4625 rows, 4638 columns, 14174 nonzeros
+
+
+Root relaxation: objective 1.995812e+05, 2984 iterations, 0.28 seconds
+Another try with MIP start
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+H    0     0                    198693.00000 261372.000  31.5%     -    0s
+     0     0 199581.186    0  319 198693.000 199581.186  0.45%     -    0s
+     0     0 198698.000    0  299 198693.000 198698.000  0.00%     -    0s
+     0     0 198698.000    0  299 198693.000 198698.000  0.00%     -    1s
+     0     2 198698.000    0  299 198693.000 198698.000  0.00%     -    1s
+  6181   216 198696.000  764    1 198693.000 198698.000  0.00%   1.7    5s
+
+Explored 13792 nodes (38947 simplex iterations) in 8.81 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 198693 198693 
+
+Optimal solution found (tolerance 1.00e-12)
+Best objective 1.986930000000e+05, best bound 1.986930000000e+05, gap 0.0000%
+
+Gurobi 9.1.2 (win64) logging started Wed Jun 15 14:48:08 2022
+
+Read MPS format model from file C:\Users\Xavier\Documents\XP-Documents\UNI\Magistrale 1 anno\Optimization Algorithms\Project\.\istanze\mps\Class4Mps\prob4_030_010000_10.mps
+Reading time = 0.02 seconds
+HELLO: 10001 rows, 10030 columns, 30030 nonzeros
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 15391 rows, 10030 columns and 35696 nonzeros
+Model fingerprint: 0xd0f5f07f
+Variable types: 0 continuous, 10030 integer (10030 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+03]
+  Objective range  [1e+01, 4e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+05]
+
+User MIP start did not produce a new incumbent solution
+User MIP start violates constraint bucketConstraint by 1.000000000
+
+Presolve removed 10778 rows and 5404 columns
+Presolve time: 0.09s
+Presolved: 4613 rows, 4626 columns, 14125 nonzeros
+Variable types: 0 continuous, 4626 integer (4626 binary)
+Presolved: 4613 rows, 4626 columns, 14125 nonzeros
+
+
+Root relaxation: objective 1.995502e+05, 2955 iterations, 0.30 seconds
+Another try with MIP start
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+H    0     0                    198693.00000 260690.000  31.2%     -    0s
+     0     0 199550.197    0  319 198693.000 199550.197  0.43%     -    0s
+     0     0 198698.000    0  299 198693.000 198698.000  0.00%     -    0s
+     0     0 198698.000    0  299 198693.000 198698.000  0.00%     -    1s
+     0     2 198698.000    0  299 198693.000 198698.000  0.00%     -    1s
+  5749   369 198696.537  695    1 198693.000 198698.000  0.00%   1.2    5s
+
+Explored 13906 nodes (36900 simplex iterations) in 10.02 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 198693 198693 
+
+Optimal solution found (tolerance 1.00e-12)
+Best objective 1.986930000000e+05, best bound 1.986930000000e+05, gap 0.0000%
+
+Gurobi 9.1.2 (win64) logging started Wed Jun 15 14:48:19 2022
+
+Read MPS format model from file C:\Users\Xavier\Documents\XP-Documents\UNI\Magistrale 1 anno\Optimization Algorithms\Project\.\istanze\mps\Class4Mps\prob4_030_010000_10.mps
+Reading time = 0.02 seconds
+HELLO: 10001 rows, 10030 columns, 30030 nonzeros
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 15402 rows, 10030 columns and 35695 nonzeros
+Model fingerprint: 0x6939be89
+Variable types: 0 continuous, 10030 integer (10030 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+03]
+  Objective range  [1e+01, 4e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+05]
+
+User MIP start did not produce a new incumbent solution
+User MIP start violates constraint bucketConstraint by 1.000000000
+
+Presolve removed 10800 rows and 5415 columns
+Presolve time: 0.08s
+Presolved: 4602 rows, 4615 columns, 14080 nonzeros
+Variable types: 0 continuous, 4615 integer (4615 binary)
+Presolved: 4602 rows, 4615 columns, 14080 nonzeros
+
+
+Root relaxation: objective 1.995502e+05, 2960 iterations, 0.30 seconds
+Another try with MIP start
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+H    0     0                    198693.00000 260710.000  31.2%     -    0s
+     0     0 199550.197    0  319 198693.000 199550.197  0.43%     -    0s
+     0     0 198698.000    0  299 198693.000 198698.000  0.00%     -    0s
+     0     0 198698.000    0  299 198693.000 198698.000  0.00%     -    1s
+     0     2 198698.000    0  299 198693.000 198698.000  0.00%     -    1s
+  4902   285 198696.412  579    1 198693.000 198698.000  0.00%   1.2    5s
+
+Explored 13469 nodes (36559 simplex iterations) in 9.61 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 198693 198693 
+
+Optimal solution found (tolerance 1.00e-12)
+Best objective 1.986930000000e+05, best bound 1.986930000000e+05, gap 0.0000%
+
+Gurobi 9.1.2 (win64) logging started Wed Jun 15 14:48:29 2022
+
+Read MPS format model from file C:\Users\Xavier\Documents\XP-Documents\UNI\Magistrale 1 anno\Optimization Algorithms\Project\.\istanze\mps\Class4Mps\prob4_030_010000_10.mps
+Reading time = 0.02 seconds
+HELLO: 10001 rows, 10030 columns, 30030 nonzeros
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 15378 rows, 10030 columns and 35694 nonzeros
+Model fingerprint: 0xf7e547af
+Variable types: 0 continuous, 10030 integer (10030 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+03]
+  Objective range  [1e+01, 4e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+05]
+
+User MIP start did not produce a new incumbent solution
+User MIP start violates constraint bucketConstraint by 1.000000000
+
+Presolve removed 10752 rows and 5391 columns
+Presolve time: 0.10s
+Presolved: 4626 rows, 4639 columns, 14175 nonzeros
+Variable types: 0 continuous, 4639 integer (4639 binary)
+Presolved: 4626 rows, 4639 columns, 14175 nonzeros
+
+
+Root relaxation: objective 1.997349e+05, 2990 iterations, 0.32 seconds
+Another try with MIP start
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+H    0     0                    198693.00000 261881.000  31.8%     -    0s
+     0     0 199734.872    0  319 198693.000 199734.872  0.52%     -    0s
+     0     0 198698.600    0  319 198693.000 198698.600  0.00%     -    0s
+     0     2 198698.600    0  319 198693.000 198698.600  0.00%     -    1s
+  6194  2044 198696.827  746    1 198693.000 198698.600  0.00%   1.6    5s
+
+Explored 37276 nodes (50975 simplex iterations) in 6.22 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 198693 198693 
+
+Optimal solution found (tolerance 1.00e-12)
+Best objective 1.986930000000e+05, best bound 1.986930000000e+05, gap 0.0000%
+
+Gurobi 9.1.2 (win64) logging started Wed Jun 15 14:48:35 2022
+
+Read MPS format model from file C:\Users\Xavier\Documents\XP-Documents\UNI\Magistrale 1 anno\Optimization Algorithms\Project\.\istanze\mps\Class4Mps\prob4_030_010000_10.mps
+Reading time = 0.02 seconds
+HELLO: 10001 rows, 10030 columns, 30030 nonzeros
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 15408 rows, 10030 columns and 35692 nonzeros
+Model fingerprint: 0xc15d50e4
+Variable types: 0 continuous, 10030 integer (10030 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+03]
+  Objective range  [1e+01, 4e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+05]
+
+User MIP start did not produce a new incumbent solution
+User MIP start violates constraint bucketConstraint by 1.000000000
+
+Presolve removed 10812 rows and 5421 columns
+Presolve time: 0.10s
+Presolved: 4596 rows, 4609 columns, 14053 nonzeros
+Variable types: 0 continuous, 4609 integer (4609 binary)
+Presolved: 4596 rows, 4609 columns, 14053 nonzeros
+
+
+Root relaxation: objective 1.997039e+05, 3642 iterations, 0.33 seconds
+Another try with MIP start
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 199703.883    0  319          - 199703.883      -     -    0s
+H    0     0                    198693.00000 199703.883  0.51%     -    0s
+     0     0 198698.600    0  319 198693.000 198698.600  0.00%     -    0s
+     0     2 198698.600    0  319 198693.000 198698.600  0.00%     -    0s
+  6781  2069 198694.500  806    1 198693.000 198698.600  0.00%   1.6    5s
+ 13776  3197 198696.412  597    1 198693.000 198698.600  0.00%   2.4   10s
+
+Explored 37075 nodes (68255 simplex iterations) in 11.40 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 198693 198693 
+
+Optimal solution found (tolerance 1.00e-12)
+Best objective 1.986930000000e+05, best bound 1.986930000000e+05, gap 0.0000%
+
+Gurobi 9.1.2 (win64) logging started Wed Jun 15 14:48:47 2022
+
+Read MPS format model from file C:\Users\Xavier\Documents\XP-Documents\UNI\Magistrale 1 anno\Optimization Algorithms\Project\.\istanze\mps\Class4Mps\prob4_030_010000_10.mps
+Reading time = 0.03 seconds
+HELLO: 10001 rows, 10030 columns, 30030 nonzeros
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 15259 rows, 10030 columns and 35688 nonzeros
+Model fingerprint: 0x87cde235
+Variable types: 0 continuous, 10030 integer (10030 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+03]
+  Objective range  [1e+01, 4e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+05]
+
+User MIP start did not produce a new incumbent solution
+User MIP start violates constraint bucketConstraint by 1.000000000
+
+Presolve removed 10514 rows and 5272 columns
+Presolve time: 0.09s
+Presolved: 4745 rows, 4758 columns, 14645 nonzeros
+Variable types: 0 continuous, 4758 integer (4758 binary)
+Presolved: 4745 rows, 4758 columns, 14645 nonzeros
+
+
+Root relaxation: objective 1.997349e+05, 3958 iterations, 0.39 seconds
+Another try with MIP start
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+H    0     0                    198693.00000 269712.000  35.7%     -    0s
+     0     0 199734.872    0  319 198693.000 199734.872  0.52%     -    0s
+     0     0 198698.600    0  319 198693.000 198698.600  0.00%     -    0s
+     0     2 198698.600    0  319 198693.000 198698.600  0.00%     -    1s
+  4994  1845 198696.647  595    1 198693.000 198698.600  0.00%   1.2    5s
+
+Explored 12080 nodes (34530 simplex iterations) in 9.41 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 198693 198693 
+
+Optimal solution found (tolerance 1.00e-12)
+Best objective 1.986930000000e+05, best bound 1.986930000000e+05, gap 0.0000%
+
+Gurobi 9.1.2 (win64) logging started Wed Jun 15 14:48:57 2022
+
+Read MPS format model from file C:\Users\Xavier\Documents\XP-Documents\UNI\Magistrale 1 anno\Optimization Algorithms\Project\.\istanze\mps\Class4Mps\prob4_030_010000_10.mps
+Reading time = 0.03 seconds
+HELLO: 10001 rows, 10030 columns, 30030 nonzeros
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 15437 rows, 10030 columns and 35687 nonzeros
+Model fingerprint: 0xdaab256f
+Variable types: 0 continuous, 10030 integer (10030 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+03]
+  Objective range  [1e+01, 4e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+05]
+
+User MIP start did not produce a new incumbent solution
+User MIP start violates constraint bucketConstraint by 1.000000000
+
+Presolve removed 11092 rows and 5612 columns
+Presolve time: 0.11s
+Presolved: 4345 rows, 4418 columns, 13166 nonzeros
+Variable types: 0 continuous, 4418 integer (4359 binary)
+Presolved: 4345 rows, 4418 columns, 13166 nonzeros
+
+
+Root relaxation: cutoff, 1951 iterations, 0.13 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0     cutoff    0               - 198693.000      -     -    0s
+
+Explored 0 nodes (1951 simplex iterations) in 0.24 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 0
+
+Model objective exceeds cutoff
+Best objective -, best bound -1.986929999801e+05, gap -
+
+Gurobi 9.1.2 (win64) logging started Wed Jun 15 14:48:58 2022
+
+Read MPS format model from file C:\Users\Xavier\Documents\XP-Documents\UNI\Magistrale 1 anno\Optimization Algorithms\Project\.\istanze\mps\Class4Mps\prob4_030_010000_10.mps
+Reading time = 0.02 seconds
+HELLO: 10001 rows, 10030 columns, 30030 nonzeros
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 15241 rows, 10030 columns and 35687 nonzeros
+Model fingerprint: 0x6b2dd76b
+Variable types: 0 continuous, 10030 integer (10030 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+03]
+  Objective range  [1e+01, 4e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+05]
+
+User MIP start did not produce a new incumbent solution
+User MIP start violates constraint bucketConstraint by 1.000000000
+
+Presolve removed 10478 rows and 5254 columns
+Presolve time: 0.08s
+Presolved: 4763 rows, 4776 columns, 14716 nonzeros
+Variable types: 0 continuous, 4776 integer (4776 binary)
+Presolved: 4763 rows, 4776 columns, 14716 nonzeros
+
+
+Root relaxation: objective 1.997177e+05, 3942 iterations, 0.38 seconds
+Another try with MIP start
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 199717.680    0  537          - 199717.680      -     -    0s
+
+Cutting planes:
+  MIR: 1
+
+Explored 1 nodes (3942 simplex iterations) in 0.85 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 0
+
+Model objective exceeds cutoff
+Best objective -, best bound -1.986929999801e+05, gap -
+
+Gurobi 9.1.2 (win64) logging started Wed Jun 15 14:48:59 2022
+
+Read MPS format model from file C:\Users\Xavier\Documents\XP-Documents\UNI\Magistrale 1 anno\Optimization Algorithms\Project\.\istanze\mps\Class4Mps\prob4_030_010000_10.mps
+Reading time = 0.02 seconds
+HELLO: 10001 rows, 10030 columns, 30030 nonzeros
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 15441 rows, 10030 columns and 35687 nonzeros
+Model fingerprint: 0xd0246e39
+Variable types: 0 continuous, 10030 integer (10030 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+03]
+  Objective range  [1e+01, 4e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+05]
+
+User MIP start did not produce a new incumbent solution
+User MIP start violates constraint bucketConstraint by 1.000000000
+
+Presolve removed 10878 rows and 5455 columns
+Presolve time: 0.08s
+Presolved: 4563 rows, 4575 columns, 13915 nonzeros
+Variable types: 0 continuous, 4575 integer (4575 binary)
+Presolved: 4563 rows, 4575 columns, 13915 nonzeros
+
+
+Root relaxation: objective 1.999299e+05, 3792 iterations, 0.33 seconds
+Another try with MIP start
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+H    0     0                    198693.00000 262931.000  32.3%     -    0s
+     0     0 199929.895    0  333 198693.000 199929.895  0.62%     -    0s
+     0     0 198699.364    0  333 198693.000 198699.364  0.00%     -    0s
+     0     2 198699.364    0  333 198693.000 198699.364  0.00%     -    0s
+
+Explored 38396 nodes (42470 simplex iterations) in 3.67 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 198693 198693 
+
+Optimal solution found (tolerance 1.00e-12)
+Best objective 1.986930000000e+05, best bound 1.986930000000e+05, gap 0.0000%
+
+Gurobi 9.1.2 (win64) logging started Wed Jun 15 14:49:03 2022
+
+Read MPS format model from file C:\Users\Xavier\Documents\XP-Documents\UNI\Magistrale 1 anno\Optimization Algorithms\Project\.\istanze\mps\Class4Mps\prob4_030_010000_10.mps
+Reading time = 0.03 seconds
+HELLO: 10001 rows, 10030 columns, 30030 nonzeros
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 15235 rows, 10030 columns and 35685 nonzeros
+Model fingerprint: 0x17444cd2
+Variable types: 0 continuous, 10030 integer (10030 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+03]
+  Objective range  [1e+01, 4e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+05]
+
+User MIP start did not produce a new incumbent solution
+User MIP start violates constraint bucketConstraint by 1.000000000
+
+Presolve removed 10466 rows and 5248 columns
+Presolve time: 0.08s
+Presolved: 4769 rows, 4782 columns, 14738 nonzeros
+Variable types: 0 continuous, 4782 integer (4782 binary)
+Presolved: 4769 rows, 4782 columns, 14738 nonzeros
+
+
+Root relaxation: objective 1.999338e+05, 4127 iterations, 0.37 seconds
+Another try with MIP start
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+H    0     0                    198693.00000 270704.000  36.2%     -    0s
+     0     0 199933.754    0  363 198693.000 199933.754  0.62%     -    0s
+     0     0 198699.364    0  363 198693.000 198699.364  0.00%     -    0s
+     0     2 198699.364    0  363 198693.000 198699.364  0.00%     -    1s
+
+Explored 3359 nodes (7752 simplex iterations) in 4.05 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 198693 198693 
+
+Optimal solution found (tolerance 1.00e-12)
+Best objective 1.986930000000e+05, best bound 1.986930000000e+05, gap 0.0000%
+
+Gurobi 9.1.2 (win64) logging started Wed Jun 15 14:49:07 2022
+
+Read MPS format model from file C:\Users\Xavier\Documents\XP-Documents\UNI\Magistrale 1 anno\Optimization Algorithms\Project\.\istanze\mps\Class4Mps\prob4_030_010000_10.mps
+Reading time = 0.02 seconds
+HELLO: 10001 rows, 10030 columns, 30030 nonzeros
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 15431 rows, 10030 columns and 35679 nonzeros
+Model fingerprint: 0x9202265c
+Variable types: 0 continuous, 10030 integer (10030 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+03]
+  Objective range  [1e+01, 4e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+05]
+
+User MIP start did not produce a new incumbent solution
+User MIP start violates constraint bucketConstraint by 1.000000000
+
+Presolve removed 10858 rows and 5445 columns
+Presolve time: 0.11s
+Presolved: 4573 rows, 4585 columns, 13947 nonzeros
+Variable types: 0 continuous, 4585 integer (4585 binary)
+Presolved: 4573 rows, 4585 columns, 13947 nonzeros
+
+
+Root relaxation: objective 1.999597e+05, 3822 iterations, 0.41 seconds
+Another try with MIP start
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+H    0     0                    198693.00000 262963.000  32.3%     -    0s
+     0     0 199959.675    0  333 198693.000 199959.675  0.64%     -    0s
+     0     0 198699.263    0  333 198693.000 198699.263  0.00%     -    1s
+     0     2 198699.263    0  333 198693.000 198699.263  0.00%     -    1s
+
+Explored 2905 nodes (6973 simplex iterations) in 3.90 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 198693 198693 
+
+Optimal solution found (tolerance 1.00e-12)
+Best objective 1.986930000000e+05, best bound 1.986930000000e+05, gap 0.0000%
+
+Gurobi 9.1.2 (win64) logging started Wed Jun 15 14:49:12 2022
+
+Read MPS format model from file C:\Users\Xavier\Documents\XP-Documents\UNI\Magistrale 1 anno\Optimization Algorithms\Project\.\istanze\mps\Class4Mps\prob4_030_010000_10.mps
+Reading time = 0.02 seconds
+HELLO: 10001 rows, 10030 columns, 30030 nonzeros
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 15431 rows, 10030 columns and 35678 nonzeros
+Model fingerprint: 0xc4875748
+Variable types: 0 continuous, 10030 integer (10030 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+03]
+  Objective range  [1e+01, 4e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+05]
+
+User MIP start did not produce a new incumbent solution
+User MIP start violates constraint bucketConstraint by 1.000000000
+
+Presolve removed 11077 rows and 5606 columns
+Presolve time: 0.13s
+Presolved: 4354 rows, 4424 columns, 13187 nonzeros
+Variable types: 0 continuous, 4424 integer (4372 binary)
+Presolved: 4354 rows, 4424 columns, 13187 nonzeros
+
+
+Root relaxation: cutoff, 2189 iterations, 0.14 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0     cutoff    0               - 198693.000      -     -    0s
+
+Explored 0 nodes (2189 simplex iterations) in 0.26 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 0
+
+Model objective exceeds cutoff
+Best objective -, best bound -1.986929999801e+05, gap -
+
+Gurobi 9.1.2 (win64) logging started Wed Jun 15 14:49:12 2022
+
+Read MPS format model from file C:\Users\Xavier\Documents\XP-Documents\UNI\Magistrale 1 anno\Optimization Algorithms\Project\.\istanze\mps\Class4Mps\prob4_030_010000_10.mps
+Reading time = 0.02 seconds
+HELLO: 10001 rows, 10030 columns, 30030 nonzeros
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 15247 rows, 10030 columns and 35678 nonzeros
+Model fingerprint: 0x848f116b
+Variable types: 0 continuous, 10030 integer (10030 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+03]
+  Objective range  [1e+01, 4e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+05]
+
+User MIP start did not produce a new incumbent solution
+User MIP start violates constraint bucketConstraint by 1.000000000
+
+Presolve removed 10490 rows and 5260 columns
+Presolve time: 0.11s
+Presolved: 4757 rows, 4770 columns, 14683 nonzeros
+Variable types: 0 continuous, 4770 integer (4770 binary)
+Presolved: 4757 rows, 4770 columns, 14683 nonzeros
+
+
+Root relaxation: objective 1.999476e+05, 4173 iterations, 0.54 seconds
+Another try with MIP start
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 199947.573    0  556          - 199947.573      -     -    0s
+
+Cutting planes:
+  MIR: 1
+
+Explored 1 nodes (4173 simplex iterations) in 1.21 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 0
+
+Model objective exceeds cutoff
+Best objective -, best bound -1.986929999801e+05, gap -
+
+Gurobi 9.1.2 (win64) logging started Wed Jun 15 14:49:14 2022
+
+Read MPS format model from file C:\Users\Xavier\Documents\XP-Documents\UNI\Magistrale 1 anno\Optimization Algorithms\Project\.\istanze\mps\Class4Mps\prob4_030_010000_10.mps
+Reading time = 0.02 seconds
+HELLO: 10001 rows, 10030 columns, 30030 nonzeros
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 15252 rows, 10030 columns and 35678 nonzeros
+Model fingerprint: 0x93f1bac2
+Variable types: 0 continuous, 10030 integer (10030 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+03]
+  Objective range  [1e+01, 4e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+05]
+
+User MIP start did not produce a new incumbent solution
+User MIP start violates constraint bucketConstraint by 1.000000000
+
+Presolve removed 10500 rows and 5265 columns
+Presolve time: 0.08s
+Presolved: 4752 rows, 4765 columns, 14663 nonzeros
+Variable types: 0 continuous, 4765 integer (4765 binary)
+Presolved: 4752 rows, 4765 columns, 14663 nonzeros
+
+
+Root relaxation: objective 1.999895e+05, 4137 iterations, 0.41 seconds
+Another try with MIP start
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+H    0     0                    198693.00000 270643.000  36.2%     -    0s
+     0     0 199989.454    0  333 198693.000 199989.454  0.65%     -    0s
+     0     0 198699.263    0  333 198693.000 198699.263  0.00%     -    1s
+     0     2 198699.263    0  333 198693.000 198699.263  0.00%     -    1s
+
+Explored 3360 nodes (7722 simplex iterations) in 4.34 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 198693 198693 
+
+Optimal solution found (tolerance 1.00e-12)
+Best objective 1.986930000000e+05, best bound 1.986930000000e+05, gap 0.0000%
+
+Gurobi 9.1.2 (win64) logging started Wed Jun 15 14:49:19 2022
+
+Read MPS format model from file C:\Users\Xavier\Documents\XP-Documents\UNI\Magistrale 1 anno\Optimization Algorithms\Project\.\istanze\mps\Class4Mps\prob4_030_010000_10.mps
+Reading time = 0.02 seconds
+HELLO: 10001 rows, 10030 columns, 30030 nonzeros
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 15336 rows, 10030 columns and 35677 nonzeros
+Model fingerprint: 0xf105c549
+Variable types: 0 continuous, 10030 integer (10030 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+03]
+  Objective range  [1e+01, 4e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+05]
+
+User MIP start did not produce a new incumbent solution
+User MIP start violates constraint bucketConstraint by 1.000000000
+
+Presolve removed 10668 rows and 5349 columns
+Presolve time: 0.09s
+Presolved: 4668 rows, 4681 columns, 14326 nonzeros
+Variable types: 0 continuous, 4681 integer (4681 binary)
+Presolved: 4668 rows, 4681 columns, 14326 nonzeros
+
+
+Root relaxation: objective 1.999716e+05, 4042 iterations, 0.38 seconds
+Another try with MIP start
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 199971.648    0  541          - 199971.648      -     -    0s
+
+Cutting planes:
+  MIR: 1
+
+Explored 1 nodes (4042 simplex iterations) in 0.84 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 0
+
+Model objective exceeds cutoff
+Best objective -, best bound -1.986929999801e+05, gap -
+
+Gurobi 9.1.2 (win64) logging started Wed Jun 15 14:49:20 2022
+
+Read MPS format model from file C:\Users\Xavier\Documents\XP-Documents\UNI\Magistrale 1 anno\Optimization Algorithms\Project\.\istanze\mps\Class4Mps\prob4_030_010000_10.mps
+Reading time = 0.02 seconds
+HELLO: 10001 rows, 10030 columns, 30030 nonzeros
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 15649 rows, 10030 columns and 35677 nonzeros
+Model fingerprint: 0x5783956a
+Variable types: 0 continuous, 10030 integer (10030 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+03]
+  Objective range  [1e+01, 4e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+05]
+
+User MIP start did not produce a new incumbent solution
+User MIP start violates constraint bucketConstraint by 1.000000000
+
+Presolve time: 0.00s
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+No other solutions better than -1e+100
+
+Model is infeasible
+Best objective -, best bound -, gap -

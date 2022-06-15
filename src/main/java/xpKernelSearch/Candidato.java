@@ -52,4 +52,10 @@ public class Candidato {
         this.failed = false;
         this.numOfTries = 0;
     }
+
+    public void printCandidatoStatus() {
+        System.out.println("Dalla famiglia "+ famiglia.getVarName() +
+            "  sono selezionati "+ this.sets.size() + " subsets a parire dal " +
+            (famiglia.getIndexOfLastSubset()-this.sets.size()) + " subset. In totale la famiglia conta: "+ famiglia.getNumOfSubsets() );
+    }
 }

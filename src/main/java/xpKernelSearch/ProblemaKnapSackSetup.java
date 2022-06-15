@@ -185,15 +185,15 @@ public class ProblemaKnapSackSetup {
         List<Candidato> newCandidati = new ArrayList<>();
         int dim= 0;
         Candidato c;
-        System.out.println("ANNA LIST DIM :: "+this.annaList.size());
+        System.out.println("\n::: GENERATING NEW BUCKET :::");
         while (dim < Math.floor(this.bucketDimFactor*dimKerSet) && this.annaList.size()>0) {
             c= this.annaList.pollFirst();
-            System.out.println("BucketSize:  "+dim);
+            System.out.println("\tAdding a subset");
+            c.printCandidatoStatus();
             dim+= c.getDim();
             newCandidati.add(c);
         }
         System.out.println("Max bucket dim: "+bucketDimFactor*dimKerSet);
-        System.out.println("BucketDimension: "+dim  );
         this.lastSubmittedCandidati = newCandidati;
         if(newCandidati.size()> 0)
             return this.fromCandidatiToBucket(newCandidati);
