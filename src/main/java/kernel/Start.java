@@ -61,14 +61,10 @@ public class Start
 			System.out.println("Inizio ad eseguire il KernelSearch sull'istanza chiamata: "+ist[0]+"  "+ist[1]);
 			runKerSearch(pth, pathlog, config, solution);
 			solutions.add(solution);
+			solwriter.write_solution(solution);
 		}
 		solutions.forEach(s -> {
 			System.out.println("Soluzione istanza "+ "\n\t" + s.getCsvRes());
-			try {
-				solwriter.write_solution(s);
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
 		});
 		// TODO: Guarda perchè prob3_050_090_110_005_015_01 è cursata
 	}
