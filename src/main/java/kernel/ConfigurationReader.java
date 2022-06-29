@@ -31,6 +31,7 @@ public class ConfigurationReader {
 					switch (Integer.parseInt(valToParse)) {
 						case 0 -> config.setItemSorter(new ItemSorterByValueAndAbsoluteRC());
 						case 1 -> config.setItemSorter(new ItemSorterByProfitOverCost());
+						case 2 -> config.setItemSorter(new ItemSorterByBoth());
 						default -> System.out.println("Unrecognized item sorter.");
 					}
 				}

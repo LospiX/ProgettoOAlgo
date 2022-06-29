@@ -23,7 +23,6 @@ public class Start
 	private static String CLASSPATH;
 	public static void main(String[] args) throws Exception {
 
-//		System.out.println(OutputSolution.getHeader(Files.readAllLines(Path.of(".\\config.txt"))));
 		System.out.println("Working directory ::" +System.getProperty("user.dir"));
 		CLASSPATH = Arrays.stream(System.getProperty("java.class.path").split(";")).filter(e -> e.endsWith("classes")|| e.endsWith(".jar")).findFirst().orElseThrow();
 		Path classPath = Path.of(CLASSPATH);
@@ -35,18 +34,6 @@ public class Start
 		List<OutputSolution> solutions = new ArrayList<>();
 
 		Explorer exp = new Explorer(".\\istanze");
-		/*String pathOfIstanze;
-		if(Start.class.getResource("Start.class").toString().startsWith("jar")) {
-			System.out.println("The program is running as a jar");
-			exp = new Explorer(Start.class.getResource("/Istanze").toURI());
-		} else {
-			System.out.println("The program is NOT running as a jar");
-			pathOfIstanze = Start.class.getResource("/Istanze").toURI().getPath().substring(1); // substring to remove the leading a slash
-			exp = new Explorer(pathOfIstanze);
-		}*/
-		/*System.out.println("Start.class.getResource(\"/Istanze\")= "+Start.class.getResource("/Istanze"));
-		System.out.println("Start.class.getResource(\"/Istanze\toUri\")= "+Start.class.getResource("/Istanze").toURI());
-		System.out.println("Start.class.getResource(\"/Istanze\"getPath)= "+Start.class.getResource("/Istanze").toURI().getPath());*/
 		List<String[]> istanze = Arrays.stream(args)
 			.map(ist -> new String[]{ist + ".txt", ist + ".mps"})
 			.toList();

@@ -53,7 +53,6 @@ public class KernelSearch {
 	
 	private void configure(Configuration configuration) {
 		sorter = config.getItemSorter();
-		System.out.println(sorter);
 		tlim = config.getTimeLimit();
 		bucketBuilder = config.getBucketBuilder();
 		kernelBuilder = config.getKernelBuilder();

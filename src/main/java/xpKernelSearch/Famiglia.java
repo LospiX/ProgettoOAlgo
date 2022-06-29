@@ -8,7 +8,7 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Famiglia implements Item {
-    private List<Variabile> variables;
+    private  List<Variabile> variables;
     private double RC;
     private final String id;
 
@@ -34,11 +34,9 @@ public class Famiglia implements Item {
         this.id = id;
         this.sorter = sorter;
         this.variables = variables;
-//        this.variablesOrdered = sorter.sort(variables);
         this.setUpCost = setUpCost;
         this.pesoFamiglia = pesoFamiglia;
         this.subsetItems= new ArrayList<>();
-//        this.generateSubsets();
         this.indexOfLastSubsetSelected=0;
     }
     public void setPartOfSolution(){
@@ -71,11 +69,13 @@ public class Famiglia implements Item {
         }
         if(subSet.size()>0)
             this.subsetItems.add(new SubSet(subSet));
+/*
         System.out.println("Famiglia: "+this.id+ "   contains: "+this.subsetItems.stream().map(e -> e.getDim()).mapToInt(Integer::intValue).sum()+" items in "+this.subsetItems.size()+ " subsets.");
         for(var v1 : this.subsetItems){
             System.out.println("\t subset dim: "+v1.getDim());
-            //v1.getSet().forEach(v2 -> System.out.println("Var:: "+v2 + "  prof: "+v2.getProfitto()+ "  peso: "+v2.getPeso()+ "  rapporto: "+v2.getRapportoProfPeso()));
+            v1.getSet().forEach(v2 -> System.out.println("Var:: "+v2 + "  XR: "+v2.getXr()+ "  RC: "+v2.getRc()+ "  rapporto: "+v2.getRapportoProfPeso()));
         }
+*/
     }
 
     private int calcNumVarToBeatSetupCost(double subsetFactor) {
