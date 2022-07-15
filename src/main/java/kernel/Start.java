@@ -61,7 +61,12 @@ public class Start
 		//rtime.gc();
 		long memory = rtime.totalMemory()-rtime.freeMemory();
 		var bef = Instant.now();
-		KernelSearch ks = new KernelSearch(pth.get(0).getPath(), pth.get(1).getPath(), pathlog, config);
+		KernelSearch ks;
+		if (pth.get(0).toString().endsWith(".mps")) {
+			ks = new KernelSearch(pth.get(1).getPath(), pth.get(0).getPath(), pathlog, config);
+		} else {
+			ks = new KernelSearch(pth.get(0).getPath(), pth.get(1).getPath(), pathlog, config);
+		}
 		sol.setOttimoRaggiunto((int) ks.start().getObj());
 		var timeBetween = Duration.between(bef, Instant.now()).toMillis();
 		sol.setTempoImpiegato(timeBetween);
